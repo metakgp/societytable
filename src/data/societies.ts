@@ -7,6 +7,16 @@ export interface ISociety {
   tsg_recognized: boolean;
   link: string;
   description: string;
+  /**
+   * Block of the periodic table:
+   * T - Technical
+   * O - Organizational
+   * C - Creative
+   * U - Uncategorized
+   *
+   * A combination of these letters denotes a special block that is either a cross between two blocks or a sub-block.
+   */
+  block: "T" | "TO" | "O" | "W" | "C" | "CC" | "U";
 }
 
 export const SOCIETIES: ISociety[] = [
@@ -18,7 +28,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: true,
     link: "https://www.facebook.com/aerialroboticskgp",
-    description: "The ARK consists of a group of students working towards building autonomous aerial vehicles, based at Indian Institute of Technology Kharagpur."
+    description: "The ARK consists of a group of students working towards building autonomous aerial vehicles, based at Indian Institute of Technology Kharagpur.",
+    block: "T"
   },
   {
     index: 2,
@@ -28,7 +39,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: false,
     link: "https://www.facebook.com/awaaziitkgp/",
-    description: "आवाज़ पिछले १० वर्षों से कैम्पस सम्बन्धी ताज़ा समाचार तथा सामयिक विषयों पे समीक्षा प्रस्तुत करती रही है | इन वर्षों में कैम्पस में काफी कुछ बदला है और राजभाषा हिंदी के माध्यम से 'आवाज़' आपसे अनवरत जुड़ी रही |"
+    description: "आवाज़ पिछले १० वर्षों से कैम्पस सम्बन्धी ताज़ा समाचार तथा सामयिक विषयों पे समीक्षा प्रस्तुत करती रही है | इन वर्षों में कैम्पस में काफी कुछ बदला है और राजभाषा हिंदी के माध्यम से 'आवाज़' आपसे अनवरत जुड़ी रही |",
+    block: "U"
   },
   {
     index: 3,
@@ -38,7 +50,8 @@ export const SOCIETIES: ISociety[] = [
     size: "NA",
     tsg_recognized: false,
     link: "https://www.facebook.com/agvkgp/",
-    description: "AGV is an interdisciplinary team aspiring to win the Intelligent Ground Vehicle Competition held at Oakland University and be involved in the Research work related to autonomous and mobile robots."
+    description: "AGV is an interdisciplinary team aspiring to win the Intelligent Ground Vehicle Competition held at Oakland University and be involved in the Research work related to autonomous and mobile robots.",
+    block: "T"
   },
   {
     index: 4,
@@ -48,7 +61,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/The.KGTS/",
-    description: "KGTS is dedicated towards spreading awareness, knowledge and application of Game Theory. They are involved in publishing the half-yearly newspaper, \"The Strategist\"."
+    description: "KGTS is dedicated towards spreading awareness, knowledge and application of Game Theory. They are involved in publishing the half-yearly newspaper, \"The Strategist\".",
+    block: "TO"
   },
   {
     index: 5,
@@ -58,7 +72,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: true,
     link: "https://www.facebook.com/iitkgp.quizclub/",
-    description: "The Quiz Club conducts branstorming sessions and mock quizzes to promote the quizzing culture in the campus. The club usually meets at 10 PM on Thursdays in the Institute Foyer."
+    description: "The Quiz Club conducts branstorming sessions and mock quizzes to promote the quizzing culture in the campus. The club usually meets at 10 PM on Thursdays in the Institute Foyer.",
+    block: "C"
   },
   {
     index: 6,
@@ -68,7 +83,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: true,
     link: "https://www.facebook.com/Spectra.IITKGP/",
-    description: "Spectra is the Fine Arts Group of the campus which aims to bring together like-minded people who have the shared love for art."
+    description: "Spectra is the Fine Arts Group of the campus which aims to bring together like-minded people who have the shared love for art.",
+    block: "C"
   },
   {
     index: 7,
@@ -78,7 +94,8 @@ export const SOCIETIES: ISociety[] = [
     size: "XL",
     tsg_recognized: true,
     link: "https://www.facebook.com/tdsdruheen/",
-    description: "Technology Dramatics Society Druheen is one of the oldest societies of IIT Kharagpur. It is a dedicated group for theatrical plays in Bengali."
+    description: "Technology Dramatics Society Druheen is one of the oldest societies of IIT Kharagpur. It is a dedicated group for theatrical plays in Bengali.",
+    block: "C"
   },
   {
     index: 8,
@@ -88,7 +105,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: true,
     link: "https://www.facebook.com/wtmsiitkgp/",
-    description: "WTMS is a group of self learned musicians who explore different genres of western music. They perform an hourly concert every semester and keep the musical veins throbbing in the campus."
+    description: "WTMS is a group of self learned musicians who explore different genres of western music. They perform an hourly concert every semester and keep the musical veins throbbing in the campus.",
+    block: "CC"
   },
   {
     index: 9,
@@ -98,7 +116,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: false,
     link: "https://www.facebook.com/groups/732492363547374/",
-    description: "An interest driven group of enthusiastic Language Learners who use the group as a platform to reach other learners, organize meetups and share language learning resources."
+    description: "An interest driven group of enthusiastic Language Learners who use the group as a platform to reach other learners, organize meetups and share language learning resources.",
+    block: "U"
   },
   {
     index: 10,
@@ -108,7 +127,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: false,
     link: "https://www.facebook.com/auviitkgp/",
-    description: "The IIT Kharagpur AUV Team (nicknamed iKat) was conceived to develop an autonomous underground vehicle to participate in student level competitions and demonstrate the Robotics and Intelligent Systems Lab of the campus."
+    description: "The IIT Kharagpur AUV Team (nicknamed iKat) was conceived to develop an autonomous underground vehicle to participate in student level competitions and demonstrate the Robotics and Intelligent Systems Lab of the campus.",
+    block: "T"
   },
   {
     index: 11,
@@ -118,7 +138,8 @@ export const SOCIETIES: ISociety[] = [
     size: "NA",
     tsg_recognized: false,
     link: "https://www.facebook.com/spAce.iitkgp/",
-    description: "spAts functions as the student body of Kalpana Chawla Space Technology Cell, the contact point of ISRO at IIT Kharagpur.They are dedicated to explore space technology and astronomy by conducting lectures, events and workshops."
+    description: "spAts functions as the student body of Kalpana Chawla Space Technology Cell, the contact point of ISRO at IIT Kharagpur.They are dedicated to explore space technology and astronomy by conducting lectures, events and workshops.",
+    block: "TO"
   },
   {
     index: 12,
@@ -128,7 +149,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: true,
     link: "https://www.facebook.com/bclubkgp/",
-    description: "B-Club is the campus society for all things business. A student run forum, BClub has built an analytical framework with their technical background with which they apply in domains related to business."
+    description: "B-Club is the campus society for all things business. A student run forum, BClub has built an analytical framework with their technical background with which they apply in domains related to business.",
+    block: "C"
   },
   {
     index: 13,
@@ -138,7 +160,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: true,
     link: "https://www.facebook.com/tlsiitkgp/",
-    description: "TLS, one of the oldest societies of the campus, has been an outlet for the literary skills of the Kgp populace. Their notable works include Hang On's, Pulse and Alankar. They also hold the events 'Kavyanjali' and 'Kavya Sandhya'"
+    description: "TLS, one of the oldest societies of the campus, has been an outlet for the literary skills of the Kgp populace. Their notable works include Hang On's, Pulse and Alankar. They also hold the events 'Kavyanjali' and 'Kavya Sandhya'",
+    block: "C"
   },
   {
     index: 14,
@@ -148,7 +171,8 @@ export const SOCIETIES: ISociety[] = [
     size: "XL",
     tsg_recognized: true,
     link: "https://www.facebook.com/Prasthanam.TDS/",
-    description: "Prasthanam is the youngest of all dramatics societies formed to assimilate and integrate the rich culture and dramatics heritage of the Telugu speaking people into the mainstream culture of IIT Kharagpur."
+    description: "Prasthanam is the youngest of all dramatics societies formed to assimilate and integrate the rich culture and dramatics heritage of the Telugu speaking people into the mainstream culture of IIT Kharagpur.",
+    block: "C"
   },
   {
     index: 15,
@@ -158,7 +182,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: true,
     link: "https://www.facebook.com/tfps.iitkgp/",
-    description: "TFPS is the campus group for students interested in filmmaking, photography and film-appreciation. The society has been a launchpad for students interested in pursuing careers in the Entertainment Industry."
+    description: "TFPS is the campus group for students interested in filmmaking, photography and film-appreciation. The society has been a launchpad for students interested in pursuing careers in the Entertainment Industry.",
+    block: "CC"
   },
   {
     index: 16,
@@ -168,7 +193,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: true,
     link: "https://www.facebook.com/groups/402924043246682/",
-    description: "Helps in quality control of the functioning of the mess across all halls and food outlets in the campus."
+    description: "Helps in quality control of the functioning of the mess across all halls and food outlets in the campus.",
+    block: "U"
   },
   {
     index: 17,
@@ -178,7 +204,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: true,
     link: "https://www.facebook.com/kgpdag/",
-    description: "KDAG is aimed at bringing Data Analytics and Machine Learning enthusiasts together under the umbrella of a single society. The group holds selections each year and conducts workshops and helps assimilate analytics skills in the students."
+    description: "KDAG is aimed at bringing Data Analytics and Machine Learning enthusiasts together under the umbrella of a single society. The group holds selections each year and conducts workshops and helps assimilate analytics skills in the students.",
+    block: "T"
   },
   {
     index: 18,
@@ -188,7 +215,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: true,
     link: "https://www.facebook.com/robotixiitkgp/",
-    description: "Technology Robotix Society conducts activities and projects related to robotics in the campus. With its reach expanding steadily each year, it has also cemented its position as one of the nerve centres of amateur robotics in India."
+    description: "Technology Robotix Society conducts activities and projects related to robotics in the campus. With its reach expanding steadily each year, it has also cemented its position as one of the nerve centres of amateur robotics in India.",
+    block: "TO"
   },
   {
     index: 19,
@@ -198,7 +226,8 @@ export const SOCIETIES: ISociety[] = [
     size: "XL",
     tsg_recognized: false,
     link: "https://www.facebook.com/kossiitkgp/",
-    description: "A bunch of open source enthusiasts and previously called the ‘Firefox club’, KOSS is aimed at creating awareness about web and the open source movement."
+    description: "A bunch of open source enthusiasts and previously called the ‘Firefox club’, KOSS is aimed at creating awareness about web and the open source movement.",
+    block: "TO"
   },
   {
     index: 20,
@@ -208,7 +237,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: false,
     link: "https://www.facebook.com/iitkgp.alumnicell/",
-    description: "Alumni cell is a student body in IIT Kharagpur with the aim to foster and bridge the interaction between the institute and its Alumni. IIT Kharagpur has always maintained strong Alumni –Institute relation."
+    description: "Alumni cell is a student body in IIT Kharagpur with the aim to foster and bridge the interaction between the institute and its Alumni. IIT Kharagpur has always maintained strong Alumni –Institute relation.",
+    block: "O"
   },
   {
     index: 21,
@@ -218,7 +248,8 @@ export const SOCIETIES: ISociety[] = [
     size: "XL",
     tsg_recognized: true,
     link: "https://www.facebook.com/springfest.iitkgp/",
-    description: "Spring Fest is the annual Social and Cultural fest of IIT Kharagpur, West Bengal held in the month of January."
+    description: "Spring Fest is the annual Social and Cultural fest of IIT Kharagpur, West Bengal held in the month of January.",
+    block: "O"
   },
   {
     index: 22,
@@ -228,7 +259,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: false,
     link: "https://www.facebook.com/Branding-And-Relations-Cell-IIT-Kharagpur-123930134625611/",
-    description: "BARC works to bring media attention to notable events in the campus and promote IIT Kharagpur as a reputable brand."
+    description: "BARC works to bring media attention to notable events in the campus and promote IIT Kharagpur as a reputable brand.",
+    block: "O"
   },
   {
     index: 23,
@@ -238,7 +270,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: false,
     link: "https://www.facebook.com/aieseciitkgp/",
-    description: "AIESEC is focused on providing a platform for youth leadership development by providing opportunities to participate in International Internships, Experiential leadership opportunities and a global learning environment."
+    description: "AIESEC is focused on providing a platform for youth leadership development by providing opportunities to participate in International Internships, Experiential leadership opportunities and a global learning environment.",
+    block: "O"
   },
   {
     index: 24,
@@ -248,7 +281,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: true,
     link: "https://www.facebook.com/communique.iitkgp/",
-    description: "Communique aims to be an interface between professional communication experts and individual students and work with the students to ensure that there is a perceptible change in the level of communication skills in the campus."
+    description: "Communique aims to be an interface between professional communication experts and individual students and work with the students to ensure that there is a perceptible change in the level of communication skills in the campus.",
+    block: "C"
   },
   {
     index: 25,
@@ -258,7 +292,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: false,
     link: "https://www.facebook.com/iit.tech.ambit/",
-    description: "The IIT Tech Ambit covers research and tech stories from the PAN IIT ecosystem."
+    description: "The IIT Tech Ambit covers research and tech stories from the PAN IIT ecosystem.",
+    block: "C"
   },
   {
     index: 26,
@@ -268,7 +303,8 @@ export const SOCIETIES: ISociety[] = [
     size: "XL",
     tsg_recognized: true,
     link: "https://www.facebook.com/Pravaah/",
-    description: "PRAVAH is the Hindi theater group of IIT Kharagpur which aims to create awareness about theatre and its various aspects in the students by bringing together people who are interested in the performing arts."
+    description: "PRAVAH is the Hindi theater group of IIT Kharagpur which aims to create awareness about theatre and its various aspects in the students by bringing together people who are interested in the performing arts.",
+    block: "C"
   },
   {
     index: 27,
@@ -278,7 +314,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: true,
     link: "https://www.facebook.com/Breakfreenowornever/",
-    description: "Breakfree is the campus dance society that acts as a common platform for students interested in dancing and choreography, and exploring the various genres of dance."
+    description: "Breakfree is the campus dance society that acts as a common platform for students interested in dancing and choreography, and exploring the various genres of dance.",
+    block: "CC"
   },
   {
     index: 28,
@@ -288,7 +325,8 @@ export const SOCIETIES: ISociety[] = [
     size: "NA",
     tsg_recognized: false,
     link: "https://www.facebook.com/ChessClubIITKGP/",
-    description: "Chess Club is an open-for-all club meant to boost the enthusiasm for chess and improve the chess culture in IIT Kharagpur."
+    description: "Chess Club is an open-for-all club meant to boost the enthusiasm for chess and improve the chess culture in IIT Kharagpur.",
+    block: "U"
   },
   {
     index: 29,
@@ -298,7 +336,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/TeamKART/",
-    description: "TeamKART is the official Formula Student team of IIT Kharagpur. They are a group of students who design, manufacture and test Formula style racecars and represent IIT Kharagpur in FSAE competitions."
+    description: "TeamKART is the official Formula Student team of IIT Kharagpur. They are a group of students who design, manufacture and test Formula style racecars and represent IIT Kharagpur in FSAE competitions.",
+    block: "T"
   },
   {
     index: 30,
@@ -308,7 +347,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: false,
     link: "https://www.facebook.com/krssg/",
-    description: "A students' group in IIT Kharagpur which works on building autonomous bots for playing soccer and participating in international events like F.I.R.A. World Championship and RoboCup soccer."
+    description: "A students' group in IIT Kharagpur which works on building autonomous bots for playing soccer and participating in international events like F.I.R.A. World Championship and RoboCup soccer.",
+    block: "TO"
   },
   {
     index: 31,
@@ -318,7 +358,8 @@ export const SOCIETIES: ISociety[] = [
     size: "NA",
     tsg_recognized: false,
     link: "https://www.facebook.com/CRY.IITKGP/",
-    description: "CRY IITKGP a group of volunteers working under the Child Rights and You (CRY) IIT Kharagpur Volunteer Chapter. CRY is an internationally renowned NGO working on Child Rights in India & abroad for over 30 years."
+    description: "CRY IITKGP a group of volunteers working under the Child Rights and You (CRY) IIT Kharagpur Volunteer Chapter. CRY is an internationally renowned NGO working on Child Rights in India & abroad for over 30 years.",
+    block: "W"
   },
   {
     index: 32,
@@ -328,7 +369,8 @@ export const SOCIETIES: ISociety[] = [
     size: "NA",
     tsg_recognized: false,
     link: "https://www.facebook.com/gyws.iitkgp/",
-    description: "GYWS is a NGO run by a team of students and professors of the campus, with assistance from local social enthusiasts. GYWS aims to improve the living standards of the people of Gopali (a village located 5 km from the IIT campus)"
+    description: "GYWS is a NGO run by a team of students and professors of the campus, with assistance from local social enthusiasts. GYWS aims to improve the living standards of the people of Gopali (a village located 5 km from the IIT campus)",
+    block: "W"
   },
   {
     index: 33,
@@ -338,7 +380,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/ambar.iitkgp/",
-    description: "Ambar is the Gender and Sexual diversity group of the campus for the LGBTQ community residing in the campus comprised of current students, alumni, staff and family of staff."
+    description: "Ambar is the Gender and Sexual diversity group of the campus for the LGBTQ community residing in the campus comprised of current students, alumni, staff and family of staff.",
+    block: "W"
   },
   {
     index: 34,
@@ -348,7 +391,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: false,
     link: "https://www.facebook.com/metakgp/",
-    description: "Metakgp is a collective interest group of engineers, hackers, and artists from IIT Kharagpur, who collaborate on various technical and non-technical projects."
+    description: "Metakgp is a collective interest group of engineers, hackers, and artists from IIT Kharagpur, who collaborate on various technical and non-technical projects.",
+    block: "W"
   },
   {
     index: 35,
@@ -358,7 +402,8 @@ export const SOCIETIES: ISociety[] = [
     size: "XL",
     tsg_recognized: false,
     link: "https://www.facebook.com/netimpactiitkharagpur/",
-    description: "Net Impact IIT Kharagpur aims at creating a positive impact in the campus. The students can use their platform to develop themselves for the type of career they are looking for."
+    description: "Net Impact IIT Kharagpur aims at creating a positive impact in the campus. The students can use their platform to develop themselves for the type of career they are looking for.",
+    block: "W"
   },
   {
     index: 36,
@@ -368,7 +413,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: false,
     link: "https://www.facebook.com/ecell.iitkgp/",
-    description: "E-Cell aims to foster the spirit of entrepreneurship among college students in India and nurture young people with bright ideas. It is ranked as one of the most active entrepreneurship promoting bodies by several rating agencies."
+    description: "E-Cell aims to foster the spirit of entrepreneurship among college students in India and nurture young people with bright ideas. It is ranked as one of the most active entrepreneurship promoting bodies by several rating agencies.",
+    block: "O"
   },
   {
     index: 37,
@@ -378,7 +424,8 @@ export const SOCIETIES: ISociety[] = [
     size: "XL",
     tsg_recognized: true,
     link: "https://www.facebook.com/ktj.iitkgp/",
-    description: "KTJ is the annual techno-management fest of the campus. It aims to promote the technical and managerial output of the nation by providing a platform for the youth to display their inputs and skills."
+    description: "KTJ is the annual techno-management fest of the campus. It aims to promote the technical and managerial output of the nation by providing a platform for the youth to display their inputs and skills.",
+    block: "O"
   },
   {
     index: 38,
@@ -388,7 +435,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: false,
     link: "https://www.facebook.com/IRCIITKGP/",
-    description: "IRC is formed under Dean Alumni Affairs and International Relations, with the aim to develop and manage partnerships, linkages and networks with institutions of academic excellence and repute all over the world."
+    description: "IRC is formed under Dean Alumni Affairs and International Relations, with the aim to develop and manage partnerships, linkages and networks with institutions of academic excellence and repute all over the world.",
+    block: "O"
   },
   {
     index: 39,
@@ -398,7 +446,8 @@ export const SOCIETIES: ISociety[] = [
     size: "NA",
     tsg_recognized: false,
     link: "https://www.facebook.com/financeclubiitkgp/",
-    description: "Finance Club conducts events, initiates programs and acts as an intermediary to ensure maximum benefit to students including, but not limited to those in the Financial Engineering program."
+    description: "Finance Club conducts events, initiates programs and acts as an intermediary to ensure maximum benefit to students including, but not limited to those in the Financial Engineering program.",
+    block: "O"
   },
   {
     index: 40,
@@ -408,7 +457,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: true,
     link: "https://www.facebook.com/kgpdebsoc/",
-    description: "The Debating Society, IIT Kharagpur, is a full-fledged society under the Technology Students' Gymkhana, IIT Kharagpur, which aims to promote the culture of debating on the campus and provides a platform to bring all the debaters together."
+    description: "The Debating Society, IIT Kharagpur, is a full-fledged society under the Technology Students' Gymkhana, IIT Kharagpur, which aims to promote the culture of debating on the campus and provides a platform to bring all the debaters together.",
+    block: "C"
   },
   {
     index: 41,
@@ -418,7 +468,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/scholarsavenue/",
-    description: "We are the independent student run English newsbody of the campus. We report campus events and function as a public interface between students and the administration. Often, we make cool stuff like the one you are reading right now."
+    description: "We are the independent student run English newsbody of the campus. We report campus events and function as a public interface between students and the administration. Often, we make cool stuff like the one you are reading right now.",
+    block: "C"
   },
   {
     index: 42,
@@ -428,7 +479,8 @@ export const SOCIETIES: ISociety[] = [
     size: "XL",
     tsg_recognized: true,
     link: "https://www.facebook.com/TDSEncore/",
-    description: "Encore is the English dramatics society of the campus. Their goal is to enjoy the moments on stage and give their audience a worthwhile experience. They go by their tagline \"Stage humare baap ka hai\"."
+    description: "Encore is the English dramatics society of the campus. Their goal is to enjoy the moments on stage and give their audience a worthwhile experience. They go by their tagline \"Stage humare baap ka hai\".",
+    block: "C"
   },
   {
     index: 43,
@@ -438,7 +490,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: true,
     link: "https://www.facebook.com/ETMSIITKGP/",
-    description: "ETMS is a group of self-learned musicians who find a common interest in the wide sea of music. They perform twice annually covering a spectrum of genres ranging from classical to fusion to popular bollywood hits."
+    description: "ETMS is a group of self-learned musicians who find a common interest in the wide sea of music. They perform twice annually covering a spectrum of genres ranging from classical to fusion to popular bollywood hits.",
+    block: "CC"
   },
   {
     index: 44,
@@ -448,7 +501,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/comedyclubiitkgp/",
-    description: "Comedy Club is a society for stand-up and comedy enthusiasts."
+    description: "Comedy Club is a society for stand-up and comedy enthusiasts.",
+    block: "U"
   },
   {
     index: 45,
@@ -458,7 +512,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/EVG.IITKGP/",
-    description: "EVG is involved in building Electric Vehicles that are fast, affordable and energy-efficient."
+    description: "EVG is involved in building Electric Vehicles that are fast, affordable and energy-efficient.",
+    block: "T"
   },
   {
     index: 46,
@@ -468,7 +523,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/swarmroboticskgp",
-    description: "Swarm explores the contemporary field of distributed algorithms for robot swarms and their implementation."
+    description: "Swarm explores the contemporary field of distributed algorithms for robot swarms and their implementation.",
+    block: "TO"
   },
   {
     index: 47,
@@ -478,7 +534,8 @@ export const SOCIETIES: ISociety[] = [
     size: "S",
     tsg_recognized: false,
     link: "https://www.facebook.com/maskiitkgp",
-    description: "MASK is a group of otakus engaging in art, AMV making, manga creation and quizzing."
+    description: "MASK is a group of otakus engaging in art, AMV making, manga creation and quizzing.",
+    block: "W"
   },
   {
     index: 48,
@@ -488,7 +545,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/prodex.iitkgp/",
-    description: "ProDex is a technical society based on the concept of Product Design with an objective to fuel the technological advancement of India through its activities."
+    description: "ProDex is a technical society based on the concept of Product Design with an objective to fuel the technological advancement of India through its activities.",
+    block: "W"
   },
   {
     index: 49,
@@ -498,7 +556,8 @@ export const SOCIETIES: ISociety[] = [
     size: "NA",
     tsg_recognized: true,
     link: "https://www.facebook.com/TAdS.IIT/",
-    description: "TAdS is the adventure society of the campus that brings extreme sports closer to the students. They explore Mountaineering, Rock Climbing, Mountain Biking, Hang Gliding, Bungee jumping, and organize adventure trips in the country for students."
+    description: "TAdS is the adventure society of the campus that brings extreme sports closer to the students. They explore Mountaineering, Rock Climbing, Mountain Biking, Hang Gliding, Bungee jumping, and organize adventure trips in the country for students.",
+    block: "W"
   },
   {
     index: 50,
@@ -508,7 +567,8 @@ export const SOCIETIES: ISociety[] = [
     size: "XL",
     tsg_recognized: false,
     link: "https://www.facebook.com/groups/300564543844072",
-    description: "The recreational math club hosts weekly sessions and reading groups for math lovers."
+    description: "The recreational math club hosts weekly sessions and reading groups for math lovers.",
+    block: "W"
   },
   {
     index: 51,
@@ -518,7 +578,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/180dckgp/",
-    description: "180 Degree Consulting provides socially conscious organizations around the world with high quality and affordable consulting services."
+    description: "180 Degree Consulting provides socially conscious organizations around the world with high quality and affordable consulting services.",
+    block: "O"
   },
   {
     index: 52,
@@ -528,7 +589,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: false,
     link: "https://www.facebook.com/TTG.SRIC/",
-    description: "Technology Transfer Group (TTG) is a students' initiative under the aegis of Sponsored Research & Industrial Consultancy (SRIC), IIT Kharagpur, which believes in the potential of the Institute as a premier Research & Development center."
+    description: "Technology Transfer Group (TTG) is a students' initiative under the aegis of Sponsored Research & Industrial Consultancy (SRIC), IIT Kharagpur, which believes in the potential of the Institute as a premier Research & Development center.",
+    block: "O"
   },
   {
     index: 53,
@@ -538,7 +600,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/SWGIITKGP/",
-    description: "SWG helps students in improving their skills, attitude and resources necessary to both succeed in the college environment as well as to pursue productive and satisfying lives by organizing different activities on the campus."
+    description: "SWG helps students in improving their skills, attitude and resources necessary to both succeed in the college environment as well as to pursue productive and satisfying lives by organizing different activities on the campus.",
+    block: "O"
   },
   {
     index: 54,
@@ -548,7 +611,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: true,
     link: "https://www.facebook.com/iwg.iitkgp/",
-    description: "Under the Students' Welfare portfolio of the Technology Students' Gymkhana, IWG consists of trained students who conduct welfare activities among the student community and act as primary nodes for mature student counselling."
+    description: "Under the Students' Welfare portfolio of the Technology Students' Gymkhana, IWG consists of trained students who conduct welfare activities among the student community and act as primary nodes for mature student counselling.",
+    block: "O"
   },
   {
     index: 55,
@@ -558,7 +622,8 @@ export const SOCIETIES: ISociety[] = [
     size: "L",
     tsg_recognized: true,
     link: "https://www.facebook.com/aroma.iitkgp/",
-    description: "The Culinary Arts Society encourages and facilitates students to learn and develop a diverse set of culinary arts and specific cooking techniques."
+    description: "The Culinary Arts Society encourages and facilitates students to learn and develop a diverse set of culinary arts and specific cooking techniques.",
+    block: "C"
   },
   {
     index: 56,
@@ -568,7 +633,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/clickkgp/",
-    description: "Click KGP is a group of photo-enthusiasts with the sole aim of capturing the campus, people and culture of IIT Kharagpur."
+    description: "Click KGP is a group of photo-enthusiasts with the sole aim of capturing the campus, people and culture of IIT Kharagpur.",
+    block: "C"
   },
   {
     index: 57,
@@ -578,7 +644,8 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/LaObscuraPhotographyandVisualArt/",
-    description: "La Obscura is a group that features photographs from KGP and all over India as well."
+    description: "La Obscura is a group that features photographs from KGP and all over India as well.",
+    block: "C"
   },
   {
     index: 58,
@@ -588,7 +655,8 @@ export const SOCIETIES: ISociety[] = [
     size: "NA",
     tsg_recognized: true,
     link: "https://www.facebook.com/cgsiitkgp/",
-    description: "IIT KGP's first of its kind graphics development group focused on game development, AR/VR and graphics research."
+    description: "IIT KGP's first of its kind graphics development group focused on game development, AR/VR and graphics research.",
+    block: "CC"
   },
   {
     index: 59,
@@ -598,6 +666,7 @@ export const SOCIETIES: ISociety[] = [
     size: "NA",
     tsg_recognized: false,
     link: "https://www.facebook.com/kgpspeedcubers/",
-    description: "The KGP Speedcubers is a hobby group for speedcubers in IIT Kharagpur that organizes workshops and competitions on campus."
+    description: "The KGP Speedcubers is a hobby group for speedcubers in IIT Kharagpur that organizes workshops and competitions on campus.",
+    block: "U"
   }
 ];
