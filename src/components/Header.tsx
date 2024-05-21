@@ -8,10 +8,6 @@ function Header() {
 					KGPIAN SOCIETIES
 				</strong>
 			</h1>
-			<p className="subtitle">
-				TOP LEFT: Index | TOP RIGHT: Foundation_Year <br/>
-				* = Gymkhana_Recognized |	BOTTOM RIGHT: Team_Size | NA = Not Available
-			</p>
 		</header>
 	);
 }
