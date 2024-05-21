@@ -6,6 +6,7 @@ $society-size: 5.5rem;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	gap: 2rem;
 
 	.society {
 		width: $society-size;
@@ -47,6 +48,11 @@ $society-size: 5.5rem;
 			right: $society-padding;
 		}
 
+		&.empty-cell {
+			background-color: transparent;
+			outline: none;
+		}
+
 		&.block-t {
 			background: #FF667C;
 		}
@@ -59,7 +65,7 @@ $society-size: 5.5rem;
 			background-color: #EDC85F;
 		}
 
-		&.block-w {
+		&.block-w, &.inner-transition-cell {
 			background-color: #54D39C;
 		}
 
@@ -73,6 +79,11 @@ $society-size: 5.5rem;
 
 		&.block-u {
 			background-color: #888888;
+		}
+
+		&.the-unknown-soc {
+			background-color: black;
+			color: white;
 		}
 	}
 }
