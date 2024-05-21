@@ -22,7 +22,27 @@ $block-u-color: #888888;
 		text-decoration: none;
 	}
 
+	.soc-tooltip {
+		background-color: black;
+		opacity: 1;
+		color: white;
+
+		z-index: 1000;
+		text-align: center;
+
+		width: 30%;
+		border-radius: 0.5rem;
+		padding: 0.5rem;
+
+		.soc-tooltip-name {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+	}
+
 	.society {
+		font-family: 'Nixie One';
+
 		width: $society-size;
 		height: $society-size;
 
