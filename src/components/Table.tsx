@@ -5,13 +5,15 @@ type TableCellProps = {society: ISociety, type: "society"} | {type: "empty" | "i
 function TableCell(props: TableCellProps) {
 	switch (props.type) {
 		case "society":
-			return <GridItem className={`society block-${props.society.block.toLowerCase()}`}>
-				<span className="index">{props.society.index}</span>
-				<span className="year">{props.society.year}</span>
-				<span className="recognized">{props.society.tsg_recognized ? "*" : ""}</span>
-				<span className="symbol">{props.society.symbol}</span>
-				<span className="size">{props.society.size}</span>
-			</GridItem>;
+			return <a href={props.society.link} target="_blank" rel="noreferrer">
+				<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
+					<span className="index">{props.society.index}</span>
+					<span className="year">{props.society.year}</span>
+					<span className="recognized">{props.society.tsg_recognized ? "*" : ""}</span>
+					<span className="symbol">{props.society.symbol}</span>
+					<span className="size">{props.society.size}</span>
+				</GridItem>
+			</a>;
 		case "empty":
 			return <GridItem className="society empty-cell"></GridItem>;
 		case "inner-transition":

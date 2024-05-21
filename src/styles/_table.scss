@@ -1,5 +1,15 @@
+@use "sass:color";
+
 $society-padding: 5px;
 $society-size: 5.5rem;
+
+$block-t-color: #FF667C;
+$block-to-color: #F29C61;
+$block-o-color: #EDC85F;
+$block-w-color: #54D39C;
+$block-c-color: #4EAEC4;
+$block-cc-color: #A46BB2;
+$block-u-color: #888888;
 
 .table {
 	display: flex;
@@ -7,6 +17,10 @@ $society-size: 5.5rem;
 	align-items: center;
 	justify-content: center;
 	gap: 2rem;
+
+	a {
+		text-decoration: none;
+	}
 
 	.society {
 		width: $society-size;
@@ -18,6 +32,7 @@ $society-size: 5.5rem;
 		position: relative;
 
 		outline: 1px solid black;
+		color: $fg-color;
 
 		.symbol {
 			font-weight: bold;
@@ -48,42 +63,48 @@ $society-size: 5.5rem;
 			right: $society-padding;
 		}
 
+		transition: filter 200ms;
+		&:hover {
+			filter: brightness(80%);
+		}
+
 		&.empty-cell {
 			background-color: transparent;
 			outline: none;
 		}
 
 		&.block-t {
-			background: #FF667C;
+			background: $block-t-color;
 		}
 
 		&.block-to {
-			background-color: #F29C61;
+			background-color: $block-to-color;
 		}
 
 		&.block-o {
-			background-color: #EDC85F;
+			background-color: $block-o-color;
 		}
 
 		&.block-w, &.inner-transition-cell {
-			background-color: #54D39C;
+			background-color: $block-w-color;
 		}
 
 		&.block-c {
-			background-color: #4EAEC4;
+			background-color: $block-c-color;
 		}
 
 		&.block-cc {
-			background-color: #A46BB2;
+			background-color: $block-c-color;
 		}
 
 		&.block-u {
-			background-color: #888888;
+			background-color: $block-u-color;
 		}
 
 		&.the-unknown-soc {
 			background-color: black;
 			color: white;
 		}
+
 	}
 }
