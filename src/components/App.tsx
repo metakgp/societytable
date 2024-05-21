@@ -1,6 +1,8 @@
+import { SOCIETIES } from '../data/societies';
 import Footer from './Footer';
 import Header from './Header';
 import Legend from './Legend';
+import Table from './Table';
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
         </div>
         <div className="row table-container">
           <Legend />
+          <Table societies={SOCIETIES} />
         </div>
         <div className="row">
           <Footer />

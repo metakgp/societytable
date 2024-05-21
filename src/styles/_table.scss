@@ -1,0 +1,46 @@
+$society-padding: 5px;
+$society-size: 5.5rem;
+
+.table {
+	.society {
+		width: $society-size;
+		height: $society-size;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		background: grey;
+
+		outline: 1px solid black;
+
+		.symbol {
+			font-weight: bold;
+			font-size: 1.5rem;
+		}
+
+		.year {
+			position: absolute;
+			top: $society-padding;
+			right: $society-padding;
+		}
+
+		.index {
+			position: absolute;
+			top: $society-padding;
+			left: $society-padding;
+		}
+
+		.recognized {
+			position: absolute;
+			bottom: $society-padding;
+			left: $society-padding;
+		}
+
+		.size {
+			position: absolute;
+			bottom: $society-padding;
+			right: $society-padding;
+		}
+	}
+}

@@ -2,6 +2,7 @@
 @import "./header";
 @import "./footer";
 @import "./legend";
+@import "./table";
 
 body {
 	background: $bg-color;
@@ -24,5 +25,15 @@ body {
 	.table-container {
 		display: flex;
 		align-items: center;
+
+		.legend {
+			width: 20%;
+		}
+
+		.table {
+			width: 60%;
+			display: flex;
+			justify-content: center;
+		}
 	}
 }
