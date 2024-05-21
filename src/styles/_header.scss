@@ -1,5 +1,17 @@
 @use "sass:color";
 
+.header {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.subtitle {
+		margin-top: 0;
+		text-align: center;
+	}
+}
+
 .ribbon {
 	font-size: 20px !important;
 	/* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
@@ -12,7 +24,7 @@
 	text-align: center;
 	padding: 1em 2em;
 	/* Adjust to suit */
-	margin: 2em auto 3em;
+	margin: 2em auto 2em;
 	/* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
 
 	.ribbon-of {

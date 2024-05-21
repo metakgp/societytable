@@ -1,8 +1,15 @@
 @import "./variables";
-@import "./ribbon";
+@import "./header";
 
 body {
 	background: $bg-color;
 	font-family: 'Nixie One';
 	overflow-x: hidden;
+}
+
+.app-container {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
 }
