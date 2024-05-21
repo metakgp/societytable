@@ -1,6 +1,7 @@
 @import "./variables";
 @import "./header";
 @import "./footer";
+@import "./legend";
 
 body {
 	background: $bg-color;
@@ -14,4 +15,14 @@ body {
 	flex-direction: column;
 
 	width: 100%;
+
+	.row {
+		width: 100%;
+		display: flex;
+	}
+
+	.table-container {
+		display: flex;
+		align-items: center;
+	}
 }
