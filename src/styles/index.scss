@@ -1,0 +1,8 @@
+@import "./variables";
+@import "./ribbon";
+
+body {
+	background: $bg-color;
+	font-family: 'Nixie One';
+	overflow-x: hidden;
+}
