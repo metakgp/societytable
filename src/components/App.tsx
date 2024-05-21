@@ -13,7 +13,7 @@ function App() {
         </div>
         <div className="row table-container">
           <Legend />
-          <Table societies={SOCIETIES.sort((a, b) => a.index - b.index)} />
+          <Table societies={SOCIETIES} />
         </div>
         <div className="row">
           <Footer />

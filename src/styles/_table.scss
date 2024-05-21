@@ -2,6 +2,11 @@ $society-padding: 5px;
 $society-size: 5.5rem;
 
 .table {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
 	.society {
 		width: $society-size;
 		height: $society-size;
@@ -10,7 +15,6 @@ $society-size: 5.5rem;
 		justify-content: center;
 		align-items: center;
 		position: relative;
-		background: grey;
 
 		outline: 1px solid black;
 
@@ -41,6 +45,34 @@ $society-size: 5.5rem;
 			position: absolute;
 			bottom: $society-padding;
 			right: $society-padding;
+		}
+
+		&.block-t {
+			background: #FF667C;
+		}
+
+		&.block-to {
+			background-color: #F29C61;
+		}
+
+		&.block-o {
+			background-color: #EDC85F;
+		}
+
+		&.block-w {
+			background-color: #54D39C;
+		}
+
+		&.block-c {
+			background-color: #4EAEC4;
+		}
+
+		&.block-cc {
+			background-color: #A46BB2;
+		}
+
+		&.block-u {
+			background-color: #888888;
 		}
 	}
 }

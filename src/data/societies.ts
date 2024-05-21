@@ -669,4 +669,4 @@ export const SOCIETIES: ISociety[] = [
     description: "The KGP Speedcubers is a hobby group for speedcubers in IIT Kharagpur that organizes workshops and competitions on campus.",
     block: "U"
   }
-];
+].sort((a, b) => a.index - b.index) as ISociety[];
