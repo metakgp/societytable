@@ -6,9 +6,12 @@
 	flex-direction: column;
 	align-items: center;
 
+	margin-bottom: 1rem;
+
 	.subtitle {
 		margin-top: 0;
 		text-align: center;
+		font-size: 1.2rem;
 	}
 }
 
@@ -24,7 +27,7 @@
 	text-align: center;
 	padding: 1em 2em;
 	/* Adjust to suit */
-	margin: 2em auto 2em;
+	margin: 2em auto 1em;
 	/* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
 
 	.ribbon-of {

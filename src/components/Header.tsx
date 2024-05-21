@@ -8,6 +8,7 @@ function Header() {
 					KGPIAN SOCIETIES
 				</strong>
 			</h1>
+			<i className="subtitle"> A tabular display of societies, organized by their chemical properties. </i>
 		</header>
 	);
 }
