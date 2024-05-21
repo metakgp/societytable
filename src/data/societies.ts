@@ -414,7 +414,7 @@ export const SOCIETIES: ISociety[] = [
     index: 41,
     symbol: "Sa",
     name: "The Scholars’ Avenue",
-    year: 2004,
+    year: 2005,
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/scholarsavenue/",
