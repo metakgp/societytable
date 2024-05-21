@@ -7,7 +7,7 @@ function TableCell(props: TableCellProps) {
 	switch (props.type) {
 		case "society":
 			return <>
-				<a href={props.society.link} target="_blank" rel="noreferrer" data-tooltip-id={`${props.society.index.toString()}-${props.society.symbol}`}>
+				<a href={props.society.link} target="_blank" rel="noreferrer" data-tooltip-delay-hide={0} data-tooltip-id={`${props.society.index.toString()}-${props.society.symbol}`}>
 					<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
 						<span className="index">{props.society.index}</span>
 						<span className="year">{props.society.year}</span>
@@ -16,7 +16,7 @@ function TableCell(props: TableCellProps) {
 						<span className="size">{props.society.size}</span>
 					</GridItem>
 				</a>
-				<Tooltip className="soc-tooltip" id={`${props.society.index.toString()}-${props.society.symbol}`}>
+				<Tooltip className="soc-tooltip" id={`${props.society.index.toString()}-${props.society.symbol}`} delayHide={0} delayShow={0}>
 					<span className="soc-tooltip-name">{props.society.name}</span>
 					<p className="soc-toolip-desc">{props.society.description}</p>
 				</Tooltip>
@@ -25,15 +25,23 @@ function TableCell(props: TableCellProps) {
 			return <GridItem className="society empty-cell"></GridItem>;
 		case "inner-transition":
 			return <GridItem className="society inner-transition-cell">
-				<span className="symbol">↓</span>
-			</GridItem>;
+					<span className="symbol">↓</span>
+				</GridItem>;
 		case "the-unknown-soc":
-			return <GridItem className={`society the-unknown-soc`}>
-				<span className="index">?</span>
-				<span className="year">?</span>
-				<span className="symbol">Us</span>
-				<span className="size">?</span>
-			</GridItem>;
+			return <>
+				<div data-tooltip-id="the-unknown-soc" data-tooltip-delay-hide={0}>
+					<GridItem className={`society the-unknown-soc`} >
+						<span className="index">?</span>
+						<span className="year">?</span>
+						<span className="symbol">Us</span>
+						<span className="size">?</span>
+					</GridItem>
+				</div>
+				<Tooltip className="soc-tooltip" id="the-unknown-soc" delayHide={0} delayShow={0}>
+					<span className="soc-tooltip-name">The Unknown Society</span>
+					<p className="soc-toolip-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
+				</Tooltip>
+			</>;
 	}
 }
 
