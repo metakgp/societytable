@@ -1,0 +1,29 @@
+@use "sass:color";
+
+.footer {
+	width: 100%;
+	text-align: center;
+
+	margin-top: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+
+	.footer-highlight {
+		padding: 3px 5px;
+		border-radius: 5px;
+
+		background-color: $highlight-color;
+		font-weight: bold;
+	}
+
+	a.footer-highlight {
+		text-decoration: none;
+		color: $fg-color;
+
+		&:hover {
+			background-color: color.change($highlight-color, $lightness:45%);
+		}
+	}
+}

@@ -1,0 +1,36 @@
+@import "./variables";
+@import "./header";
+@import "./footer";
+@import "./legend";
+@import "./table";
+
+body {
+	background: $bg-color;
+	color: $fg-color;
+	margin: 0;
+}
+
+.app-container {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+
+	.row {
+		width: 100%;
+		display: flex;
+	}
+
+	.table-container {
+		display: flex;
+		align-items: center;
+
+		.legend {
+			width: 20%;
+		}
+
+		.table {
+			width: 60%;
+		}
+	}
+}

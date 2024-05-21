@@ -1,0 +1,11 @@
+.legend {
+	display: flex;
+	flex-direction: column;
+
+	width: 20%;
+	align-items: center;
+
+	.legend-img {
+		width: 70%;
+	}
+}

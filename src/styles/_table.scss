@@ -1,0 +1,130 @@
+@use "sass:color";
+
+$society-padding: 5px;
+$society-size: 5.5rem;
+
+$block-t-color: #FF667C;
+$block-to-color: #F29C61;
+$block-o-color: #EDC85F;
+$block-w-color: #54D39C;
+$block-c-color: #4EAEC4;
+$block-cc-color: #A46BB2;
+$block-u-color: #888888;
+
+.table {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+
+	a {
+		text-decoration: none;
+	}
+
+	.soc-tooltip {
+		background-color: black;
+		opacity: 1;
+		color: white;
+
+		z-index: 1000;
+		text-align: center;
+
+		width: 30%;
+		border-radius: 0.5rem;
+		padding: 0.5rem;
+
+		.soc-tooltip-name {
+			font-size: 1.2rem;
+			font-weight: bold;
+		}
+	}
+
+	.society {
+		font-family: 'Nixie One';
+
+		width: $society-size;
+		height: $society-size;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+
+		outline: 1px solid black;
+		color: $fg-color;
+
+		.symbol {
+			font-weight: bold;
+			font-size: 1.5rem;
+		}
+
+		.year {
+			position: absolute;
+			top: $society-padding;
+			right: $society-padding;
+		}
+
+		.index {
+			position: absolute;
+			top: $society-padding;
+			left: $society-padding;
+		}
+
+		.recognized {
+			position: absolute;
+			bottom: $society-padding;
+			left: $society-padding;
+		}
+
+		.size {
+			position: absolute;
+			bottom: $society-padding;
+			right: $society-padding;
+		}
+
+		transition: filter 200ms;
+		&:hover {
+			filter: brightness(80%);
+		}
+
+		&.empty-cell {
+			background-color: transparent;
+			outline: none;
+		}
+
+		&.block-t {
+			background: $block-t-color;
+		}
+
+		&.block-to {
+			background-color: $block-to-color;
+		}
+
+		&.block-o {
+			background-color: $block-o-color;
+		}
+
+		&.block-w, &.inner-transition-cell {
+			background-color: $block-w-color;
+		}
+
+		&.block-c {
+			background-color: $block-c-color;
+		}
+
+		&.block-cc {
+			background-color: $block-c-color;
+		}
+
+		&.block-u {
+			background-color: $block-u-color;
+		}
+
+		&.the-unknown-soc {
+			background-color: black;
+			color: white;
+		}
+
+	}
+}
