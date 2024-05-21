@@ -58,13 +58,12 @@
   </a>
 </div>
 
-_Detailed explaination of the project goes here_
+The Periodic Table of Societies is a table of the societies and clubs of IIT Kharagpur in a format inspired by the Periodic Table of Elements. It was originally created by [The Scholars Avenue](https://wiki.metakgp.org/w/The_Scholars%27_Avenue). It was forked and has been maintained by metaKGP since 21 May 2024.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Getting Started
-
-To set up a local instance of the application, follow the steps below.
+## Development
+To set up a development environment, follow the steps below.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
