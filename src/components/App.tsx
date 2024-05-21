@@ -1,3 +1,4 @@
+import Footer from './Footer';
 import Header from './Header';
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <>
       <div className="app-container">
         <Header />
+        <Footer />
       </div>
     </>
   )

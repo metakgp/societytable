@@ -1,10 +1,12 @@
 @import "./variables";
 @import "./header";
+@import "./footer";
 
 body {
 	background: $bg-color;
+	color: $fg-color;
 	font-family: 'Nixie One';
-	overflow-x: hidden;
+	margin: 0;
 }
 
 .app-container {
