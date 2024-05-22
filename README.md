@@ -54,7 +54,7 @@
 <!-- UPDATE -->
 <div align="center">
   <a href="https://github.com/metakgp/societytable">
-    <img width="80%" alt="image" src="https://user-images.githubusercontent.com/86282911/206632547-a3b34b47-e7ae-4186-a1e6-ecda7ddb38e6.png">
+    <img width="80%" alt="image" src="./public/preview.png">
   </a>
 </div>
 
