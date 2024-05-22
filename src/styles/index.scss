@@ -10,6 +10,11 @@ body {
 	margin: 0;
 }
 
+// Removes any transition delay in react-tooltip
+.react-tooltip__closing {
+	display: none;
+}
+
 .app-container {
 	display: flex;
 	flex-direction: column;
