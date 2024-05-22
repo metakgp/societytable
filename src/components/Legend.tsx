@@ -1,11 +1,9 @@
-import SymbolLegendImg from "../assets/symbol_legend_nobg.png";
-import ColorLegendImg from "../assets/color_legend.png";
+import LegendImg from "../assets/legend_nobg.png";
 
 function Legend() {
 	return (
 		<div className="legend">
-			<img src={SymbolLegendImg} className="legend-img" />
-			<img src={ColorLegendImg} className="legend-img" />
+			<img src={LegendImg} className="legend-img" />
 		</div>
 	);
 }
