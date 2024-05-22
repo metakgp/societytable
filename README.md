@@ -27,7 +27,7 @@
   <!-- UPDATE -->
     <i>A tabular display of societies, organized by their chemical properties.</i>
     <br />
-    <a href="https://societytable.metakgp.org">Website</a>
+    <a href="https://soc.metakgp.org">Website</a>
     ·
     <a href="https://github.com/societytable/issues">Request Feature / Report Bug</a>
   </p>
