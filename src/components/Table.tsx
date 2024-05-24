@@ -79,7 +79,7 @@ function Table(props: {societies: ISociety[]}) {
 				{main_grid_entries.map((props) => <TableCell {...props} />)}
 			</Grid>
 			<Grid
-				options={{numColumns: INNER_TRANSITION_SOCIETIES.length / 2}}
+				options={{numColumns: Math.ceil((INNER_TRANSITION_SOCIETIES.length + 1) / 2)}}
 			>
 				{INNER_TRANSITION_SOCIETIES.map((society) => <TableCell society={society} type="society" />)}
 				<TableCell type="the-unknown-soc" />
