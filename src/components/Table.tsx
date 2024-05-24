@@ -134,8 +134,6 @@ function Table(props: {societies: ISociety[]}) {
 		}
 	}
 
-	console.log(inner_transition_offsets)
-
 	return (
 		<div className="table">
 			<Grid
