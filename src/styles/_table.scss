@@ -126,5 +126,8 @@ $block-u-color: #888888;
 			color: white;
 		}
 
+		&.undiscovered-soc {
+			filter: brightness(60%);
+		}
 	}
 }

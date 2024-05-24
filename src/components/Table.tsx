@@ -2,7 +2,31 @@ import { Tooltip } from 'react-tooltip';
 import { Block, ISociety } from "../data/societies";
 import { Grid, GridItem } from "./Grid";
 
-type TableCellProps = { society: ISociety, index: number, type: "society" } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
+/**
+ * Gives the temporary name and symbol of an undiscovered element according to IUPAC nomenclature.
+ * See https://en.wikipedia.org/wiki/Systematic_element_name for more information
+ * @param index The index of the undiscovered element
+ * @returns The temporary name and symbol
+ */
+function getIUPACTemporaryNameAndSymbol(index: number): {name: string, symbol: string} {
+	const NUMERICAL_ROOTS = ["nil", "un", "bi", "tri", "quad", "pent", "hex", "sept", "oct", "en"];
+	const index_digits = index.toString().split('').map((digit_str) => parseInt(digit_str));
+
+	let symbol = index_digits.map((digit) => NUMERICAL_ROOTS[digit][0]).join('');
+	symbol = symbol[0].toUpperCase() + symbol.slice(1);
+
+	let name = index_digits.map((digit) => NUMERICAL_ROOTS[digit]).join('');
+	name.replace('nnn', 'nn');
+	name.replace('iii', 'ii');
+	name = name[0].toUpperCase() + name.slice(1);
+
+	return {
+		name,
+		symbol
+	}
+}
+
+type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc"  };
 function TableCell(props: TableCellProps) {
 	switch (props.type) {
 		case "society":
@@ -42,6 +66,23 @@ function TableCell(props: TableCellProps) {
 					<p className="soc-toolip-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
 				</Tooltip>
 			</>;
+		case "undiscovered":
+			const { name, symbol } = getIUPACTemporaryNameAndSymbol(props.index);
+
+			return <>
+				<div data-tooltip-id={`${props.index.toString()}-${symbol}`} data-tooltip-delay-hide={0}>
+					<GridItem className={`society undiscovered-soc block-${props.block.toLowerCase()}`} >
+						<span className="index">{props.index}</span>
+						<span className="year">?</span>
+						<span className="symbol">{symbol}</span>
+						<span className="size">NA</span>
+					</GridItem>
+				</div>
+				<Tooltip className="soc-tooltip" id={`${props.index.toString()}-${symbol}`} delayHide={0} delayShow={0}>
+					<span className="soc-tooltip-name">{name} (Not Discovered)</span>
+					<p className="soc-toolip-desc">This society has not been discovered yet and has been assigned a temporary name.</p>
+				</Tooltip>
+			</>;
 	}
 }
 
@@ -70,7 +111,7 @@ function Table(props: { societies: ISociety[] }) {
 	// Number of elements in the inner transition block (+1 for the unknown society)
 	const INNER_TRANSITION_ELEMENTS = INNER_TRANSITION_SOCIETIES.length + 1;
 	// Number of rows in the inner transition block
-	const INNER_TRANSITION_ROWS = Math.floor(INNER_TRANSITION_ELEMENTS / INNER_TRANSITION_COLUMNS);
+	const INNER_TRANSITION_ROWS = Math.ceil(INNER_TRANSITION_ELEMENTS / INNER_TRANSITION_COLUMNS);
 
 	// Cells of the main table's Grid
 	const main_grid_entries: TableCellProps[] = [];
@@ -96,7 +137,7 @@ function Table(props: { societies: ISociety[] }) {
 			inner_transition_offsets.length < INNER_TRANSITION_ROWS
 		) {
 			main_grid_entries.push({ type: "inner-transition" });
-			inner_transition_offsets.push(index + 1);
+			inner_transition_offsets.push(index);
 
 			// The number of inner transition block rows already used
 			const used_inner_rows = inner_transition_offsets.length;
@@ -104,7 +145,7 @@ function Table(props: { societies: ISociety[] }) {
 			if (used_inner_rows < INNER_TRANSITION_ROWS) {
 				// If less than the number of total rows, then the row is full
 				// Offset the index by number of columns
-				index += INNER_TRANSITION_COLUMNS
+				index += INNER_TRANSITION_COLUMNS;
 			} else {
 				// If equal to the number of rows, then the row may not be full
 				// Ofset by the number of elements in the last row
@@ -119,14 +160,14 @@ function Table(props: { societies: ISociety[] }) {
 
 			if (next_soc_index === -1) {
 				// If there are no more socs in this block, add an empty cell
-				// TODO: Replace this with a "not found" element later
-				main_grid_entries.push({ type: "empty" });
+				main_grid_entries.push({ type: "undiscovered", index, block });
 			} else {
 				// If a soc exists, insert its element
-				index += 1;
 				const next_soc = MAIN_SOCIETIES.splice(next_soc_index, 1)[0];
 				main_grid_entries.push({ society: next_soc, index, type: "society" });
 			}
+
+			index += 1;
 
 			if (index in EMPTY_CELL_MAP) {
 				// If parts of the row should be left empty, do that

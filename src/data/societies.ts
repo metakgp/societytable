@@ -81,6 +81,16 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
+    symbol: "Ke",
+    name: "Kek",
+    year: 2007,
+    size: "M",
+    tsg_recognized: true,
+    link: "https://www.facebook.com/Spectra.IITKGP/",
+    description: "Spectra is the Fine Arts Group of the campus which aims to bring together like-minded people who have the shared love for art.",
+    block: "C"
+  },
+  {
     symbol: "Dr",
     name: "Bengali Technology Dramatics Society (Druheen)",
     year: 1970,
