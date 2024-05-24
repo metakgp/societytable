@@ -1,8 +1,8 @@
+export type Block = "T" | "TO" | "O" | "W" | "C" | "CC" | "U";
 export interface ISociety {
-  index: number;
   symbol: string;
   name: string;
-  year: number | "NA";
+  year: number;
   size: "S" | "M" | "L" | "XL" | "NA";
   tsg_recognized: boolean;
   link: string;
@@ -16,12 +16,11 @@ export interface ISociety {
    *
    * A combination of these letters denotes a special block that is either a cross between two blocks or a sub-block.
    */
-  block: "T" | "TO" | "O" | "W" | "C" | "CC" | "U";
+  block: Block;
 }
 
 export const SOCIETIES: ISociety[] = [
   {
-    index: 1,
     symbol: "Ar",
     name: "Aerial Robotics Kharagpur",
     year: 2013,
@@ -32,7 +31,6 @@ export const SOCIETIES: ISociety[] = [
     block: "T"
   },
   {
-    index: 2,
     symbol: "Aw",
     name: "Awaaz",
     year: 2006,
@@ -43,7 +41,6 @@ export const SOCIETIES: ISociety[] = [
     block: "U"
   },
   {
-    index: 3,
     symbol: "Ag",
     name: "Autonomous Ground vehicle Research Group",
     year: 2007,
@@ -54,7 +51,6 @@ export const SOCIETIES: ISociety[] = [
     block: "T"
   },
   {
-    index: 4,
     symbol: "Gt",
     name: "The KGPian Game Theory Society",
     year: 2010,
@@ -65,7 +61,6 @@ export const SOCIETIES: ISociety[] = [
     block: "TO"
   },
   {
-    index: 5,
     symbol: "Qu",
     name: "Quiz Club",
     year: 2003,
@@ -76,7 +71,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 6,
     symbol: "Sp",
     name: "Spectra",
     year: 2007,
@@ -87,7 +81,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 7,
     symbol: "Dr",
     name: "Bengali Technology Dramatics Society (Druheen)",
     year: 1970,
@@ -98,7 +91,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 8,
     symbol: "Wt",
     name: "Western Technology Music Society",
     year: 2008,
@@ -109,7 +101,6 @@ export const SOCIETIES: ISociety[] = [
     block: "CC"
   },
   {
-    index: 9,
     symbol: "Lg",
     name: "KGP Language Learners’ Group",
     year: 2015,
@@ -120,7 +111,6 @@ export const SOCIETIES: ISociety[] = [
     block: "U"
   },
   {
-    index: 10,
     symbol: "Au",
     name: "Autonomous Underwater Vehicle Research Group",
     year: 2010,
@@ -131,10 +121,9 @@ export const SOCIETIES: ISociety[] = [
     block: "T"
   },
   {
-    index: 11,
     symbol: "St",
     name: "Space Technology Students’ Society (spAts)",
-    year: "NA",
+    year: 2008,
     size: "NA",
     tsg_recognized: false,
     link: "https://www.facebook.com/spAce.iitkgp/",
@@ -142,7 +131,6 @@ export const SOCIETIES: ISociety[] = [
     block: "TO"
   },
   {
-    index: 12,
     symbol: "Bc",
     name: "Business Club",
     year: 2009,
@@ -153,7 +141,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 13,
     symbol: "Li",
     name: "Technology Literary Society",
     year: 1950,
@@ -164,7 +151,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 14,
     symbol: "Pr",
     name: "Telugu technology Dramatics Society (Prasthanam)",
     year: 2010,
@@ -175,7 +161,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 15,
     symbol: "Fp",
     name: "Technology Filmmaking and Photography Society",
     year: 2011,
@@ -186,7 +171,6 @@ export const SOCIETIES: ISociety[] = [
     block: "CC"
   },
   {
-    index: 16,
     symbol: "Fm",
     name: "Food/Mess Monitoring Committee",
     year: 2010,
@@ -197,7 +181,6 @@ export const SOCIETIES: ISociety[] = [
     block: "U"
   },
   {
-    index: 17,
     symbol: "Dt",
     name: "Kharagpur Data Analytics Group",
     year: 2014,
@@ -208,7 +191,6 @@ export const SOCIETIES: ISociety[] = [
     block: "T"
   },
   {
-    index: 18,
     symbol: "Rx",
     name: "Technology Robotix Society",
     year: 2001,
@@ -219,7 +201,6 @@ export const SOCIETIES: ISociety[] = [
     block: "TO"
   },
   {
-    index: 19,
     symbol: "Os",
     name: "Kharagpur Open Source Society",
     year: 2013,
@@ -230,7 +211,6 @@ export const SOCIETIES: ISociety[] = [
     block: "TO"
   },
   {
-    index: 20,
     symbol: "Ac",
     name: "Alumni Cell",
     year: 2008,
@@ -241,7 +221,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 21,
     symbol: "Sf",
     name: "Spring Fest",
     year: 1960,
@@ -252,7 +231,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 22,
     symbol: "Br",
     name: "Branding and Relations Cell",
     year: 2015,
@@ -263,7 +241,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 23,
     symbol: "Ai",
     name: "AIESEC IITKGP",
     year: 2010,
@@ -274,7 +251,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 24,
     symbol: "Cq",
     name: "Communiqué",
     year: 2006,
@@ -285,7 +261,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 25,
     symbol: "Ta",
     name: "IIT Tech Ambit",
     year: 2018,
@@ -296,7 +271,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 26,
     symbol: "Ph",
     name: "Hindi Technology Dramatics Society (Pravaah)",
     year: 1967,
@@ -307,10 +281,9 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 27,
     symbol: "Bk",
     name: "Technology Dance Society (Breakfree)",
-    year: "NA",
+    year: 2012,
     size: "L",
     tsg_recognized: true,
     link: "https://www.facebook.com/Breakfreenowornever/",
@@ -318,7 +291,6 @@ export const SOCIETIES: ISociety[] = [
     block: "CC"
   },
   {
-    index: 28,
     symbol: "Ch",
     name: "Chess Club, IIT Kharagpur",
     year: 2017,
@@ -329,7 +301,6 @@ export const SOCIETIES: ISociety[] = [
     block: "U"
   },
   {
-    index: 29,
     symbol: "Tk",
     name: "Team KART",
     year: 2008,
@@ -340,7 +311,6 @@ export const SOCIETIES: ISociety[] = [
     block: "T"
   },
   {
-    index: 30,
     symbol: "Kr",
     name: "Kharagpur Robosoccer Students’ Group",
     year: 2008,
@@ -351,7 +321,6 @@ export const SOCIETIES: ISociety[] = [
     block: "TO"
   },
   {
-    index: 31,
     symbol: "Cy",
     name: "Child Rights and You KGP",
     year: 2014,
@@ -362,10 +331,9 @@ export const SOCIETIES: ISociety[] = [
     block: "W"
   },
   {
-    index: 32,
     symbol: "Gw",
     name: "Gopali Youth Welfare Society",
-    year: "NA",
+    year: 2002,
     size: "NA",
     tsg_recognized: false,
     link: "https://www.facebook.com/gyws.iitkgp/",
@@ -373,7 +341,6 @@ export const SOCIETIES: ISociety[] = [
     block: "W"
   },
   {
-    index: 33,
     symbol: "Am",
     name: "Ambar",
     year: 2015,
@@ -384,7 +351,6 @@ export const SOCIETIES: ISociety[] = [
     block: "W"
   },
   {
-    index: 34,
     symbol: "Mk",
     name: "MetaKGP",
     year: 2015,
@@ -395,7 +361,6 @@ export const SOCIETIES: ISociety[] = [
     block: "W"
   },
   {
-    index: 35,
     symbol: "Ni",
     name: "NET Impact IIT Kharagpur",
     year: 2015,
@@ -406,7 +371,6 @@ export const SOCIETIES: ISociety[] = [
     block: "W"
   },
   {
-    index: 36,
     symbol: "Ec",
     name: "Entrepreneurship Cell",
     year: 2006,
@@ -417,7 +381,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 37,
     symbol: "Kj",
     name: "Kshitij",
     year: 2004,
@@ -428,7 +391,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 38,
     symbol: "Ir",
     name: "International Relations Cell",
     year: 2015,
@@ -439,7 +401,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 39,
     symbol: "Fc",
     name: "Finance Club, IIT Kharagpur",
     year: 2019,
@@ -450,7 +411,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 40,
     symbol: "Ds",
     name: "Debating Society",
     year: 2009,
@@ -461,7 +421,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 41,
     symbol: "Sa",
     name: "The Scholars’ Avenue",
     year: 2005,
@@ -472,7 +431,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 42,
     symbol: "En",
     name: "English Technology Dramatics Society (Encore)",
     year: 1980,
@@ -483,7 +441,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 43,
     symbol: "Et",
     name: "Eastern Technology Music Society",
     year: 2008,
@@ -494,7 +451,6 @@ export const SOCIETIES: ISociety[] = [
     block: "CC"
   },
   {
-    index: 44,
     symbol: "Cc",
     name: "Comedy Club",
     year: 2019,
@@ -505,7 +461,6 @@ export const SOCIETIES: ISociety[] = [
     block: "U"
   },
   {
-    index: 45,
     symbol: "Ev",
     name: "Electric Ground Vehicle",
     year: 2016,
@@ -516,7 +471,6 @@ export const SOCIETIES: ISociety[] = [
     block: "T"
   },
   {
-    index: 46,
     symbol: "Sw",
     name: "Swarm Robotics",
     year: 2016,
@@ -527,7 +481,6 @@ export const SOCIETIES: ISociety[] = [
     block: "TO"
   },
   {
-    index: 47,
     symbol: "Ma",
     name: "Manga and Anime Society Kharagpur",
     year: 2019,
@@ -538,7 +491,6 @@ export const SOCIETIES: ISociety[] = [
     block: "W"
   },
   {
-    index: 48,
     symbol: "Pd",
     name: "ProDex",
     year: 2012,
@@ -549,10 +501,9 @@ export const SOCIETIES: ISociety[] = [
     block: "W"
   },
   {
-    index: 49,
     symbol: "As",
     name: "Technology Adventure Society",
-    year: "NA",
+    year: 2008,
     size: "NA",
     tsg_recognized: true,
     link: "https://www.facebook.com/TAdS.IIT/",
@@ -560,7 +511,6 @@ export const SOCIETIES: ISociety[] = [
     block: "W"
   },
   {
-    index: 50,
     symbol: "Rm",
     name: "IIT Kharagpur Recreational Mathematics Club",
     year: 2018,
@@ -571,7 +521,6 @@ export const SOCIETIES: ISociety[] = [
     block: "W"
   },
   {
-    index: 51,
     symbol: "Dc",
     name: "180 Degree Consulting, IIT Kharagpur",
     year: 2019,
@@ -582,7 +531,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 52,
     symbol: "Tg",
     name: "Technology Transfer Group",
     year: 2007,
@@ -593,7 +541,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 53,
     symbol: "Sg",
     name: "Student Welfare Group",
     year: 2011,
@@ -604,7 +551,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 54,
     symbol: "Ig",
     name: "Institute Wellness Group",
     year: 2017,
@@ -615,7 +561,6 @@ export const SOCIETIES: ISociety[] = [
     block: "O"
   },
   {
-    index: 55,
     symbol: "Tc",
     name: "Aroma: Technology Culinary Arts Society",
     year: 2019,
@@ -626,7 +571,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 56,
     symbol: "Ck",
     name: "Click KGP",
     year: 2011,
@@ -637,7 +581,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 57,
     symbol: "Lo",
     name: "La Obscura",
     year: 2018,
@@ -648,7 +591,6 @@ export const SOCIETIES: ISociety[] = [
     block: "C"
   },
   {
-    index: 58,
     symbol: "Cg",
     name: "Computer Graphics Society",
     year: 2015,
@@ -659,7 +601,6 @@ export const SOCIETIES: ISociety[] = [
     block: "CC"
   },
   {
-    index: 59,
     symbol: "Sc",
     name: "KGP Speedcubers",
     year: 2015,
@@ -669,4 +610,4 @@ export const SOCIETIES: ISociety[] = [
     description: "The KGP Speedcubers is a hobby group for speedcubers in IIT Kharagpur that organizes workshops and competitions on campus.",
     block: "U"
   }
-].sort((a, b) => a.index - b.index) as ISociety[];
+].sort((a, b) => a.year - b.year) as ISociety[];
