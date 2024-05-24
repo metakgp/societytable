@@ -2,7 +2,7 @@ import { Tooltip } from 'react-tooltip';
 import { Block, ISociety } from "../data/societies";
 import { Grid, GridItem } from "./Grid";
 
-type TableCellProps = {society: ISociety, index: number, type: "society"} | {type: "empty" | "inner-transition" | "the-unknown-soc"};
+type TableCellProps = { society: ISociety, index: number, type: "society" } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
 function TableCell(props: TableCellProps) {
 	switch (props.type) {
 		case "society":
@@ -25,8 +25,8 @@ function TableCell(props: TableCellProps) {
 			return <GridItem className="society empty-cell"></GridItem>;
 		case "inner-transition":
 			return <GridItem className="society inner-transition-cell">
-					<span className="symbol">↓</span>
-				</GridItem>;
+				<span className="symbol">↓</span>
+			</GridItem>;
 		case "the-unknown-soc":
 			return <>
 				<div data-tooltip-id="the-unknown-soc" data-tooltip-delay-hide={0}>
@@ -62,7 +62,7 @@ const INNER_TRANSITION_GAP_COLUMN = 2;
 // The row (zero-indexed) where inner transition socities start
 const INNER_TRANSITION_START_ROW = 4;
 
-function Table(props: {societies: ISociety[]}) {
+function Table(props: { societies: ISociety[] }) {
 	// All societies that will be part of the main table
 	const MAIN_SOCIETIES = props.societies.filter((soc) => soc.block != "W");
 	// All inner transition societies
@@ -85,8 +85,17 @@ function Table(props: {societies: ISociety[]}) {
 	const inner_transition_offsets: number[] = [];
 
 	while (MAIN_SOCIETIES.length > 0) {
-		if (row >= INNER_TRANSITION_START_ROW && column === INNER_TRANSITION_GAP_COLUMN) {
-			main_grid_entries.push({type: "inner-transition"});
+		if (
+			// If the row greater than or equal to where the inner transitions' start
+			row >= INNER_TRANSITION_START_ROW &&
+			// And the column is where a gap would be inserted
+			column === INNER_TRANSITION_GAP_COLUMN &&
+			// And all rows haven't been used up
+			// TODO: In the future add "not found" elements to the inner transition
+			// block if there is an extra row
+			inner_transition_offsets.length < INNER_TRANSITION_ROWS
+		) {
+			main_grid_entries.push({ type: "inner-transition" });
 			inner_transition_offsets.push(index + 1);
 
 			// The number of inner transition block rows already used
@@ -111,24 +120,24 @@ function Table(props: {societies: ISociety[]}) {
 			if (next_soc_index === -1) {
 				// If there are no more socs in this block, add an empty cell
 				// TODO: Replace this with a "not found" element later
-				main_grid_entries.push({type: "empty"});
+				main_grid_entries.push({ type: "empty" });
 			} else {
 				// If a soc exists, insert its element
 				index += 1;
 				const next_soc = MAIN_SOCIETIES.splice(next_soc_index, 1)[0];
-				main_grid_entries.push({society: next_soc, index, type: "society"});
+				main_grid_entries.push({ society: next_soc, index, type: "society" });
 			}
 
 			if (index in EMPTY_CELL_MAP) {
 				// If parts of the row should be left empty, do that
 				const num_empty_cells = EMPTY_CELL_MAP[index as keyof typeof EMPTY_CELL_MAP];
-				main_grid_entries.push(...new Array(num_empty_cells).fill({type: "empty"}));
+				main_grid_entries.push(...new Array(num_empty_cells).fill({ type: "empty" }));
 				column += num_empty_cells;
 			}
 		}
 
 		column += 1;
-		if (column >=MAIN_TABLE_COLUMNS) {
+		if (column >= MAIN_TABLE_COLUMNS) {
 			column %= MAIN_TABLE_COLUMNS;
 			row += 1;
 		}
@@ -137,12 +146,12 @@ function Table(props: {societies: ISociety[]}) {
 	return (
 		<div className="table">
 			<Grid
-				options={{numColumns: MAIN_TABLE_COLUMNS}}
+				options={{ numColumns: MAIN_TABLE_COLUMNS }}
 			>
 				{main_grid_entries.map((props) => <TableCell {...props} />)}
 			</Grid>
 			<Grid
-				options={{numColumns: INNER_TRANSITION_COLUMNS}}
+				options={{ numColumns: INNER_TRANSITION_COLUMNS }}
 			>
 				{INNER_TRANSITION_SOCIETIES.map((society, i) => {
 					// The row of the current inner transition element
