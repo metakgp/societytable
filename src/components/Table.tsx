@@ -8,7 +8,7 @@ import { Grid, GridItem } from "./Grid";
  * @param index The index of the undiscovered element
  * @returns The temporary name and symbol
  */
-function getIUPACTemporaryNameAndSymbol(index: number): {name: string, symbol: string} {
+function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: string } {
 	const NUMERICAL_ROOTS = ["nil", "un", "bi", "tri", "quad", "pent", "hex", "sept", "oct", "en"];
 	const index_digits = index.toString().split('').map((digit_str) => parseInt(digit_str));
 
@@ -18,7 +18,7 @@ function getIUPACTemporaryNameAndSymbol(index: number): {name: string, symbol: s
 	let name = index_digits.map((digit) => NUMERICAL_ROOTS[digit]).join('');
 	name.replace('nnn', 'nn');
 	name.replace('iii', 'ii');
-	name = name[0].toUpperCase() + name.slice(1);
+	name = name[0].toUpperCase() + name.slice(1) + "ium";
 
 	return {
 		name,
@@ -26,7 +26,7 @@ function getIUPACTemporaryNameAndSymbol(index: number): {name: string, symbol: s
 	}
 }
 
-type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc"  };
+type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
 function TableCell(props: TableCellProps) {
 	switch (props.type) {
 		case "society":
