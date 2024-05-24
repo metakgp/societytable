@@ -58,7 +58,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     link: "https://www.facebook.com/The.KGTS/",
     description: "KGTS is dedicated towards spreading awareness, knowledge and application of Game Theory. They are involved in publishing the half-yearly newspaper, \"The Strategist\".",
-    block: "TO"
+    block: "T"
   },
   {
     symbol: "Qu",
@@ -138,7 +138,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: true,
     link: "https://www.facebook.com/bclubkgp/",
     description: "B-Club is the campus society for all things business. A student run forum, BClub has built an analytical framework with their technical background with which they apply in domains related to business.",
-    block: "C"
+    block: "O"
   },
   {
     symbol: "Li",
@@ -258,7 +258,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: true,
     link: "https://www.facebook.com/communique.iitkgp/",
     description: "Communique aims to be an interface between professional communication experts and individual students and work with the students to ensure that there is a perceptible change in the level of communication skills in the campus.",
-    block: "C"
+    block: "O"
   },
   {
     symbol: "Ta",
@@ -308,7 +308,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     link: "https://www.facebook.com/TeamKART/",
     description: "TeamKART is the official Formula Student team of IIT Kharagpur. They are a group of students who design, manufacture and test Formula style racecars and represent IIT Kharagpur in FSAE competitions.",
-    block: "T"
+    block: "TO"
   },
   {
     symbol: "Kr",
@@ -318,7 +318,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     link: "https://www.facebook.com/krssg/",
     description: "A students' group in IIT Kharagpur which works on building autonomous bots for playing soccer and participating in international events like F.I.R.A. World Championship and RoboCup soccer.",
-    block: "TO"
+    block: "T"
   },
   {
     symbol: "Cy",
@@ -358,7 +358,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     link: "https://www.facebook.com/metakgp/",
     description: "Metakgp is a collective interest group of engineers, hackers, and artists from IIT Kharagpur, who collaborate on various technical and non-technical projects.",
-    block: "W"
+    block: "TO"
   },
   {
     symbol: "Ni",
@@ -398,7 +398,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     link: "https://www.facebook.com/IRCIITKGP/",
     description: "IRC is formed under Dean Alumni Affairs and International Relations, with the aim to develop and manage partnerships, linkages and networks with institutions of academic excellence and repute all over the world.",
-    block: "O"
+    block: "W"
   },
   {
     symbol: "Fc",
@@ -488,7 +488,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     link: "https://www.facebook.com/maskiitkgp",
     description: "MASK is a group of otakus engaging in art, AMV making, manga creation and quizzing.",
-    block: "W"
+    block: "C"
   },
   {
     symbol: "Pd",
@@ -498,7 +498,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     link: "https://www.facebook.com/prodex.iitkgp/",
     description: "ProDex is a technical society based on the concept of Product Design with an objective to fuel the technological advancement of India through its activities.",
-    block: "W"
+    block: "TO"
   },
   {
     symbol: "As",
@@ -508,7 +508,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: true,
     link: "https://www.facebook.com/TAdS.IIT/",
     description: "TAdS is the adventure society of the campus that brings extreme sports closer to the students. They explore Mountaineering, Rock Climbing, Mountain Biking, Hang Gliding, Bungee jumping, and organize adventure trips in the country for students.",
-    block: "W"
+    block: "O"
   },
   {
     symbol: "Rm",
@@ -518,7 +518,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     link: "https://www.facebook.com/groups/300564543844072",
     description: "The recreational math club hosts weekly sessions and reading groups for math lovers.",
-    block: "W"
+    block: "C"
   },
   {
     symbol: "Dc",
@@ -548,7 +548,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     link: "https://www.facebook.com/SWGIITKGP/",
     description: "SWG helps students in improving their skills, attitude and resources necessary to both succeed in the college environment as well as to pursue productive and satisfying lives by organizing different activities on the campus.",
-    block: "O"
+    block: "W"
   },
   {
     symbol: "Ig",
@@ -558,7 +558,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: true,
     link: "https://www.facebook.com/iwg.iitkgp/",
     description: "Under the Students' Welfare portfolio of the Technology Students' Gymkhana, IWG consists of trained students who conduct welfare activities among the student community and act as primary nodes for mature student counselling.",
-    block: "O"
+    block: "W"
   },
   {
     symbol: "Tc",
