@@ -12,6 +12,7 @@ export interface ISociety {
    * T - Technical
    * O - Organizational
    * C - Creative
+   * W - Welfare
    * U - Uncategorized
    *
    * A combination of these letters denotes a special block that is either a cross between two blocks or a sub-block.
