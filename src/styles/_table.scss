@@ -18,10 +18,21 @@ $block-u-color: #888888;
 	justify-content: center;
 	gap: 2rem;
 
+	border-collapse: collapse;
+
 	a {
 		text-decoration: none;
 	}
 
+	.inner-transition-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 1rem;
+		padding: 0rem 0rem 3rem 9rem;
+	
+	}
 	.soc-tooltip {
 		background-color: black;
 		opacity: 1;
@@ -30,7 +41,7 @@ $block-u-color: #888888;
 		z-index: 1000;
 		text-align: center;
 
-		width: 30%;
+		width: fit-content;
 		border-radius: 0.5rem;
 		padding: 0.5rem;
 

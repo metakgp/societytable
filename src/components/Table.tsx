@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { Tooltip } from 'react-tooltip';
+import { Modal } from 'react-modal';
 import { Block, ISociety } from "../data/societies";
 import { Grid, GridItem } from "./Grid";
+import Legend from './Legend';
 
 /**
  * Gives the temporary name and symbol of an undiscovered element according to IUPAC nomenclature.
@@ -30,6 +33,19 @@ type TableCellProps = { society: ISociety, index: number, type: "society" } | { 
 function TableCell(props: TableCellProps) {
 	switch (props.type) {
 		case "society":
+			let subtitle;
+			const [modalIsOpen, setIsOpen] = useState(false);
+
+			function openModal() {
+				setIsOpen(true);
+			}
+			function afterOpenModal() {
+				// references are now sync'd and can be accessed.
+				subtitle.style.color = '#f00';
+			}
+			function closeModal() {	
+				setIsOpen(false);
+			}
 			return <>
 				<a href={props.society.link} target="_blank" rel="noreferrer" data-tooltip-delay-hide={0} data-tooltip-id={`${props.index.toString()}-${props.society.symbol}`}>
 					<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
@@ -42,8 +58,24 @@ function TableCell(props: TableCellProps) {
 				</a>
 				<Tooltip className="soc-tooltip" id={`${props.index.toString()}-${props.society.symbol}`} delayHide={0} delayShow={0}>
 					<span className="soc-tooltip-name">{props.society.name}</span>
-					<p className="soc-toolip-desc">{props.society.description}</p>
 				</Tooltip>
+				{/* <Modal 
+					isOpen={modalIsOpen}
+					onAfterOpen={afterOpenModal}
+					onRequestClose={closeModal}
+					contentLabel="Example Modal"			
+				>
+					<h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
+					<button onClick={closeModal}>close</button>
+					<div>I am a modal</div>
+					<form>
+					<input />
+					<button>tab navigation</button>
+					<button>stays</button>
+					<button>inside</button>
+					<button>the modal</button>
+					</form>
+				</Modal> */}
 			</>;
 		case "empty":
 			return <GridItem className="society empty-cell"></GridItem>;
@@ -191,19 +223,23 @@ function Table(props: { societies: ISociety[] }) {
 			>
 				{main_grid_entries.map((props) => <TableCell {...props} />)}
 			</Grid>
-			<Grid
-				options={{ numColumns: INNER_TRANSITION_COLUMNS }}
-			>
-				{INNER_TRANSITION_SOCIETIES.map((society, i) => {
-					// The row of the current inner transition element
-					let inner_row = Math.floor(i / INNER_TRANSITION_COLUMNS);
-					// The index of the element, calculated by adding offset to its index in the current row
-					let index = inner_transition_offsets[inner_row] + (i % INNER_TRANSITION_COLUMNS);
 
-					return <TableCell society={society} index={index} type="society" />;
-				})}
-				<TableCell type="the-unknown-soc" />
-			</Grid>
+			<div className='inner-transition-container'>
+				<Grid
+					options={{ numColumns: INNER_TRANSITION_COLUMNS }}
+				>
+					{INNER_TRANSITION_SOCIETIES.map((society, i) => {
+						// The row of the current inner transition element
+						let inner_row = Math.floor(i / INNER_TRANSITION_COLUMNS);
+						// The index of the element, calculated by adding offset to its index in the current row
+						let index = inner_transition_offsets[inner_row] + (i % INNER_TRANSITION_COLUMNS);
+
+						return <TableCell society={society} index={index} type="society" />;
+					})}
+					<TableCell type="the-unknown-soc" />
+				</Grid>
+				<Legend />
+			</div>
 		</div>
 	);
 }

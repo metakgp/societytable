@@ -11,9 +11,10 @@
 	.subtitle {
 		margin-top: 0;
 		text-align: center;
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 	}
 }
+
 
 .ribbon {
 	font-size: 20px !important;
@@ -21,14 +22,37 @@
 	width: 40%;
 	position: relative;
 	font-family: 'Nixie One';
-	font-size: 6em;
+	// font-size: 6em;
 	background: $ribbon-color;
 	color: #222;
 	text-align: center;
-	padding: 1em 2em;
+	padding: 1em 5em;
 	/* Adjust to suit */
 	margin: 2em auto 1em;
 	/* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+
+	@media screen and (max-width: 768px){
+		font-size: 1.1rem !important;
+		width: 25%;
+		padding: 1em 5em;
+		margin-bottom: 2em;
+	}
+
+	// @media screen and (max-width: 1024px){
+	// 	font-size: 15px !important;
+	// 	width: 30%;
+	// 	position: relative;
+	// 	font-family: 'Nixie One';
+	// 	// font-size: 6em;
+	// 	background: $ribbon-color;
+	// 	color: #222;
+	// 	text-align: center;
+	// 	padding: 1em 5em;
+	// 	/* Adjust to suit */
+	// 	margin: 2em auto 1em;
+	// 	/* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+	// }
+
 
 	.ribbon-of {
 		font-family: 'Tangerine';

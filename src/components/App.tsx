@@ -1,7 +1,6 @@
 import { SOCIETIES } from '../data/societies';
 import Footer from './Footer';
 import Header from './Header';
-import Legend from './Legend';
 import Table from './Table';
 
 function App() {
@@ -12,7 +11,6 @@ function App() {
           <Header />
         </div>
         <div className="row table-container">
-          <Legend />
           <Table societies={SOCIETIES} />
         </div>
         <div className="row">
