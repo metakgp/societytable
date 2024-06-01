@@ -2,7 +2,8 @@ import { Tooltip } from 'react-tooltip';
 import { Block, ISociety } from "../data/societies";
 import { Grid, GridItem } from "./Grid";
 import Legend from './Legend';
-
+import Modal from 'react-modal'
+import { useState, useRef } from 'react';
 /**
  * Gives the temporary name and symbol of an undiscovered element according to IUPAC nomenclature.
  * See https://en.wikipedia.org/wiki/Systematic_element_name for more information
@@ -29,22 +30,66 @@ function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: 
 
 type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
 function TableCell(props: TableCellProps) {
+	// Set the root element for the modal
+	Modal.setAppElement('#root');
+	const [modalIsOpen, setIsOpen] = useState(false);
+	const modalRef = useRef<HTMLDivElement>(null);
+
+	function openModal() {
+		setIsOpen(true);
+	}
+
+
+	function closeModal() {
+		setIsOpen(false);
+	}
+
+
 	switch (props.type) {
 		case "society":
+		
 			return <>
-				<a href={props.society.link} target="_blank" rel="noreferrer" data-tooltip-delay-hide={0} data-tooltip-id={`${props.index.toString()}-${props.society.symbol}`}>
-					<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
-						<span className="index">{props.index}</span>
-						<span className="year">{props.society.year}</span>
-						<span className="recognized">{props.society.tsg_recognized ? "*" : ""}</span>
-						<span className="symbol">{props.society.symbol}</span>
-						<span className="size">{props.society.size}</span>
-					</GridItem>
-				</a>
-				<Tooltip className="soc-tooltip" id={`${props.index.toString()}-${props.society.symbol}`} delayHide={0} delayShow={0}>
-					<span className="soc-tooltip-name">{props.society.name}</span>
-				</Tooltip>
-			</>;
+					<div onMouseEnter={openModal} onMouseLeave={closeModal} ref={modalRef}>
+						<a href={props.society.link} target="_blank" rel="noreferrer" data-tooltip-delay-hide={0} data-tooltip-id={`${props.index.toString()}-${props.society.symbol}`}>
+							<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
+								<span className="index">{props.index}</span>
+								<span className="year">{props.society.year}</span>
+								<span className="recognized">{props.society.tsg_recognized ? "*" : ""}</span>
+								<span className="symbol">{props.society.symbol}</span>
+								<span className="size">{props.society.size}</span>
+							</GridItem>
+						</a>
+						<Modal
+							className={"society soc-modal"}
+							isOpen={modalIsOpen}
+							onRequestClose={closeModal}
+							contentLabel="Example Modal"
+							ariaHideApp={false}
+							style={{
+								overlay: {
+									position: 'absolute',
+									top: modalRef.current ? `${modalRef.current.offsetTop}px` : '0',
+									left: modalRef.current ? `${modalRef.current.offsetLeft + modalRef.current.offsetWidth}px` : '0',
+									width: '20%',
+									height: '20%',
+									borderRadius: '5px',
+								},
+								content: {
+									background: 'rgb(0, 0, 0)',
+									color: 'rgb(255, 255, 255)',
+									overflow: 'auto',
+									WebkitOverflowScrolling: 'touch',
+									borderRadius: '5px',
+									outline: 'none',
+									padding: '20px'
+								}
+							}}
+						>
+							<h2>{props.society.name}</h2>
+							<p>{props.society.description}</p>
+						</Modal>
+					</div>
+				</>;
 		case "empty":
 			return <GridItem className="society empty-cell"></GridItem>;
 		case "inner-transition":
