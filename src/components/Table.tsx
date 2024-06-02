@@ -4,6 +4,7 @@ import { Grid, GridItem } from "./Grid";
 import Legend from './Legend';
 import Modal from 'react-modal'
 import { useState } from 'react';
+import facebook from '../assets/socials_facebook.png';
 /**
  * Gives the temporary name and symbol of an undiscovered element according to IUPAC nomenclature.
  * See https://en.wikipedia.org/wiki/Systematic_element_name for more information
@@ -98,6 +99,7 @@ function TableCell(props: TableCellProps & { insideModal?: boolean }) {
 									</div>
 								</div>
 								<p>{props.society.description}</p>
+								<a href={props.society.link} target="_blank" rel="noreferrer"><img style={{height: '1.5em', width: '1.5em'}} src={facebook} /></a>
 							</div>
 						</Modal>
 					</div>
