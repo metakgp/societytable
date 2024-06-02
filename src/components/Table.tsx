@@ -80,8 +80,23 @@ function TableCell(props: TableCellProps & { insideModal?: boolean }) {
 								}
 							}}
 						>
-							<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+							<div className='table soc-modal'>
 								<h2>{props.society.name}</h2>
+								<div className='society soc-modal'>
+									<div className='info-row'>
+										<span style={{top: 0, left: 0}}>{props.index}</span>
+										<span style={{top: 0, right: 0}}>{props.society.year}</span>
+									</div>
+									
+									<div className='modal-symbol'>
+										<span className="symbol">{props.society.symbol}</span>
+									</div>
+
+									<div className='info-row'>
+										<span className="recognized">{props.society.tsg_recognized ? "*" : ""}</span>
+										<span className="size">{props.society.size}</span>
+									</div>
+								</div>
 								<p>{props.society.description}</p>
 							</div>
 						</Modal>
