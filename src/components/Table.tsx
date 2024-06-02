@@ -3,7 +3,7 @@ import { Block, ISociety } from "../data/societies";
 import { Grid, GridItem } from "./Grid";
 import Legend from './Legend';
 import Modal from 'react-modal'
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 /**
  * Gives the temporary name and symbol of an undiscovered element according to IUPAC nomenclature.
  * See https://en.wikipedia.org/wiki/Systematic_element_name for more information
@@ -29,11 +29,10 @@ function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: 
 }
 
 type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
-function TableCell(props: TableCellProps) {
+function TableCell(props: TableCellProps & { insideModal?: boolean }) {
 	// Set the root element for the modal
 	Modal.setAppElement('#root');
-	const [modalIsOpen, setIsOpen] = useState(false);
-	const modalRef = useRef<HTMLDivElement>(null);
+	const [modalIsOpen, setIsOpen] = useState(false);	
 
 	function openModal() {
 		setIsOpen(true);
@@ -42,15 +41,13 @@ function TableCell(props: TableCellProps) {
 
 	function closeModal() {
 		setIsOpen(false);
-	}
-
+	}	
 
 	switch (props.type) {
 		case "society":
 		
 			return <>
-					<div onMouseEnter={openModal} onMouseLeave={closeModal} ref={modalRef}>
-						<a href={props.society.link} target="_blank" rel="noreferrer" data-tooltip-delay-hide={0} data-tooltip-id={`${props.index.toString()}-${props.society.symbol}`}>
+					<div onMouseUpCapture={openModal}>
 							<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
 								<span className="index">{props.index}</span>
 								<span className="year">{props.society.year}</span>
@@ -58,35 +55,35 @@ function TableCell(props: TableCellProps) {
 								<span className="symbol">{props.society.symbol}</span>
 								<span className="size">{props.society.size}</span>
 							</GridItem>
-						</a>
-						<Modal
-							className={"society soc-modal"}
+							<Modal
 							isOpen={modalIsOpen}
 							onRequestClose={closeModal}
-							contentLabel="Example Modal"
-							ariaHideApp={false}
+							contentLabel="Society Details"
 							style={{
 								overlay: {
-									position: 'absolute',
-									top: modalRef.current ? `${modalRef.current.offsetTop}px` : '0',
-									left: modalRef.current ? `${modalRef.current.offsetLeft + modalRef.current.offsetWidth}px` : '0',
-									width: '20%',
-									height: '20%',
-									borderRadius: '5px',
+									position: 'fixed',
+									backgroundColor: 'rgba(0, 0, 0, 0.75)',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center'
 								},
 								content: {
-									background: 'rgb(0, 0, 0)',
-									color: 'rgb(255, 255, 255)',
-									overflow: 'auto',
-									WebkitOverflowScrolling: 'touch',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									position: 'relative',
+									border: '1px solid #ccc',
+									background: 'hsl(51, 45%, 85%)',
 									borderRadius: '5px',
-									outline: 'none',
-									padding: '20px'
+									width: '80%',
+									maxWidth: '500px',
 								}
 							}}
 						>
-							<h2>{props.society.name}</h2>
-							<p>{props.society.description}</p>
+							<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+								<h2>{props.society.name}</h2>
+								<p>{props.society.description}</p>
+							</div>
 						</Modal>
 					</div>
 				</>;
