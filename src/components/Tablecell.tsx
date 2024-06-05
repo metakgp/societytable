@@ -87,12 +87,12 @@ function TableCell(props: TableCellProps) {
     const [modalIsOpen, setIsOpen] = useState(false);	
     
     function openModal() {
-        setIsOpen(true);
+        if(!modalIsOpen) setIsOpen(true);
     }
     
     
     function closeModal() {
-        setIsOpen(false);
+        if(modalIsOpen) setIsOpen(false);
     }
 
     
