@@ -1,0 +1,47 @@
+.ReactModal__Overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.ReactModal__Content {
+
+    @media screen and (min-width: 1200px) {
+        scale: 0.8;
+    }
+
+    inset: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: fit-content;
+    max-width: 80%;
+    border: 1px solid #ccc;
+    background: hsl(51, 45%, 85%);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 20px;
+    overflow: auto;
+    outline: none;
+}
+
+.modal-element {
+    scale: 1.5;
+    font-weight: 800;
+    font-size: 0.5em;
+    margin: 3rem 0 3rem 0;
+}
+
+.modal-socials {
+    img {
+        height: 2em;
+        width: 2em
+    }
+}
+
+

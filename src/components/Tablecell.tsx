@@ -3,9 +3,16 @@ import { GridItem } from "./Grid";
 import Modal from 'react-modal'
 import { useState } from 'react';
 import facebook from '../assets/socials_facebook.png';
+import '../styles/_modal.scss';
 
 export type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
 
+/**
+ * Gives the temporary name and symbol of an undiscovered element according to IUPAC nomenclature.
+ * See https://en.wikipedia.org/wiki/Systematic_element_name for more information
+ * @param index The index of the undiscovered element
+ * @returns The temporary name and symbol
+**/
 
 function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: string } {
 	const NUMERICAL_ROOTS = ["nil", "un", "bi", "tri", "quad", "pent", "hex", "sept", "oct", "en"];
@@ -17,7 +24,7 @@ function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: 
 	let name = index_digits.map((digit) => NUMERICAL_ROOTS[digit]).join('');
 	name = name[0].toUpperCase() + name.slice(1) + "ium";
 	name.replace('nnn', 'nn');
-	name.replace('iii', 'ii');
+	name.replace('ii', 'ii');
 
 	return {
 		name,
@@ -25,7 +32,7 @@ function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: 
 	}
 }
 
-function Cell(props: TableCellProps & { insideModal?: boolean }) {
+function Element(props: TableCellProps) {
 
 	switch (props.type) {
 		case "society":
@@ -88,42 +95,22 @@ function TableCell(props: TableCellProps) {
 
     
     return <div className='modal-container' onClick={openModal}>
-        <Cell {...props}/>
+        <Element {...props}/>
         {props.type === 'society' && <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             shouldCloseOnEsc={true}
-            contentLabel="Society Details"
-            style={{
-                overlay: {
-                    position: 'fixed',
-                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                },
-                content: {
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    position: 'relative',
-                    border: '1px solid #ccc',
-                    background: 'hsl(51, 45%, 85%)',
-                    borderRadius: '5px',
-					marginRight: '7%',
-					fontSize: 'min(2rem, 40px)',
-					textAlign: 'center',
-					maxHeight: 'fit-content',
-                }
-            }}
+            contentLabel='Society Details'
+            className={'table modal'}
+            overlayClassName={'table modal-overlay'}
             >
                 <div className='table soc-modal'>
-                    <h2 style={{marginBottom: '4rem',  }}>{props.society.name}</h2>
-					<div style={{scale: '1.6', fontSize: '0.5em', marginBlock: '2em'}}>
-                    	<Cell {...props} />
+                    <h2>{props.society.name}</h2>
+					<div className='modal-element'>
+                    	<Element {...props} />
 					</div>
-                    <p style={{marginTop: '4rem'}}>{props.society.description}</p>
-                    <a href={props.society.link} target="_blank" rel="noreferrer"><img style={{ height: '2em', width: '2em' }} src={facebook} alt="Facebook" /></a>
+                    <p className="modal-desc">{props.society.description}</p>
+                    <a className="modal-socials" href={props.society.link} target="_blank" rel="noreferrer"><img src={facebook} alt="Facebook" /></a>
                 </div>
             </Modal>
         }
@@ -132,35 +119,15 @@ function TableCell(props: TableCellProps) {
             onRequestClose={closeModal}
             shouldCloseOnEsc={true}
             contentLabel="Society Details"
-            style={{
-                overlay: {
-                    position: 'fixed',
-                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                },
-                content: {
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    position: 'relative',
-                    border: '1px solid #ccc',
-                    background: 'hsl(51, 45%, 85%)',
-                    borderRadius: '5px',
-					marginRight: '7%',
-					fontSize: 'min(2rem, 40px)',
-					textAlign: 'center',
-					maxHeight: 'fit-content',
-                }
-            }}
+            className={'modal'}
+            overlayClassName={'modal-overlay'}
             >
                 <div className='table soc-modal'>
-                    <h2 style={{marginBottom: '4rem'}}>The Unknown Society</h2>
-					<div style={{scale: '1.6', fontSize: '0.5em', marginBlock: '2em'}}>
-                    	<Cell {...props} />
+                    <h2>The Unknown Society</h2>
+					<div className="modal-element">
+                    	<Element {...props} />
 					</div>
-                    <p style={{marginTop: '4rem'}}>This society has not been discovered yet and has been assigned a temporary name.</p>
+                    <p className="modal-desc">This society has not been discovered yet and has been assigned a temporary name.</p>
                 </div>
             </Modal>
 		}

@@ -4,14 +4,6 @@ import { TableCellProps } from './Tablecell';
 import TableCell from './Tablecell';
 import { Block, ISociety } from "../data/societies";
 
-
-/**
- * Gives the temporary name and symbol of an undiscovered element according to IUPAC nomenclature.
- * See https://en.wikipedia.org/wiki/Systematic_element_name for more information
- * @param index The index of the undiscovered element
- * @returns The temporary name and symbol
-**/
-
 // Number of columns in the main table (which excludes the inner transition elements)
 const MAIN_TABLE_COLUMNS = 12;
 // A map of which block each column in a row belongs to
