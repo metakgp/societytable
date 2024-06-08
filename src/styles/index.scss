@@ -14,20 +14,18 @@ body {
 .react-tooltip__closing {
 	display: none;
 }
-
 @media screen and (max-width: 1200px){
 	.table-container {
-		scale: 0.8;
+		scale: 0.95;
 	}
 }
-
 
 .app-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
+	flex: 1;
 	min-width: fit-content;
 
 	.row {

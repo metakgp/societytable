@@ -96,7 +96,7 @@ function TableCell(props: TableCellProps) {
     }
 
     
-    return <div onClick={openModal}>
+    return <div className='modal-container' onClick={openModal}>
         <Cell {...props}/>
         {props.type === 'society' && <Modal
             isOpen={modalIsOpen}
@@ -119,16 +119,20 @@ function TableCell(props: TableCellProps) {
                     border: '1px solid #ccc',
                     background: 'hsl(51, 45%, 85%)',
                     borderRadius: '5px',
-                    width: '80%',
-                    maxWidth: '500px',
+					marginRight: '7%',
+					fontSize: 'min(2rem, 40px)',
+					textAlign: 'center',
+					maxHeight: 'fit-content',
                 }
             }}
             >
                 <div className='table soc-modal'>
-                    <h2>{props.society.name}</h2>
-                    <Cell {...props} />
-                    <p>{props.society.description}</p>
-                    <a href={props.society.link} target="_blank" rel="noreferrer"><img style={{ height: '1.5em', width: '1.5em' }} src={facebook} alt="Facebook" /></a>
+                    <h2 style={{marginBottom: '4rem',  }}>{props.society.name}</h2>
+					<div style={{scale: '1.6', fontSize: '0.5em', marginBlock: '2em'}}>
+                    	<Cell {...props} />
+					</div>
+                    <p style={{marginTop: '4rem'}}>{props.society.description}</p>
+                    <a href={props.society.link} target="_blank" rel="noreferrer"><img style={{ height: '2em', width: '2em' }} src={facebook} alt="Facebook" /></a>
                 </div>
             </Modal>
         }
