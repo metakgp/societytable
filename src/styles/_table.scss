@@ -11,6 +11,7 @@ $block-c-color: #4EAEC4;
 $block-cc-color: #A46BB2;
 $block-u-color: #888888;
 
+
 .table {
 	display: flex;
 	flex-direction: column;
@@ -30,8 +31,19 @@ $block-u-color: #888888;
 		justify-content: flex-end;
 		gap: 1rem;
 		padding: 0rem 0rem 3rem 9rem;
-	
+
 	}
+
+	@media screen and (max-width: 1200px) {
+		.inner-transition-container {
+			align-items: center;
+			justify-content: flex-end;
+			gap: 5rem;
+			padding: 0;
+			flex-direction: column;
+		}
+	}
+
 
 	.soc-tooltip {
 		background-color: black;
@@ -51,7 +63,7 @@ $block-u-color: #888888;
 		}
 	}
 
-	
+
 	.society {
 		font-family: 'Nixie One';
 
@@ -96,6 +108,7 @@ $block-u-color: #888888;
 		}
 
 		transition: filter 200ms;
+
 		&:hover {
 			filter: brightness(80%);
 		}
@@ -117,7 +130,8 @@ $block-u-color: #888888;
 			background-color: $block-o-color;
 		}
 
-		&.block-w, &.inner-transition-cell {
+		&.block-w,
+		&.inner-transition-cell {
 			background-color: $block-w-color;
 		}
 

@@ -9,3 +9,11 @@
 		width: 70%;
 	}
 }
+
+@media screen and (max-width: 1200px) {
+	.legend {
+		margin-top: 12vh;
+		margin-bottom: 12vh;
+		scale: 1.5;
+	}
+}

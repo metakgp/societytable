@@ -1,4 +1,3 @@
-import { Tooltip } from 'react-tooltip';
 import { Block, ISociety } from "../data/societies";
 import { GridItem } from "./Grid";
 import Modal from 'react-modal'
@@ -16,9 +15,9 @@ function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: 
 	symbol = symbol[0].toUpperCase() + symbol.slice(1);
 
 	let name = index_digits.map((digit) => NUMERICAL_ROOTS[digit]).join('');
+	name = name[0].toUpperCase() + name.slice(1) + "ium";
 	name.replace('nnn', 'nn');
 	name.replace('iii', 'ii');
-	name = name[0].toUpperCase() + name.slice(1) + "ium";
 
 	return {
 		name,
@@ -57,13 +56,9 @@ function Cell(props: TableCellProps & { insideModal?: boolean }) {
 						<span className="size">?</span>
 					</GridItem>
 				</div>
-				<Tooltip className="soc-tooltip" id="the-unknown-soc" delayHide={0} delayShow={0}>
-					<span className="soc-tooltip-name">The Unknown Society</span>
-					<p className="soc-toolip-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
-				</Tooltip>
 			</>;
 		case "undiscovered":
-			const { name, symbol } = getIUPACTemporaryNameAndSymbol(props.index);
+			const { symbol } = getIUPACTemporaryNameAndSymbol(props.index);
 
 			return <>
 				<div data-tooltip-id={`${props.index.toString()}-${symbol}`} data-tooltip-delay-hide={0}>
@@ -74,10 +69,6 @@ function Cell(props: TableCellProps & { insideModal?: boolean }) {
 						<span className="size">NA</span>
 					</GridItem>
 				</div>
-				<Tooltip className="soc-tooltip" id={`${props.index.toString()}-${symbol}`} delayHide={0} delayShow={0}>
-					<span className="soc-tooltip-name">{name} (Not Discovered)</span>
-					<p className="soc-toolip-desc">This society has not been discovered yet and has been assigned a temporary name.</p>
-				</Tooltip>
 			</>;
 	}
 }
@@ -136,6 +127,43 @@ function TableCell(props: TableCellProps) {
                 </div>
             </Modal>
         }
+		{props.type === 'the-unknown-soc' && <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            shouldCloseOnEsc={true}
+            contentLabel="Society Details"
+            style={{
+                overlay: {
+                    position: 'fixed',
+                    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                },
+                content: {
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    position: 'relative',
+                    border: '1px solid #ccc',
+                    background: 'hsl(51, 45%, 85%)',
+                    borderRadius: '5px',
+					marginRight: '7%',
+					fontSize: 'min(2rem, 40px)',
+					textAlign: 'center',
+					maxHeight: 'fit-content',
+                }
+            }}
+            >
+                <div className='table soc-modal'>
+                    <h2 style={{marginBottom: '4rem'}}>The Unknown Society</h2>
+					<div style={{scale: '1.6', fontSize: '0.5em', marginBlock: '2em'}}>
+                    	<Cell {...props} />
+					</div>
+                    <p style={{marginTop: '4rem'}}>This society has not been discovered yet and has been assigned a temporary name.</p>
+                </div>
+            </Modal>
+		}
     </div>
 
 }

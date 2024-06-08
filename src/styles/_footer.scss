@@ -23,7 +23,7 @@
 		color: $fg-color;
 
 		&:hover {
-			background-color: color.change($highlight-color, $lightness:45%);
+			background-color: color.change($highlight-color, $lightness: 45%);
 		}
 	}
 }

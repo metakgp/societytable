@@ -1,4 +1,3 @@
-// import { Block, ISociety } from "../data/societies";
 import { Grid } from "./Grid";
 import Legend from './Legend';
 import { TableCellProps } from './Tablecell';
