@@ -282,7 +282,7 @@ export const SOCIETIES: ISociety[] = [
     year: 1967,
     size: 'XL',
     tsg_recognized: true,
-    description: 'PRAVAH is the Hindi theater group of IIT Kharagpur which aims to create awareness about theatre and its various aspects in the students by bringing together people who are interested in the performing arts.',
+    description: 'Pravaah is the Hindi theater group of IIT Kharagpur which aims to create awareness about theatre and its various aspects in the students by bringing together people who are interested in the performing arts.',
     block: 'C',
     links: { fb: 'https://www.facebook.com/Pravaah/' }
   },
