@@ -9,6 +9,7 @@ function Header() {
 				</strong>
 			</h1>
 			<i className="subtitle"> A tabular display of societies, organized by their chemical properties. </i>
+			<i className="sub-subtitle">(Click on an element to learn more)</i>
 		</header>
 	);
 }

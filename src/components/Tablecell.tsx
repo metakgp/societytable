@@ -37,7 +37,7 @@ function Element(props: TableCellProps) {
 	switch (props.type) {
 		case "society":
 			return <>
-				<div>
+				<div title="Click to learn more.">
 					<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
 						<span className="index">{props.index}</span>
 						<span className="year">{props.society.year}</span>
@@ -55,7 +55,7 @@ function Element(props: TableCellProps) {
 			</GridItem>;
 		case "the-unknown-soc":
 			return <>
-				<div data-tooltip-id="the-unknown-soc" data-tooltip-delay-hide={0}>
+				<div data-tooltip-id="the-unknown-soc" data-tooltip-delay-hide={0}  title="Click to learn more.">
 					<GridItem className={`society the-unknown-soc`} >
 						<span className="index">?</span>
 						<span className="year">?</span>
@@ -68,7 +68,7 @@ function Element(props: TableCellProps) {
 			const { symbol } = getIUPACTemporaryNameAndSymbol(props.index);
 
 			return <>
-				<div data-tooltip-id={`${props.index.toString()}-${symbol}`} data-tooltip-delay-hide={0}>
+				<div data-tooltip-id={`${props.index.toString()}-${symbol}`} data-tooltip-delay-hide={0}  title="Click to learn more.">
 					<GridItem className={`society undiscovered-soc block-${props.block.toLowerCase()}`} >
 						<span className="index">{props.index}</span>
 						<span className="year">?</span>

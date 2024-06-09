@@ -9,7 +9,6 @@
 	margin-bottom: 1rem;
 
 	.subtitle {
-
 		@media screen and (max-width: 1280px) {
 			font-size: 1.7rem;
 		}
@@ -17,6 +16,17 @@
 		margin-top: 0;
 		text-align: center;
 		font-size: 1.1rem;
+	}
+
+	.sub-subtitle {
+		@media screen and (max-width: 1280px) {
+			font-size: 1.5rem;
+		}
+
+		color: color.change($fg-color, $lightness: 50%);
+		margin-top: 0;
+		text-align: center;
+		font-size: 0.9rem;
 	}
 }
 
