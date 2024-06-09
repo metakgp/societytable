@@ -1,7 +1,7 @@
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareFacebook, faInstagram, faLinkedin, faSlack, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faCircleXmark, faBook, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faBook, faGlobe, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import { Block, ISociety, Social } from "../data/societies";
 import { GridItem } from "./Grid";
@@ -87,7 +87,8 @@ const SOCIAL_TITLE_ICON_MAP = {
 	metawiki: { title: 'MetaWiki', icon: faBook },
 	website: { title: 'Website', icon: faGlobe },
 	slack: { title: 'Slack', icon: faSlack },
-	twitter: { title: 'Twitter', icon: faTwitter }
+	twitter: { title: 'Twitter', icon: faTwitter },
+	email: { title: 'Email', icon: faEnvelope }
 }
 
 function TableCell(props: TableCellProps) {

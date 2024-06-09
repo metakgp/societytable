@@ -1,5 +1,5 @@
 export type Block = "T" | "TO" | "O" | "W" | "C" | "CC" | "U";
-export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website" | "slack" | "twitter";
+export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website" | "slack" | "twitter" | "email";
 export interface ISociety {
   symbol: string;
   name: string;
