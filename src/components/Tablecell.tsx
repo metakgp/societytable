@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faSquareFacebook, faInstagram, faLinkedin, faSlack } from '@fortawesome/free-brands-svg-icons';
 import { faCircleXmark, faBook, faGlobe } from '@fortawesome/free-solid-svg-icons';
 
 import { Block, ISociety, Social } from "../data/societies";
@@ -81,11 +81,12 @@ function Element(props: TableCellProps) {
 }
 
 const SOCIAL_TITLE_ICON_MAP = {
-	fb: {title: 'Facebook', icon: faSquareFacebook},
-	insta: {title: 'Instagram', icon: faInstagram},
-	linkedin: {title: 'LinkedIn', icon: faLinkedin},
-	metawiki: {title: 'MetaWiki', icon: faBook},
-	website: {title: 'Website', icon: faGlobe}
+	fb: { title: 'Facebook', icon: faSquareFacebook },
+	insta: { title: 'Instagram', icon: faInstagram },
+	linkedin: { title: 'LinkedIn', icon: faLinkedin },
+	metawiki: { title: 'MetaWiki', icon: faBook },
+	website: { title: 'Website', icon: faGlobe },
+	slack: { title: 'Slack', icon: faSlack }
 }
 
 function TableCell(props: TableCellProps) {
@@ -150,11 +151,28 @@ function TableCell(props: TableCellProps) {
 			overlayClassName={'modal-overlay'}
 		>
 			<div className='table soc-modal'>
-				<h2>The Unknown Society</h2>
-				<div className="modal-element">
+				<div className="modal-header">
+					<h2 className="modal-title">
+						The Unknown Society
+					</h2>
+					<button className="modal-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
+				</div>
+				<div className='modal-element'>
 					<Element {...props} />
 				</div>
 				<p className="modal-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
+				<div className="modal-socials">
+				<a
+							className="modal-social"
+							href="https://slack.metakgp.org"
+							title="metaKGP Slack"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FontAwesomeIcon icon={faSlack} size="2x" />
+							metaKGP Slack
+						</a>
+				</div>
 			</div>
 		</Modal>
 		}
