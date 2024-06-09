@@ -494,7 +494,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     description: 'MASK is a group of otakus engaging in art, AMV making, manga creation and quizzing.',
     block: 'C',
-    links: { fb: 'https://www.facebook.com/maskiitkgp' }
+    links: { website: 'https://kgpmask.club/', insta: 'https://www.instagram.com/maskiitkgp/', fb: 'https://www.facebook.com/maskiitkgp' }
   },
   {
     symbol: 'Pd',
