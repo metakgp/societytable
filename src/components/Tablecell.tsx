@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { Block, ISociety } from "../data/societies";
 import { GridItem } from "./Grid";
@@ -103,6 +104,7 @@ function TableCell(props: TableCellProps) {
 			overlayClassName={'table modal-overlay'}
 		>
 			<div className='table soc-modal'>
+				<button className="modal-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
 				<h2>{props.society.name}</h2>
 				<div className='modal-element'>
 					<Element {...props} />
