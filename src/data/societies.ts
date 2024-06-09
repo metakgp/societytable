@@ -621,7 +621,7 @@ export const SOCIETIES: ISociety[] = [
   {
     symbol: 'Tr',
     name: 'Team TRAK',
-    year: 2023,
+    year: 2024,
     size: 'M',
     tsg_recognized: false,
     description: "Railway Research Students' Group of IIT Kharagpur",
