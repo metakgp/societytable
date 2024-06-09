@@ -137,7 +137,7 @@ function TableCell(props: TableCellProps) {
 							rel="noreferrer"
 						>
 							<FontAwesomeIcon icon={icon} size="2x" />
-							{title}
+							<p className="modal-social-title">{title}</p>
 						</a>
 					})}
 				</div>
@@ -172,7 +172,7 @@ function TableCell(props: TableCellProps) {
 						rel="noreferrer"
 					>
 						<FontAwesomeIcon icon={faSlack} size="2x" />
-						metaKGP Slack
+						<p className="modal-social-title">metaKGP Slack</p>
 					</a>
 				</div>
 			</div>

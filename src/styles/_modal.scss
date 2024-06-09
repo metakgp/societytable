@@ -9,7 +9,6 @@
     justify-content: center;
 }
 
-
 .ReactModal__Content {
     @media screen and (min-width: 1280px) {
         scale: 0.8;
@@ -46,7 +45,7 @@
 .modal-social {
     display: flex;
     flex-direction: column;
-    color: $fg-color;
+    color: rgb(46, 92, 184);
 
     padding: 0.5rem;
     border-radius: 5px;
@@ -55,6 +54,14 @@
 
     &:hover {
         background-color: color.adjust($bg-color, $lightness: -5%);
+
+        .modal-social-title {
+            text-decoration:solid;
+        }
+    }
+
+    .modal-social-title {
+        font-weight: bold;
     }
 }
 
