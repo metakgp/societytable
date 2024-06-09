@@ -617,5 +617,15 @@ export const SOCIETIES: ISociety[] = [
     description: 'The KGP Speedcubers is a hobby group for speedcubers in IIT Kharagpur that organizes workshops and competitions on campus.',
     block: 'U',
     links: { fb: 'https://www.facebook.com/kgpspeedcubers/' }
+  },
+  {
+    symbol: 'Tr',
+    name: 'Team TRAK',
+    year: 2023,
+    size: 'M',
+    tsg_recognized: false,
+    description: "Railway Research Students' Group of IIT Kharagpur",
+    block: 'T',
+    links: { fb: 'https://www.facebook.com/team.trakgp', insta: 'https://www.instagram.com/team_trakgp' }
   }
 ].sort((a, b) => a.year - b.year) as ISociety[];
