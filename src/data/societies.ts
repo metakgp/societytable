@@ -32,7 +32,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: true,
     description: 'The ARK consists of a group of students working towards building autonomous aerial vehicles, based at Indian Institute of Technology Kharagpur.',
     block: 'T',
-    links: { fb: 'https://www.facebook.com/aerialroboticskgp', insta: 'lol', metawiki: 'kek' }
+    links: { fb: 'https://www.facebook.com/aerialroboticskgp' }
   },
   {
     symbol: 'Aw',
