@@ -1,8 +1,10 @@
+import Modal from 'react-modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
+
 import { Block, ISociety } from "../data/societies";
 import { GridItem } from "./Grid";
-import Modal from 'react-modal'
 import { useState } from 'react';
-import facebook from '../assets/socials_facebook.png';
 import '../styles/_modal.scss';
 
 export type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
@@ -106,7 +108,7 @@ function TableCell(props: TableCellProps) {
 					<Element {...props} />
 				</div>
 				<p className="modal-desc">{props.society.description}</p>
-				<a className="modal-socials" href={props.society.link} target="_blank" rel="noreferrer"><img src={facebook} alt="Facebook" /></a>
+				<a className="modal-socials" href={props.society.link} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faSquareFacebook} /></a>
 			</div>
 		</Modal>
 		}
