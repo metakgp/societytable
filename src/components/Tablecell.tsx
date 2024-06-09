@@ -177,6 +177,40 @@ function TableCell(props: TableCellProps) {
 			</div>
 		</Modal>
 		}
+		{props.type === 'undiscovered' && <Modal
+			isOpen={modalIsOpen}
+			onRequestClose={closeModal}
+			shouldCloseOnEsc={true}
+			contentLabel="Society Details"
+			className={'modal'}
+			overlayClassName={'modal-overlay'}
+		>
+			<div className='table soc-modal'>
+				<div className="modal-header">
+					<h2 className="modal-title">
+						{getIUPACTemporaryNameAndSymbol(props.index).name} (Undiscovered)
+					</h2>
+					<button className="modal-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
+				</div>
+				<div className='modal-element'>
+					<Element {...props} />
+				</div>
+				<p className="modal-desc">This society has not been discovered yet and has been given a temporary name. If you know any society that fits this category, let us know at the slack link below.</p>
+				<div className="modal-socials">
+					<a
+						className="modal-social"
+						href="https://slack.metakgp.org"
+						title="metaKGP Slack"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<FontAwesomeIcon icon={faSlack} size="2x" />
+						metaKGP Slack
+					</a>
+				</div>
+			</div>
+		</Modal>
+		}
 	</div>
 
 }

@@ -141,6 +141,10 @@ $block-u-color: #888888;
 
 		&.undiscovered-soc {
 			filter: brightness(60%);
+
+			&:hover {
+				filter: brightness(50%);
+			}
 		}
 	}
 
