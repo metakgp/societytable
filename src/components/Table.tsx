@@ -71,6 +71,8 @@ function Table(props: { societies: ISociety[] }) {
 				index += (INNER_TRANSITION_ELEMENTS - 1) - INNER_TRANSITION_COLUMNS * (used_inner_rows - 1);
 			}
 		} else {
+			index += 1;
+
 			// The block the next element must belong to
 			const block = MAIN_SOC_COLUMN_BLOCKS[column];
 			// Find the index of the next soc that belongs to this block
@@ -85,7 +87,6 @@ function Table(props: { societies: ISociety[] }) {
 				main_grid_entries.push({ society: next_soc, index, type: "society" });
 			}
 
-			index += 1;
 
 			if (index in EMPTY_CELL_MAP) {
 				// If parts of the row should be left empty, do that
@@ -118,7 +119,7 @@ function Table(props: { societies: ISociety[] }) {
 						// The row of the current inner transition element
 						let inner_row = Math.floor(i / INNER_TRANSITION_COLUMNS);
 						// The index of the element, calculated by adding offset to its index in the current row
-						let index = inner_transition_offsets[inner_row] + (i % INNER_TRANSITION_COLUMNS);
+						let index = 1 + inner_transition_offsets[inner_row] + (i % INNER_TRANSITION_COLUMNS);
 
 						return <TableCell society={society} index={index} type="society" />;
 					})}
