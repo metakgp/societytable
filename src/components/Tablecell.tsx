@@ -162,16 +162,16 @@ function TableCell(props: TableCellProps) {
 				</div>
 				<p className="modal-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
 				<div className="modal-socials">
-				<a
-							className="modal-social"
-							href="https://slack.metakgp.org"
-							title="metaKGP Slack"
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FontAwesomeIcon icon={faSlack} size="2x" />
-							metaKGP Slack
-						</a>
+					<a
+						className="modal-social"
+						href="https://slack.metakgp.org"
+						title="metaKGP Slack"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<FontAwesomeIcon icon={faSlack} size="2x" />
+						metaKGP Slack
+					</a>
 				</div>
 			</div>
 		</Modal>
