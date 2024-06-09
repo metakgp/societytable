@@ -358,13 +358,13 @@ export const SOCIETIES: ISociety[] = [
   },
   {
     symbol: 'Mk',
-    name: 'MetaKGP',
+    name: 'metaKGP',
     year: 2015,
     size: 'S',
     tsg_recognized: false,
-    description: 'Metakgp is a collective interest group of engineers, hackers, and artists from IIT Kharagpur, who collaborate on various technical and non-technical projects.',
+    description: 'metaKGP is a collective interest group of engineers, hackers, and artists from IIT Kharagpur, who collaborate on various technical and non-technical projects.',
     block: 'TO',
-    links: { fb: 'https://www.facebook.com/metakgp/' }
+    links: { slack: 'https://slack.metakgp.org', insta: 'https://instagram.com/metakgp_/', metawiki: 'https://wiki.metakgp.org/w/Metakgp:About', website: 'https://metakgp.github.io' }
   },
   {
     symbol: 'Ni',
