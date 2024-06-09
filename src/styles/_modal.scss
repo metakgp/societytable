@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .ReactModal__Overlay {
     position: fixed;
     inset: 0px;
@@ -37,9 +39,22 @@
 }
 
 .modal-socials {
-    img {
-        height: 2em;
-        width: 2em
+    display: flex;
+    gap: 1rem;
+}
+
+.modal-social {
+    display: flex;
+    flex-direction: column;
+    color: $fg-color;
+
+    padding: 0.5rem;
+    border-radius: 5px;
+
+    font-size: 0.8em;
+
+    &:hover {
+        background-color: color.adjust($bg-color, $lightness: -5%);
     }
 }
 

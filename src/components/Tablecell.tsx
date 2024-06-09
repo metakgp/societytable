@@ -6,7 +6,6 @@ import { faCircleXmark, faBook, faGlobe } from '@fortawesome/free-solid-svg-icon
 import { Block, ISociety, Social } from "../data/societies";
 import { GridItem } from "./Grid";
 import { useState } from 'react';
-import '../styles/_modal.scss';
 
 export type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
 
@@ -122,20 +121,23 @@ function TableCell(props: TableCellProps) {
 					<Element {...props} />
 				</div>
 				<p className="modal-desc">{props.society.description}</p>
-				{Object.keys(props.society.links).map((social) => {
-					const { icon, title } = SOCIAL_TITLE_ICON_MAP[social as Social];
-					const link = props.society.links[social as Social];
+				<div className="modal-socials">
+					{Object.keys(props.society.links).map((social) => {
+						const { icon, title } = SOCIAL_TITLE_ICON_MAP[social as Social];
+						const link = props.society.links[social as Social];
 
-					return <a
-						className="modal-socials"
-						href={link}
-						title={title}
-						target="_blank"
-						rel="noreferrer"
-					>
-						<FontAwesomeIcon icon={icon} />
-					</a>
-				})}
+						return <a
+							className="modal-social"
+							href={link}
+							title={title}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FontAwesomeIcon icon={icon} size="2x" />
+							{title}
+						</a>
+					})}
+				</div>
 			</div>
 		</Modal>
 		}
