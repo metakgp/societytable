@@ -1,11 +1,14 @@
 export type Block = "T" | "TO" | "O" | "W" | "C" | "CC" | "U";
+export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website";
 export interface ISociety {
   symbol: string;
   name: string;
   year: number;
   size: "S" | "M" | "L" | "XL" | "NA";
   tsg_recognized: boolean;
-  links: { fb: string } | { insta: string } | { metawiki: string } | { linkedin: string } | { website: string } | {};
+  links: {
+    [key in Social]?: string
+  };
   description: string;
   /**
    * Block of the periodic table:

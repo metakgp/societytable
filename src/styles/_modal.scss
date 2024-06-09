@@ -44,7 +44,23 @@
 }
 
 .modal-close-btn {
-    margin-left: auto;
     background: transparent;
     border: none;
+    float: right;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+
+    .modal-title {
+        width: 100%;
+        margin: 0.5rem;
+    }
 }

@@ -1,9 +1,9 @@
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faSquareFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faCircleXmark, faBook, faGlobe } from '@fortawesome/free-solid-svg-icons';
 
-import { Block, ISociety } from "../data/societies";
+import { Block, ISociety, Social } from "../data/societies";
 import { GridItem } from "./Grid";
 import { useState } from 'react';
 import '../styles/_modal.scss';
@@ -81,6 +81,14 @@ function Element(props: TableCellProps) {
 	}
 }
 
+const SOCIAL_TITLE_ICON_MAP = {
+	fb: {title: 'Facebook', icon: faSquareFacebook},
+	insta: {title: 'Instagram', icon: faInstagram},
+	linkedin: {title: 'LinkedIn', icon: faLinkedin},
+	metawiki: {title: 'MetaWiki', icon: faBook},
+	website: {title: 'Website', icon: faGlobe}
+}
+
 function TableCell(props: TableCellProps) {
 	Modal.setAppElement('#root');
 	const [modalIsOpen, setIsOpen] = useState(false);
@@ -104,13 +112,30 @@ function TableCell(props: TableCellProps) {
 			overlayClassName={'table modal-overlay'}
 		>
 			<div className='table soc-modal'>
-				<button className="modal-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
-				<h2>{props.society.name}</h2>
+				<div className="modal-header">
+					<h2 className="modal-title">
+						{props.society.name}
+					</h2>
+					<button className="modal-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
+				</div>
 				<div className='modal-element'>
 					<Element {...props} />
 				</div>
 				<p className="modal-desc">{props.society.description}</p>
-				<a className="modal-socials" href={props.society.link} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faSquareFacebook} /></a>
+				{Object.keys(props.society.links).map((social) => {
+					const { icon, title } = SOCIAL_TITLE_ICON_MAP[social as Social];
+					const link = props.society.links[social as Social];
+
+					return <a
+						className="modal-socials"
+						href={link}
+						title={title}
+						target="_blank"
+						rel="noreferrer"
+					>
+						<FontAwesomeIcon icon={icon} />
+					</a>
+				})}
 			</div>
 		</Modal>
 		}
