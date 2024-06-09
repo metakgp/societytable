@@ -1,5 +1,5 @@
 export type Block = "T" | "TO" | "O" | "W" | "C" | "CC" | "U";
-export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website" | "slack";
+export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website" | "slack" | "twitter";
 export interface ISociety {
   symbol: string;
   name: string;
@@ -212,7 +212,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     description: 'A bunch of open source enthusiasts and previously called the ‘Firefox club’, KOSS is aimed at creating awareness about web and the open source movement.',
     block: 'TO',
-    links: { fb: 'https://www.facebook.com/kossiitkgp/' }
+    links: { insta: 'https://www.instagram.com/kossiitkgp/', website: 'https://kossiitkgp.org', fb: 'https://www.facebook.com/kossiitkgp/' }
   },
   {
     symbol: 'Ac',
