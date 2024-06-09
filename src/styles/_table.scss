@@ -11,35 +11,47 @@ $block-c-color: #4EAEC4;
 $block-cc-color: #A46BB2;
 $block-u-color: #888888;
 
+
 .table {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 2rem;
+
+	border-collapse: collapse;
 
 	a {
 		text-decoration: none;
 	}
 
-	.soc-tooltip {
-		background-color: black;
-		opacity: 1;
-		color: white;
+	.inner-transition-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 1rem;
+		padding: 0rem 0rem 3rem 9rem;
 
-		z-index: 1000;
-		text-align: center;
+	}
 
-		width: 30%;
-		border-radius: 0.5rem;
-		padding: 0.5rem;
-
-		.soc-tooltip-name {
-			font-size: 1.2rem;
-			font-weight: bold;
+	.cell-container {
+		cursor: pointer;
+		
+		.empty-cell {
+			cursor: default;
 		}
 	}
 
+	@media screen and (max-width: 1280px) {
+		.inner-transition-container {
+			align-items: center;
+			justify-content: flex-end;
+			gap: 5rem;
+			padding: 0;
+			flex-direction: column;
+		}
+	}
+	
 	.society {
 		font-family: 'Nixie One';
 
@@ -84,6 +96,7 @@ $block-u-color: #888888;
 		}
 
 		transition: filter 200ms;
+
 		&:hover {
 			filter: brightness(80%);
 		}
@@ -105,7 +118,8 @@ $block-u-color: #888888;
 			background-color: $block-o-color;
 		}
 
-		&.block-w, &.inner-transition-cell {
+		&.block-w,
+		&.inner-transition-cell {
 			background-color: $block-w-color;
 		}
 
@@ -128,6 +142,17 @@ $block-u-color: #888888;
 
 		&.undiscovered-soc {
 			filter: brightness(60%);
+		}
+	}
+
+	.society.soc-modal {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		.info-row {
+			display: flex;
+			gap: 1.5rem;
 		}
 	}
 }

@@ -1,90 +1,8 @@
-import { Tooltip } from 'react-tooltip';
+import { Grid } from "./Grid";
+import Legend from './Legend';
+import { TableCellProps } from './Tablecell';
+import TableCell from './Tablecell';
 import { Block, ISociety } from "../data/societies";
-import { Grid, GridItem } from "./Grid";
-
-/**
- * Gives the temporary name and symbol of an undiscovered element according to IUPAC nomenclature.
- * See https://en.wikipedia.org/wiki/Systematic_element_name for more information
- * @param index The index of the undiscovered element
- * @returns The temporary name and symbol
- */
-function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: string } {
-	const NUMERICAL_ROOTS = ["nil", "un", "bi", "tri", "quad", "pent", "hex", "sept", "oct", "en"];
-	const index_digits = index.toString().split('').map((digit_str) => parseInt(digit_str));
-
-	let symbol = index_digits.map((digit) => NUMERICAL_ROOTS[digit][0]).join('');
-	symbol = symbol[0].toUpperCase() + symbol.slice(1);
-
-	let name = index_digits.map((digit) => NUMERICAL_ROOTS[digit]).join('');
-	name.replace('nnn', 'nn');
-	name.replace('iii', 'ii');
-	name = name[0].toUpperCase() + name.slice(1) + "ium";
-
-	return {
-		name,
-		symbol
-	}
-}
-
-type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
-function TableCell(props: TableCellProps) {
-	switch (props.type) {
-		case "society":
-			return <>
-				<a href={props.society.link} target="_blank" rel="noreferrer" data-tooltip-delay-hide={0} data-tooltip-id={`${props.index.toString()}-${props.society.symbol}`}>
-					<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
-						<span className="index">{props.index}</span>
-						<span className="year">{props.society.year}</span>
-						<span className="recognized">{props.society.tsg_recognized ? "*" : ""}</span>
-						<span className="symbol">{props.society.symbol}</span>
-						<span className="size">{props.society.size}</span>
-					</GridItem>
-				</a>
-				<Tooltip className="soc-tooltip" id={`${props.index.toString()}-${props.society.symbol}`} delayHide={0} delayShow={0}>
-					<span className="soc-tooltip-name">{props.society.name}</span>
-					<p className="soc-toolip-desc">{props.society.description}</p>
-				</Tooltip>
-			</>;
-		case "empty":
-			return <GridItem className="society empty-cell"></GridItem>;
-		case "inner-transition":
-			return <GridItem className="society inner-transition-cell">
-				<span className="symbol">↓</span>
-			</GridItem>;
-		case "the-unknown-soc":
-			return <>
-				<div data-tooltip-id="the-unknown-soc" data-tooltip-delay-hide={0}>
-					<GridItem className={`society the-unknown-soc`} >
-						<span className="index">?</span>
-						<span className="year">?</span>
-						<span className="symbol">Us</span>
-						<span className="size">?</span>
-					</GridItem>
-				</div>
-				<Tooltip className="soc-tooltip" id="the-unknown-soc" delayHide={0} delayShow={0}>
-					<span className="soc-tooltip-name">The Unknown Society</span>
-					<p className="soc-toolip-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
-				</Tooltip>
-			</>;
-		case "undiscovered":
-			const { name, symbol } = getIUPACTemporaryNameAndSymbol(props.index);
-
-			return <>
-				<div data-tooltip-id={`${props.index.toString()}-${symbol}`} data-tooltip-delay-hide={0}>
-					<GridItem className={`society undiscovered-soc block-${props.block.toLowerCase()}`} >
-						<span className="index">{props.index}</span>
-						<span className="year">?</span>
-						<span className="symbol">{symbol}</span>
-						<span className="size">NA</span>
-					</GridItem>
-				</div>
-				<Tooltip className="soc-tooltip" id={`${props.index.toString()}-${symbol}`} delayHide={0} delayShow={0}>
-					<span className="soc-tooltip-name">{name} (Not Discovered)</span>
-					<p className="soc-toolip-desc">This society has not been discovered yet and has been assigned a temporary name.</p>
-				</Tooltip>
-			</>;
-	}
-}
 
 // Number of columns in the main table (which excludes the inner transition elements)
 const MAIN_TABLE_COLUMNS = 12;
@@ -191,19 +109,23 @@ function Table(props: { societies: ISociety[] }) {
 			>
 				{main_grid_entries.map((props) => <TableCell {...props} />)}
 			</Grid>
-			<Grid
-				options={{ numColumns: INNER_TRANSITION_COLUMNS }}
-			>
-				{INNER_TRANSITION_SOCIETIES.map((society, i) => {
-					// The row of the current inner transition element
-					let inner_row = Math.floor(i / INNER_TRANSITION_COLUMNS);
-					// The index of the element, calculated by adding offset to its index in the current row
-					let index = inner_transition_offsets[inner_row] + (i % INNER_TRANSITION_COLUMNS);
 
-					return <TableCell society={society} index={index} type="society" />;
-				})}
-				<TableCell type="the-unknown-soc" />
-			</Grid>
+			<div className='inner-transition-container'>
+				<Grid
+					options={{ numColumns: INNER_TRANSITION_COLUMNS }}
+				>
+					{INNER_TRANSITION_SOCIETIES.map((society, i) => {
+						// The row of the current inner transition element
+						let inner_row = Math.floor(i / INNER_TRANSITION_COLUMNS);
+						// The index of the element, calculated by adding offset to its index in the current row
+						let index = inner_transition_offsets[inner_row] + (i % INNER_TRANSITION_COLUMNS);
+
+						return <TableCell society={society} index={index} type="society" />;
+					})}
+					<TableCell type="the-unknown-soc" />
+				</Grid>
+				<Legend />
+			</div>
 		</div>
 	);
 }
