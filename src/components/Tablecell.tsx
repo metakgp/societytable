@@ -127,7 +127,7 @@ function TableCell(props: TableCellProps) {
 					<div className="modal-element">
                     	<Element {...props} />
 					</div>
-                    <p className="modal-desc">This society has not been discovered yet and has been assigned a temporary name.</p>
+                    <p className="modal-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
                 </div>
             </Modal>
 		}
