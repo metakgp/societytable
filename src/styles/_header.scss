@@ -9,6 +9,11 @@
 	margin-bottom: 1rem;
 
 	.subtitle {
+
+		@media screen and (max-width: 1280px) {
+			font-size: 1.7rem;
+		}
+
 		margin-top: 0;
 		text-align: center;
 		font-size: 1.1rem;
@@ -31,8 +36,8 @@
 	/* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
 
 	@media screen and (max-width: 1280px) {
-		font-size: 1.6em !important;
-		width: 25%;
+		font-size: 2em !important;
+		width: 55%;
 		padding: 1em 5em;
 		margin-bottom: 2em;
 	}
