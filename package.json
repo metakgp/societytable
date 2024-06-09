@@ -16,8 +16,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-modal": "^3.16.1",
-    "react-tooltip": "^5.26.4"
+    "react-modal": "^3.16.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

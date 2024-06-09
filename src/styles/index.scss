@@ -11,10 +11,6 @@ body {
 	margin: 0;
 }
 
-// Removes any transition delay in react-tooltip
-.react-tooltip__closing {
-	display: none;
-}
 
 @media screen and (max-width: 1280px) {
 	.table-container {
