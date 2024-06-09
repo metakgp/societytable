@@ -428,7 +428,7 @@ export const SOCIETIES: ISociety[] = [
     size: "M",
     tsg_recognized: false,
     link: "https://www.facebook.com/scholarsavenue/",
-    description: "We are the independent student run English newsbody of the campus. We report campus events and function as a public interface between students and the administration. Often, we make cool stuff like the one you are reading right now.",
+    description: "The Scholars’ Avenue (TSA) is the independent student run English newsbody of the campus. TSA reports campus events and function as a public interface between students and the administration. Often, they make cool stuff like the table you are reading right now.",
     block: "C"
   },
   {
