@@ -94,7 +94,7 @@ function TableCell(props: TableCellProps) {
     }
 
     
-    return <div className='modal-container' onClick={openModal}>
+    return <div className={`cell-container ${props.type}`} onClick={openModal}>
         <Element {...props}/>
         {props.type === 'society' && <Modal
             isOpen={modalIsOpen}
