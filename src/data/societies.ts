@@ -432,9 +432,9 @@ export const SOCIETIES: ISociety[] = [
     year: 2005,
     size: 'M',
     tsg_recognized: false,
-    description: 'The Scholars’ Avenue (TSA) is the independent student run English newsbody of the campus. TSA reports campus events and function as a public interface between students and the administration. Often, they make cool stuff like the table you are reading right now.',
+    description: 'The Scholars’ Avenue (TSA) is the independent student run English newsbody of the campus. TSA reports campus events and functions as a public interface between students and the administration. Often, they make cool stuff like the table you are reading right now.',
     block: 'C',
-    links: { fb: 'https://www.facebook.com/scholarsavenue/' }
+    links: { insta: 'https://www.instagram.com/scholarsavenue', fb: 'https://www.facebook.com/scholarsavenue/', email: 'mailto:thescholarsavenue@gmail.com' }
   },
   {
     symbol: 'En',
