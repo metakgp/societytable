@@ -11,7 +11,6 @@ $block-c-color: #4EAEC4;
 $block-cc-color: #A46BB2;
 $block-u-color: #888888;
 
-
 .table {
 	display: flex;
 	flex-direction: column;
@@ -36,7 +35,7 @@ $block-u-color: #888888;
 
 	.cell-container {
 		cursor: pointer;
-		
+
 		.empty-cell {
 			cursor: default;
 		}
@@ -51,7 +50,7 @@ $block-u-color: #888888;
 			flex-direction: column;
 		}
 	}
-	
+
 	.society {
 		font-family: 'Nixie One';
 

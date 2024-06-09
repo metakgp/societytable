@@ -13,7 +13,6 @@ export type TableCellProps = { society: ISociety, index: number, type: "society"
  * @param index The index of the undiscovered element
  * @returns The temporary name and symbol
 **/
-
 function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: string } {
 	const NUMERICAL_ROOTS = ["nil", "un", "bi", "tri", "quad", "pent", "hex", "sept", "oct", "en"];
 	const index_digits = index.toString().split('').map((digit_str) => parseInt(digit_str));
@@ -33,20 +32,19 @@ function getIUPACTemporaryNameAndSymbol(index: number): { name: string, symbol: 
 }
 
 function Element(props: TableCellProps) {
-
 	switch (props.type) {
 		case "society":
 			return <>
-					<div>
-                        <GridItem className={`society block-${props.society.block.toLowerCase()}`}>
-                            <span className="index">{props.index}</span>
-                            <span className="year">{props.society.year}</span>
-                            <span className="recognized">{props.society.tsg_recognized ? "*" : ""}</span>
-                            <span className="symbol">{props.society.symbol}</span>
-                            <span className="size">{props.society.size}</span>
-                        </GridItem>
-					</div>
-				</>;
+				<div>
+					<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
+						<span className="index">{props.index}</span>
+						<span className="year">{props.society.year}</span>
+						<span className="recognized">{props.society.tsg_recognized ? "*" : ""}</span>
+						<span className="symbol">{props.society.symbol}</span>
+						<span className="size">{props.society.size}</span>
+					</GridItem>
+				</div>
+			</>;
 		case "empty":
 			return <GridItem className="society empty-cell"></GridItem>;
 		case "inner-transition":
@@ -81,59 +79,56 @@ function Element(props: TableCellProps) {
 }
 
 function TableCell(props: TableCellProps) {
-    Modal.setAppElement('#root');
-    const [modalIsOpen, setIsOpen] = useState(false);	
-    
-    function openModal() {
-        if(!modalIsOpen) setIsOpen(true);
-    }
-    
-    
-    function closeModal() {
-        if(modalIsOpen) setIsOpen(false);
-    }
+	Modal.setAppElement('#root');
+	const [modalIsOpen, setIsOpen] = useState(false);
 
-    
-    return <div className={`cell-container ${props.type}`} onClick={openModal}>
-        <Element {...props}/>
-        {props.type === 'society' && <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            shouldCloseOnEsc={true}
-            contentLabel='Society Details'
-            className={'table modal'}
-            overlayClassName={'table modal-overlay'}
-            >
-                <div className='table soc-modal'>
-                    <h2>{props.society.name}</h2>
-					<div className='modal-element'>
-                    	<Element {...props} />
-					</div>
-                    <p className="modal-desc">{props.society.description}</p>
-                    <a className="modal-socials" href={props.society.link} target="_blank" rel="noreferrer"><img src={facebook} alt="Facebook" /></a>
-                </div>
-            </Modal>
-        }
-		{props.type === 'the-unknown-soc' && <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            shouldCloseOnEsc={true}
-            contentLabel="Society Details"
-            className={'modal'}
-            overlayClassName={'modal-overlay'}
-            >
-                <div className='table soc-modal'>
-                    <h2>The Unknown Society</h2>
-					<div className="modal-element">
-                    	<Element {...props} />
-					</div>
-                    <p className="modal-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
-                </div>
-            </Modal>
+	function openModal() {
+		if (!modalIsOpen) setIsOpen(true);
+	}
+
+	function closeModal() {
+		if (modalIsOpen) setIsOpen(false);
+	}
+
+	return <div className={`cell-container ${props.type}`} onClick={openModal}>
+		<Element {...props} />
+		{props.type === 'society' && <Modal
+			isOpen={modalIsOpen}
+			onRequestClose={closeModal}
+			shouldCloseOnEsc={true}
+			contentLabel='Society Details'
+			className={'table modal'}
+			overlayClassName={'table modal-overlay'}
+		>
+			<div className='table soc-modal'>
+				<h2>{props.society.name}</h2>
+				<div className='modal-element'>
+					<Element {...props} />
+				</div>
+				<p className="modal-desc">{props.society.description}</p>
+				<a className="modal-socials" href={props.society.link} target="_blank" rel="noreferrer"><img src={facebook} alt="Facebook" /></a>
+			</div>
+		</Modal>
 		}
-    </div>
+		{props.type === 'the-unknown-soc' && <Modal
+			isOpen={modalIsOpen}
+			onRequestClose={closeModal}
+			shouldCloseOnEsc={true}
+			contentLabel="Society Details"
+			className={'modal'}
+			overlayClassName={'modal-overlay'}
+		>
+			<div className='table soc-modal'>
+				<h2>The Unknown Society</h2>
+				<div className="modal-element">
+					<Element {...props} />
+				</div>
+				<p className="modal-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
+			</div>
+		</Modal>
+		}
+	</div>
 
 }
-
 
 export default TableCell;
