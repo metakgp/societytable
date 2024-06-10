@@ -21,6 +21,7 @@ export interface ISociety {
    * A combination of these letters denotes a special block that is either a cross between two blocks or a sub-block.
    */
   block: Block;
+  inactive?: boolean;
 }
 
 export const SOCIETIES: ISociety[] = [
@@ -112,7 +113,8 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     description: 'An interest driven group of enthusiastic Language Learners who use the group as a platform to reach other learners, organize meetups and share language learning resources.',
     block: 'U',
-    links: { fb: 'https://www.facebook.com/groups/732492363547374/' }
+    links: { fb: 'https://www.facebook.com/groups/732492363547374/' },
+    inactive: true
   },
   {
     symbol: 'Au',
@@ -122,7 +124,8 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     description: 'The IIT Kharagpur AUV Team (nicknamed iKat) was conceived to develop an autonomous underground vehicle to participate in student level competitions and demonstrate the Robotics and Intelligent Systems Lab of the campus.',
     block: 'T',
-    links: { fb: 'https://www.facebook.com/auviitkgp/' }
+    links: { fb: 'https://www.facebook.com/auviitkgp/' },
+    inactive: true
   },
   {
     symbol: 'St',
@@ -182,7 +185,8 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: true,
     description: 'Helps in quality control of the functioning of the mess across all halls and food outlets in the campus.',
     block: 'U',
-    links: { fb: 'https://www.facebook.com/groups/402924043246682/' }
+    links: { fb: 'https://www.facebook.com/groups/402924043246682/' },
+    inactive: true
   },
   {
     symbol: 'Dt',
@@ -374,7 +378,8 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     description: 'Net Impact IIT Kharagpur aims at creating a positive impact in the campus. The students can use their platform to develop themselves for the type of career they are looking for.',
     block: 'W',
-    links: { fb: 'https://www.facebook.com/netimpactiitkharagpur/' }
+    links: { fb: 'https://www.facebook.com/netimpactiitkharagpur/' },
+    inactive: true
   },
   {
     symbol: 'Ec',
@@ -474,7 +479,8 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     description: 'EVG is involved in building Electric Vehicles that are fast, affordable and energy-efficient.',
     block: 'T',
-    links: { fb: 'https://www.facebook.com/EVG.IITKGP/' }
+    links: { fb: 'https://www.facebook.com/EVG.IITKGP/' },
+    inactive: true
   },
   {
     symbol: 'Sw',
@@ -484,7 +490,8 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     description: 'Swarm explores the contemporary field of distributed algorithms for robot swarms and their implementation.',
     block: 'TO',
-    links: { fb: 'https://www.facebook.com/swarmroboticskgp' }
+    links: { fb: 'https://www.facebook.com/swarmroboticskgp' },
+    inactive: true
   },
   {
     symbol: 'Ma',
@@ -596,7 +603,8 @@ export const SOCIETIES: ISociety[] = [
     block: 'C',
     links: {
       fb: 'https://www.facebook.com/LaObscuraPhotographyandVisualArt/'
-    }
+    },
+    inactive: true
   },
   {
     symbol: 'Cg',
@@ -616,7 +624,8 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     description: 'The KGP Speedcubers is a hobby group for speedcubers in IIT Kharagpur that organizes workshops and competitions on campus.',
     block: 'U',
-    links: { fb: 'https://www.facebook.com/kgpspeedcubers/' }
+    links: { fb: 'https://www.facebook.com/kgpspeedcubers/' },
+    inactive: true
   },
   {
     symbol: 'Tr',
@@ -628,4 +637,4 @@ export const SOCIETIES: ISociety[] = [
     block: 'T',
     links: { fb: 'https://www.facebook.com/team.trakgp', insta: 'https://www.instagram.com/team_trakgp' }
   }
-].sort((a, b) => a.year - b.year) as ISociety[];
+].filter((soc) => !('inactive' in soc) || !soc.inactive).sort((a, b) => a.year - b.year) as ISociety[];
