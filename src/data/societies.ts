@@ -71,7 +71,7 @@ export const SOCIETIES: ISociety[] = [
     year: 2003,
     size: 'S',
     tsg_recognized: true,
-    description: 'The Quiz Club conducts branstorming sessions and mock quizzes to promote the quizzing culture in the campus. The club usually once a week and conducts quizzes.',
+    description: 'The Quiz Club conducts branstorming sessions and mock quizzes to promote the quizzing culture in the campus. The club meets usually once a week and conducts quizzes.',
     block: 'C',
     links: { fb: 'https://www.facebook.com/iitkgp.quizclub/', insta: 'https://www.instagram.com/iitkgp.qc/' }
   },
