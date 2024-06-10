@@ -131,11 +131,11 @@ export const SOCIETIES: ISociety[] = [
     symbol: 'St',
     name: 'Space Technology Students’ Society (spAts)',
     year: 2008,
-    size: 'NA',
+    size: 'M',
     tsg_recognized: false,
     description: 'spAts functions as the student body of Kalpana Chawla Space Technology Cell, the contact point of ISRO at IIT Kharagpur.They are dedicated to explore space technology and astronomy by conducting lectures, events and workshops.',
     block: 'TO',
-    links: { fb: 'https://www.facebook.com/spAce.iitkgp/' }
+    links: { fb:'https://www.facebook.com/spAts.iitkgp', insta: 'https://www.instagram.com/spats.nssc.iitkgp/', linkedin:'https://www.linkedin.com/company/spats/', website: 'https://spats.co.in/', metawiki: 'https://wiki.metakgp.org/w/Space_Technology_Students%27_Society' }
   },
   {
     symbol: 'Bc',
