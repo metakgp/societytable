@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareFacebook, faInstagram, faLinkedin, faSlack, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faSquareFacebook, faInstagram, faLinkedin, faSlack, faTwitter, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faCircleXmark, faBook, faGlobe, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import { Block, ISociety, Social } from "../data/societies";
@@ -91,6 +91,56 @@ const SOCIAL_TITLE_ICON_MAP = {
 	email: { title: 'Email', icon: faEnvelope }
 }
 
+interface IDetailsModalProps {
+	name: string;
+	description: string;
+	links: {
+		title: string,
+		url: string,
+		icon: IconDefinition
+	}[];
+	elementProps: TableCellProps;
+	isOpen: boolean;
+	closeModal: () => void;
+}
+function DetailsModal(props: IDetailsModalProps) {
+	return <Modal
+		isOpen={props.isOpen}
+		onRequestClose={props.closeModal}
+		shouldCloseOnEsc={true}
+		contentLabel='Society Details'
+		className={'table modal'}
+		overlayClassName={'table modal-overlay'}
+	>
+		<div className='table soc-modal'>
+			<div className="modal-header">
+				<h2 className="modal-title">
+					{props.name}
+				</h2>
+				<button className="modal-close-btn" onClick={props.closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
+			</div>
+			<div className='modal-element'>
+				<Element {...props.elementProps} />
+			</div>
+			<p className="modal-desc">{props.description}</p>
+			<div className="modal-socials">
+				{props.links.map(({ title, url, icon }) => {
+					return <a
+						className="modal-social"
+						href={url}
+						title={title}
+						target="_blank"
+						rel="noreferrer"
+					>
+						<FontAwesomeIcon icon={icon} size="2x" />
+						<p className="modal-social-title">{title}</p>
+					</a>
+				})}
+			</div>
+		</div>
+	</Modal>
+}
+
 function TableCell(props: TableCellProps) {
 	Modal.setAppElement('#root');
 	const [modalIsOpen, setIsOpen] = useState(false);
@@ -105,115 +155,42 @@ function TableCell(props: TableCellProps) {
 
 	return <div className={`cell-container ${props.type}`} onClick={openModal}>
 		<Element {...props} />
-		{props.type === 'society' && <Modal
-			isOpen={modalIsOpen}
-			onRequestClose={closeModal}
-			shouldCloseOnEsc={true}
-			contentLabel='Society Details'
-			className={'table modal'}
-			overlayClassName={'table modal-overlay'}
-		>
-			<div className='table soc-modal'>
-				<div className="modal-header">
-					<h2 className="modal-title">
-						{props.society.name}
-					</h2>
-					<button className="modal-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
-				</div>
-				<div className='modal-element'>
-					<Element {...props} />
-				</div>
-				<p className="modal-desc">{props.society.description}</p>
-				<div className="modal-socials">
-					{Object.keys(props.society.links).map((social) => {
-						const { icon, title } = SOCIAL_TITLE_ICON_MAP[social as Social];
-						const link = props.society.links[social as Social];
 
-						return <a
-							className="modal-social"
-							href={link}
-							title={title}
-							target="_blank"
-							rel="noreferrer"
-						>
-							<FontAwesomeIcon icon={icon} size="2x" />
-							<p className="modal-social-title">{title}</p>
-						</a>
-					})}
-				</div>
-			</div>
-		</Modal>
-		}
-		{props.type === 'the-unknown-soc' && <Modal
+		{props.type === 'society' && <DetailsModal
 			isOpen={modalIsOpen}
-			onRequestClose={closeModal}
-			shouldCloseOnEsc={true}
-			contentLabel="Society Details"
-			className={'modal'}
-			overlayClassName={'modal-overlay'}
-		>
-			<div className='table soc-modal'>
-				<div className="modal-header">
-					<h2 className="modal-title">
-						The Unknown Society
-					</h2>
-					<button className="modal-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
-				</div>
-				<div className='modal-element'>
-					<Element {...props} />
-				</div>
-				<p className="modal-desc">Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below.</p>
-				<div className="modal-socials">
-					<a
-						className="modal-social"
-						href="https://slack.metakgp.org"
-						title="metaKGP Slack"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<FontAwesomeIcon icon={faSlack} size="2x" />
-						<p className="modal-social-title">metaKGP Slack</p>
-					</a>
-				</div>
-			</div>
-		</Modal>
-		}
-		{props.type === 'undiscovered' && <Modal
+			closeModal={closeModal}
+			elementProps={props}
+			name={props.society.name}
+			description={props.society.description}
+			links={Object.keys(props.society.links).map((social) => {
+				const { title, icon } = SOCIAL_TITLE_ICON_MAP[social as Social];
+				const url = props.society.links[social as Social] as string;
+
+				return {
+					title,
+					icon,
+					url
+				}
+			})}
+		/>}
+		{props.type === 'the-unknown-soc' && <DetailsModal
 			isOpen={modalIsOpen}
-			onRequestClose={closeModal}
-			shouldCloseOnEsc={true}
-			contentLabel="Society Details"
-			className={'modal'}
-			overlayClassName={'modal-overlay'}
-		>
-			<div className='table soc-modal'>
-				<div className="modal-header">
-					<h2 className="modal-title">
-						{getIUPACTemporaryNameAndSymbol(props.index).name} (Undiscovered)
-					</h2>
-					<button className="modal-close-btn" onClick={closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
-				</div>
-				<div className='modal-element'>
-					<Element {...props} />
-				</div>
-				<p className="modal-desc">This society has not been discovered yet and has been given a temporary name. If you know any society that fits this category, let us know at the slack link below.</p>
-				<div className="modal-socials">
-					<a
-						className="modal-social"
-						href="https://slack.metakgp.org"
-						title="metaKGP Slack"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<FontAwesomeIcon icon={faSlack} size="2x" />
-						metaKGP Slack
-					</a>
-				</div>
-			</div>
-		</Modal>
+			closeModal={closeModal}
+			elementProps={props}
+			name="The Unknown Society"
+			description="Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below."
+			links={[{ title: 'metaKGP Slack', url: 'https://slack.metakgp.org', icon: faSlack }]}
+		/>}
+		{props.type === 'undiscovered' && <DetailsModal
+			isOpen={modalIsOpen}
+			closeModal={closeModal}
+			elementProps={props}
+			name={`${getIUPACTemporaryNameAndSymbol(props.index).name} (Undiscovered)`}
+			description="This society has not been discovered yet and has been given a temporary name. If you know any society that fits this category, let us know at the slack link below."
+			links={[{ title: 'metaKGP Slack', url: 'https://slack.metakgp.org', icon: faSlack }]}
+		/>
 		}
 	</div>
-
 }
 
 export default TableCell;
