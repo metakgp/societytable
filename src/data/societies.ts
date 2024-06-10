@@ -521,7 +521,11 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: true,
     description: 'TAdS is the adventure society of the campus that brings extreme sports closer to the students. They explore Mountaineering, Rock Climbing, Mountain Biking, Hang Gliding, Bungee jumping, and organize adventure trips in the country for students.',
     block: 'O',
-    links: { fb: 'https://www.facebook.com/TAdS.IIT/' }
+    links: {
+      website: 'https://www.tadsiitkgp.in/',
+      insta: 'https://www.instagram.com/tads_iitkgp/',
+      fb: 'https://www.facebook.com/TAdS.IIT/'
+    }
   },
   {
     symbol: 'Rm',
