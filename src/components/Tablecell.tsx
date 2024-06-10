@@ -37,7 +37,7 @@ function Element(props: TableCellProps) {
 	switch (props.type) {
 		case "society":
 			return <>
-				<div title="Click to learn more.">
+				<div title={props.society.name}>
 					<GridItem className={`society block-${props.society.block.toLowerCase()}`}>
 						<span className="index">{props.index}</span>
 						<span className="year">{props.society.year}</span>
