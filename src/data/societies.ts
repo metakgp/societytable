@@ -66,14 +66,14 @@ export const SOCIETIES: ISociety[] = [
     links: { fb: 'https://www.facebook.com/The.KGTS/' }
   },
   {
-    symbol: 'Qu',
+    symbol: 'Qc',
     name: 'Quiz Club',
     year: 2003,
     size: 'S',
     tsg_recognized: true,
-    description: 'The Quiz Club conducts branstorming sessions and mock quizzes to promote the quizzing culture in the campus. The club usually meets at 10 PM on Thursdays in the Institute Foyer.',
+    description: 'The Quiz Club conducts branstorming sessions and mock quizzes to promote the quizzing culture in the campus. The club usually meets once a week and conducts quizzes.',
     block: 'C',
-    links: { fb: 'https://www.facebook.com/iitkgp.quizclub/' }
+    links: { fb: 'https://www.facebook.com/iitkgp.quizclub/', insta: 'https://www.instagram.com/iitkgp.qc/' }
   },
   {
     symbol: 'Sp',
