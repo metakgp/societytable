@@ -150,12 +150,12 @@ export const SOCIETIES: ISociety[] = [
   {
     symbol: 'Li',
     name: 'Technology Literary Society',
-    year: 1950,
+    year: 1951,
     size: 'M',
     tsg_recognized: true,
-    description: "TLS, one of the oldest societies of the campus, has been an outlet for the literary skills of the Kgp populace. Their notable works include Hang On's, Pulse and Alankar. They also hold the events 'Kavyanjali' and 'Kavya Sandhya'",
+    description: "TLS, one of the oldest societies of the campus, has been an outlet for the literary skills of the Kgp populace. Their notable works include Hang On's, Pulse and Alankar. They also hold the events 'Kavyanjali', 'Kavya Sandhya', and 'Farrago.'",
     block: 'C',
-    links: { fb: 'https://www.facebook.com/tlsiitkgp/' }
+    links: { fb: 'https://www.facebook.com/tlsiitkgp/', insta: 'https://www.instagram.com/tls.iitkgp' }
   },
   {
     symbol: 'Pr',
