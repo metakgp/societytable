@@ -449,7 +449,7 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: true,
     description: 'Encore is the English dramatics society of the campus. Their goal is to enjoy the moments on stage and give their audience a worthwhile experience. They go by their tagline "Stage humare baap ka hai".',
     block: 'C',
-    links: { fb: 'https://www.facebook.com/TDSEncore/' }
+    links: { fb: 'https://www.facebook.com/TDSEncore/', insta: 'https://www.instagram.com/iitkgpencore' }
   },
   {
     symbol: 'Et',
