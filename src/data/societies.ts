@@ -212,7 +212,7 @@ export const SOCIETIES: ISociety[] = [
     symbol: 'Os',
     name: 'Kharagpur Open Source Society',
     year: 2013,
-    size: 'XL',
+    size: 'M',
     tsg_recognized: false,
     description: 'A bunch of open source enthusiasts and previously called the ‘Firefox club’, KOSS is aimed at creating awareness about web and the open source movement.',
     block: 'TO',
@@ -640,5 +640,15 @@ export const SOCIETIES: ISociety[] = [
     description: "Railway Research Students' Group of IIT Kharagpur",
     block: 'T',
     links: { fb: 'https://www.facebook.com/team.trakgp', insta: 'https://www.instagram.com/team_trakgp' }
+  },
+  {
+    symbol: 'Gc',
+    name: 'Grimoire of Code',
+    year: 2019,
+    size: 'M',
+    tsg_recognized: true,
+    description: "Grimoire of Code, abbreviated as GoC, is IIT Kharagpur's competitive programming club involving a group of passionate competitive programmers. The club conducts global and intra-campus competitive programming contests, and workshops for students on campus, fostering the competitive programming culture within IIT Kharagpur.",
+    block: 'TO',
+    links: { insta: 'https://www.instagram.com/grimoireofcode', fb: 'https://www.facebook.com/goc.iitkgp' }
   }
 ].filter((soc) => !('inactive' in soc) || !soc.inactive).sort((a, b) => a.year - b.year) as ISociety[];
