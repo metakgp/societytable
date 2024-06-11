@@ -469,7 +469,10 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: false,
     description: 'Comedy Club is a society for stand-up and comedy enthusiasts.',
     block: 'U',
-    links: { fb: 'https://www.facebook.com/comedyclubiitkgp/' }
+    links: {
+      insta: 'https://www.instagram.com/comedy_club_iit_kharagpur',
+      fb: 'https://www.facebook.com/comedyclubiitkgp/'
+    }
   },
   {
     symbol: 'Ev',
