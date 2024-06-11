@@ -666,5 +666,20 @@ export const SOCIETIES: ISociety[] = [
       insta: 'https://www.instagram.com/qicckgp/',
       linkedin: 'https://www.linkedin.com/company/quantum-information-and-computing-club/'
     }
+  },
+  {
+    symbol: 'Es',
+    name: 'Kharagpur Quantum Information and Computing Club',
+    year: 2018,
+    size: 'S',
+    tsg_recognized: false,
+    description: "TES is dedicated to the conservation and preservation of the environment, and to promoting sustainability in society. Through a range of initiatives and activities, TES strives towards more sustainable future by finding solutions to environmental challenges and promoting conservation efforts within the campus and the wider community.",
+    block: 'TO',
+    links: {
+      metawiki: 'https://wiki.metakgp.org/w/Technology_Environment_Society',
+      insta: 'https://www.instagram.com/tesiitkgp/',
+      fb: 'https://www.facebook.com/TESIITKGP/',
+      email: 'mailto:tesiitkgp@gmail.com'
+    }
   }
 ].filter((soc) => !('inactive' in soc) || !soc.inactive).sort((a, b) => a.year - b.year) as ISociety[];
