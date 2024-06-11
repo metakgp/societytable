@@ -463,7 +463,7 @@ export const SOCIETIES: ISociety[] = [
   },
   {
     symbol: 'Cc',
-    name: 'Comedy Club',
+    name: 'Technology Comedy Club',
     year: 2019,
     size: 'M',
     tsg_recognized: false,
