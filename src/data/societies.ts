@@ -520,7 +520,7 @@ export const SOCIETIES: ISociety[] = [
     symbol: 'As',
     name: 'Technology Adventure Society',
     year: 2008,
-    size: 'NA',
+    size: 'L',
     tsg_recognized: true,
     description: 'TAdS is the adventure society of the campus that brings extreme sports closer to the students. They explore Mountaineering, Rock Climbing, Mountain Biking, Hang Gliding, Bungee jumping, and organize adventure trips in the country for students.',
     block: 'O',
@@ -653,5 +653,18 @@ export const SOCIETIES: ISociety[] = [
     description: "Grimoire of Code, abbreviated as GoC, is IIT Kharagpur's competitive programming club involving a group of passionate competitive programmers. The club conducts global and intra-campus competitive programming contests, and workshops for students on campus, fostering the competitive programming culture within IIT Kharagpur.",
     block: 'TO',
     links: { insta: 'https://www.instagram.com/grimoireofcode', fb: 'https://www.facebook.com/goc.iitkgp' }
+  },
+  {
+    symbol: 'Kq',
+    name: 'Kharagpur Quantum Information and Computing Club',
+    year: 2024,
+    size: 'S',
+    tsg_recognized: false,
+    description: "KQICC is a society dedicated to conducting research and spreading awareness about Quantum Information and Computing in IIT Kharagpur. They conduct various events including workshops and hackathons for everyone on the campus.",
+    block: 'TO',
+    links: {
+      insta: 'https://www.instagram.com/qicckgp/',
+      linkedin: 'https://www.linkedin.com/company/quantum-information-and-computing-club/'
+    }
   }
 ].filter((soc) => !('inactive' in soc) || !soc.inactive).sort((a, b) => a.year - b.year) as ISociety[];
