@@ -305,7 +305,7 @@ export const SOCIETIES: ISociety[] = [
     name: 'Chess Club, IIT Kharagpur',
     year: 2017,
     size: 'NA',
-    tsg_recognized: false,
+    tsg_recognized: true,
     description: 'Chess Club is an open-for-all club meant to boost the enthusiasm for chess and improve the chess culture in IIT Kharagpur.',
     block: 'U',
     links: { fb: 'https://www.facebook.com/ChessClubIITKGP/' }
@@ -325,7 +325,7 @@ export const SOCIETIES: ISociety[] = [
     name: 'Kharagpur Robosoccer Students’ Group',
     year: 2008,
     size: 'L',
-    tsg_recognized: false,
+    tsg_recognized: true,
     description: "A students' group in IIT Kharagpur which works on building autonomous bots for playing soccer and participating in international events like F.I.R.A. World Championship and RoboCup soccer.",
     block: 'T',
     links: { fb: 'https://www.facebook.com/krssg/' }
@@ -355,7 +355,7 @@ export const SOCIETIES: ISociety[] = [
     name: 'Ambar',
     year: 2015,
     size: 'M',
-    tsg_recognized: false,
+    tsg_recognized: true,
     description: 'Ambar is the Gender and Sexual diversity group of the campus for the LGBTQ community residing in the campus comprised of current students, alumni, staff and family of staff.',
     block: 'W',
     links: { fb: 'https://www.facebook.com/ambar.iitkgp/' }
@@ -562,7 +562,7 @@ export const SOCIETIES: ISociety[] = [
     name: 'Student Welfare Group',
     year: 2011,
     size: 'M',
-    tsg_recognized: false,
+    tsg_recognized: true,
     description: 'SWG helps students in improving their skills, attitude and resources necessary to both succeed in the college environment as well as to pursue productive and satisfying lives by organizing different activities on the campus.',
     block: 'W',
     links: { fb: 'https://www.facebook.com/SWGIITKGP/' }
