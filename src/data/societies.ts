@@ -1,14 +1,37 @@
 export type Block = "T" | "TO" | "O" | "W" | "C" | "CC" | "U";
 export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website" | "slack" | "twitter" | "email";
 export interface ISociety {
+  /**
+   * The chemical symbol equivalent for the society element. Can be any unique two-letter combination.
+   */
   symbol: string;
+  /**
+   * The full name of the society.
+   */
   name: string;
+  /**
+   * The year the society was founded.
+   */
   year: number;
+  /**
+   * The team size: (S)mall, (M)edium, (L)arge, e(X)tra (L)arge, and (N)ot (A)pplicable [for open societies].
+   * There is no strict definition for this yet, use your discretion.
+   */
   size: "S" | "M" | "L" | "XL" | "NA";
+  /**
+   * Whether the society is recognized by the Technology Students' Gymkhana (TSG).
+   */
   tsg_recognized: boolean;
+  /**
+   * Links to the society's socials. Email addresses should be prepended with a `mailto:` and all URLs must use https.
+   * See the `Social` type for supported socials.
+   */
   links: {
     [key in Social]?: string
   };
+  /**
+   * A short description for the society.
+   */
   description: string;
   /**
    * Block of the periodic table:
@@ -21,6 +44,9 @@ export interface ISociety {
    * A combination of these letters denotes a special block that is either a cross between two blocks or a sub-block.
    */
   block: Block;
+  /**
+   * Whether the society is now inactive.
+   */
   inactive?: boolean;
 }
 
@@ -69,7 +95,7 @@ export const SOCIETIES: ISociety[] = [
     symbol: 'Qc',
     name: 'Quiz Club',
     year: 2003,
-    size: 'S',
+    size: 'NA',
     tsg_recognized: true,
     description: 'The Quiz Club conducts branstorming sessions and mock quizzes to promote the quizzing culture in the campus. The club usually meets once a week and conducts quizzes.',
     block: 'C',
@@ -367,7 +393,7 @@ export const SOCIETIES: ISociety[] = [
     symbol: 'Mk',
     name: 'metaKGP',
     year: 2015,
-    size: 'S',
+    size: 'NA',
     tsg_recognized: false,
     description: 'metaKGP is a collective interest group of engineers, hackers, and artists from IIT Kharagpur, who collaborate on various technical and non-technical projects.',
     block: 'TO',
