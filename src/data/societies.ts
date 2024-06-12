@@ -495,7 +495,7 @@ export const SOCIETIES: ISociety[] = [
     name: 'Technology Comedy Club',
     year: 2019,
     size: 'M',
-    tsg_recognized: false,
+    tsg_recognized: true,
     description: 'Comedy Club is a society for stand-up and comedy enthusiasts.',
     block: 'U',
     links: {
@@ -701,7 +701,7 @@ export const SOCIETIES: ISociety[] = [
     name: 'Technology Environment Society',
     year: 2018,
     size: 'S',
-    tsg_recognized: false,
+    tsg_recognized: true,
     description: "TES is dedicated to the conservation and preservation of the environment, and to promoting sustainability in society. Through a range of initiatives and activities, TES strives towards more sustainable future by finding solutions to environmental challenges and promoting conservation efforts within the campus and the wider community.",
     block: 'TO',
     links: {
