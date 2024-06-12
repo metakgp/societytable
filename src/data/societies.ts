@@ -308,7 +308,10 @@ export const SOCIETIES: ISociety[] = [
     tsg_recognized: true,
     description: 'Chess Club is an open-for-all club meant to boost the enthusiasm for chess and improve the chess culture in IIT Kharagpur.',
     block: 'U',
-    links: { fb: 'https://www.facebook.com/ChessClubIITKGP/' }
+    links: {
+      insta: 'https://www.instagram.com/chessclub_iitkgp',
+      fb: 'https://www.facebook.com/ChessClubIITKGP/'
+    }
   },
   {
     symbol: 'Tk',
