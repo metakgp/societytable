@@ -669,7 +669,7 @@ export const SOCIETIES: ISociety[] = [
   },
   {
     symbol: 'Es',
-    name: 'Kharagpur Quantum Information and Computing Club',
+    name: 'Technology Environment Society',
     year: 2018,
     size: 'S',
     tsg_recognized: false,
