@@ -684,7 +684,7 @@ export const SOCIETIES: ISociety[] = [
   },
   {
     symbol: 'Dv',
-    name: 'Developers\' Society',
+    name: "Developers' Society",
     year: 2022,
     size: 'M',
     tsg_recognized: true,
