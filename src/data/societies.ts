@@ -540,7 +540,7 @@ export const SOCIETIES: ISociety[] = [
     name: 'ProDex',
     year: 2012,
     size: 'M',
-    tsg_recognized: false,
+    tsg_recognized: true,
     description: 'ProDex is a technical society based on the concept of Product Design with an objective to fuel the technological advancement of India through its activities.',
     block: 'TO',
     links: { fb: 'https://www.facebook.com/prodex.iitkgp/' }
