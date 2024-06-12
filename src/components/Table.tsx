@@ -5,9 +5,9 @@ import TableCell from './Tablecell';
 import { Block, ISociety } from "../data/societies";
 
 // Number of columns in the main table (which excludes the inner transition elements)
-const MAIN_TABLE_COLUMNS = 12;
+const MAIN_TABLE_COLUMNS = 13;
 // A map of which block each column in a row belongs to
-const MAIN_SOC_COLUMN_BLOCKS: Block[] = ["T", "TO", "TO", "O", "O", "O", "O", "C", "C", "C", "CC", "U"];
+const MAIN_SOC_COLUMN_BLOCKS: Block[] = ["T", "TO", "TO", "TO", "O", "O", "O", "O", "C", "C", "C", "CC", "U"];
 // A map of how many cells must be left empty and after which element index
 const EMPTY_CELL_MAP = {
 	1: MAIN_TABLE_COLUMNS - 2,
@@ -17,7 +17,7 @@ const EMPTY_CELL_MAP = {
 // Number of columns in the inner transition block
 const INNER_TRANSITION_COLUMNS = 5;
 // The column (zero-indexed) where gap is left for inner transition societies
-const INNER_TRANSITION_GAP_COLUMN = 2;
+const INNER_TRANSITION_GAP_COLUMN = 3;
 // The row (zero-indexed) where inner transition socities start
 const INNER_TRANSITION_START_ROW = 4;
 
