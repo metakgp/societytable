@@ -681,5 +681,20 @@ export const SOCIETIES: ISociety[] = [
       fb: 'https://www.facebook.com/TESIITKGP/',
       email: 'mailto:tesiitkgp@gmail.com'
     }
+  },
+  {
+    symbol: 'Dv',
+    name: 'Developers\' Society',
+    year: 2022,
+    size: 'M',
+    tsg_recognized: true,
+    description: "Developers' Society is an initiative to foster and encourage the development culture of IIT Kharagpur.",
+    block: 'T',
+    links: {
+      linkedin: 'https://linkedin.com/company/devsoc-iitkgp',
+      insta: 'https://www.instagram.com/devsoc.iitkgp',
+      fb: 'https://www.facebook.com/devsoc.iitkgp',
+      email: 'mailto:devsoc.iitkgp@gmail.com'
+    }
   }
 ].filter((soc) => !('inactive' in soc) || !soc.inactive).sort((a, b) => a.year - b.year) as ISociety[];
