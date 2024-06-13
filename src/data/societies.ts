@@ -541,8 +541,8 @@ export const SOCIETIES: ISociety[] = [
     year: 2012,
     size: 'M',
     tsg_recognized: true,
-    description: 'ProDex is a technical society based on the concept of Product Design with an objective to fuel the technological advancement of India through its activities.',
-    block: 'TO',
+    description: 'ProDex is a technical society focused on promoting Hardware modelling, Design and Innovation among the students of IIT Kharagpur.',
+    block: 'T',
     links: { insta: 'https://www.instagram.com/prodex.iitkgp/', fb: 'https://www.facebook.com/prodex.iitkgp/', linkedin: 'https://www.linkedin.com/company/prodex-iit-kharagpur/', website: 'https://prodex-iitkgp.netlify.app/', email: 'mailto:prodex.iitkgp@gmail.com' }
   },
   {
