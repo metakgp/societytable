@@ -332,7 +332,7 @@ export const SOCIETIES: ISociety[] = [
     year: 2017,
     size: 'NA',
     tsg_recognized: true,
-    description: 'Chess Club is an open-for-all club meant to boost the enthusiasm for chess and improve the chess culture in IIT Kharagpur.',
+    description: 'Chess Club, IIT Kharagpur creates a lively chess culture on campus with regular tournaments and casual play sessions. It provides a welcoming space where players of all skill levels can learn, compete, and enjoy the game together.',
     block: 'U',
     links: {
       insta: 'https://www.instagram.com/chessclub_iitkgp',
