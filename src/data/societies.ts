@@ -50,7 +50,7 @@ export interface ISociety {
   inactive?: boolean;
 }
 
-export const SOCIETIES: ISociety[] = [
+export const SOCIETIES_ALL: ISociety[] = [
   {
     symbol: 'Ar',
     name: 'Aerial Robotics Kharagpur',
@@ -88,7 +88,7 @@ export const SOCIETIES: ISociety[] = [
     size: 'M',
     tsg_recognized: false,
     description: 'KGTS is dedicated towards spreading awareness, knowledge and application of Game Theory. They are involved in publishing the half-yearly newspaper, "The Strategist".',
-    block: 'T',
+    block: 'U',
     links: { fb: 'https://www.facebook.com/The.KGTS/' }
   },
   {
@@ -725,5 +725,21 @@ export const SOCIETIES: ISociety[] = [
       fb: 'https://www.facebook.com/devsoc.iitkgp',
       email: 'mailto:devsoc.iitkgp@gmail.com'
     }
+  },
+  {
+    symbol: 'Qf',
+    name: "Quant Club",
+    year: 2019,
+    size: 'M',
+    tsg_recognized: false,
+    description: "Quant Club, IIT KGP is a student body that aims at increasing the awareness of Quantitative Finance.",
+    block: 'TO',
+    links: {
+      fb: 'https://www.facebook.com/quantclubiitkgp/',
+      insta: 'https://www.instagram.com/quantclub_iitkgp',
+      linkedin: 'https://in.linkedin.com/company/qciitkgp'
+    }
   }
-].filter((soc) => !('inactive' in soc) || !soc.inactive).sort((a, b) => a.year - b.year) as ISociety[];
+]
+
+export const SOCIETIES: ISociety[] = SOCIETIES_ALL.filter((soc) => !('inactive' in soc) || !soc.inactive).sort((a, b) => a.year - b.year);
