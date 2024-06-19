@@ -739,6 +739,18 @@ export const SOCIETIES_ALL: ISociety[] = [
       insta: 'https://www.instagram.com/quantclub_iitkgp',
       linkedin: 'https://in.linkedin.com/company/qciitkgp'
     }
+  },
+  {
+    symbol: 'Ks',
+    name: "Kharagpur Speedcubers",
+    year: 2024,
+    size: 'S',
+    tsg_recognized: false,
+    description: "Kharagpur Speedcubers is a group of speedcubers in IIT Kharagpur that organizes workshops and competitions on campus.",
+    block: 'U',
+    links: {
+      fb: 'https://www.facebook.com/kgpspeedcubers/',
+    }
   }
 ]
 
