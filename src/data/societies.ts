@@ -727,7 +727,7 @@ export const SOCIETIES_ALL: ISociety[] = [
     }
   },
   {
-    symbol: 'Qf',
+    symbol: 'Sa',
     name: "Quant Club",
     year: 2019,
     size: 'M',
@@ -753,5 +753,29 @@ export const SOCIETIES_ALL: ISociety[] = [
     }
   }
 ]
+
+export const checkForSocErrors = (societies: ISociety[]) => {
+  // Check for duplicate symbols and empty symbols
+  const symbol_map: {[soc: string]: number} = {};
+  for (const i in societies) {
+    const soc = societies[i];
+
+    if (soc.symbol === '') {
+      throw `Error: Society with index ${i} hasEmpty symbol.`;
+    }
+
+    if (soc.symbol in symbol_map) {
+      throw `Error: Societies with indexes ${symbol_map[soc.symbol]} and ${i} have the same symbol.`;
+    } else {
+      symbol_map[soc.symbol] = parseInt(i);
+    }
+
+    // Societies must have at least one link
+    if (Object.keys(soc.links).length === 0 && !soc.inactive) {
+      throw `Error: Society with index ${i} has no links.`;
+    }
+  }
+
+}
 
 export const SOCIETIES: ISociety[] = SOCIETIES_ALL.filter((soc) => !('inactive' in soc) || !soc.inactive).sort((a, b) => a.year - b.year);
