@@ -727,7 +727,7 @@ export const SOCIETIES_ALL: ISociety[] = [
     }
   },
   {
-    symbol: 'Sa',
+    symbol: 'Qf',
     name: "Quant Club",
     year: 2019,
     size: 'M',
@@ -761,7 +761,7 @@ export const checkForSocErrors = (societies: ISociety[]) => {
     const soc = societies[i];
 
     if (soc.symbol === '') {
-      throw `Error: Society with index ${i} hasEmpty symbol.`;
+      throw `Error: Society with index ${i} has an empty symbol.`;
     }
 
     if (soc.symbol in symbol_map) {
