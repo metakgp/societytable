@@ -751,6 +751,33 @@ export const SOCIETIES_ALL: ISociety[] = [
     links: {
       fb: 'https://www.facebook.com/kgpspeedcubers/',
     }
+  },
+  {
+    symbol: 'Sk',
+    name: "Spark4AI",
+    year: 2023,
+    size: 'L',
+    tsg_recognized: false,
+    description: "SPARK4AI is a vibrant community of AI enthusiasts united by a common passion for harnessing the transformative power of Artificial Intelligence.",
+    block: 'TO',
+    links: {
+      insta: 'https://www.instagram.com/spark4ai.iitkgp/',
+      linkedin: 'https://www.linkedin.com/company/spark4ai/'
+    }
+  },
+  {
+    symbol: 'Pg',
+    name: "Public Policy and Governance Society",
+    year: 2023,
+    size: 'L',
+    tsg_recognized: false,
+    description: "Public Policy and Governance Society, IIT Kharagpur is a platform for students and civil service enthusiasts to examine and actively engage with current public Policy and governance issues thorugh mentorship programmes and organising public events.",
+    block: 'O',
+    links: {
+      fb: 'https://www.facebook.com/ppgs.iitkgp',
+      insta: 'https://www.instagram.com/ppgs.iitkgp/',
+      linkedin: 'https://www.linkedin.com/company/civil-services-club-iitkgp/'
+    }
   }
 ]
 
