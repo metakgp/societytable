@@ -753,7 +753,7 @@ export const SOCIETIES_ALL: ISociety[] = [
     }
   },
   {
-    symbol: 'Sa',
+    symbol: 'Sk',
     name: "Spark4AI",
     year: 2023,
     size: 'L',
@@ -771,8 +771,8 @@ export const SOCIETIES_ALL: ISociety[] = [
     year: 2023,
     size: 'L',
     tsg_recognized: false,
-    description: "Public Policy and Governance Society, IIT Kharagpur serves as a dynamic platform for impassioned students to rigorously examine, deliberate upon, and actively engage with current public Policy and governance issues.",
-    block: 'W',
+    description: "Public Policy and Governance Society, IIT Kharagpur is a platform for students and civil service enthusiasts to examine and actively engage with current public Policy and governance issues thorugh mentorship programmes and organising public events.",
+    block: 'O',
     links: {
       fb: 'https://www.facebook.com/ppgs.iitkgp',
       insta: 'https://www.instagram.com/ppgs.iitkgp/',
