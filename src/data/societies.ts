@@ -761,18 +761,18 @@ export const checkForSocErrors = (societies: ISociety[]) => {
     const soc = societies[i];
 
     if (soc.symbol === '') {
-      throw `Error: Society with index ${i} has an empty symbol.`;
+      throw `Error: Society \`${soc.name}\` has an empty symbol.`;
     }
 
     if (soc.symbol in symbol_map) {
-      throw `Error: Societies with indexes ${symbol_map[soc.symbol]} and ${i} have the same symbol.`;
+      throw `Error: Societies \`${soc.name}\` and \`${societies[symbol_map[soc.symbol]].name}\` have the same symbol.`;
     } else {
       symbol_map[soc.symbol] = parseInt(i);
     }
 
     // Societies must have at least one link
     if (Object.keys(soc.links).length === 0 && !soc.inactive) {
-      throw `Error: Society with index ${i} has no links.`;
+      throw `Error: Society \`${soc.name}\` has no links.`;
     }
   }
 
