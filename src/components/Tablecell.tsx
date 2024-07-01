@@ -7,7 +7,7 @@ import { Block, ISociety, Social } from "../data/societies";
 import { GridItem } from "./Grid";
 import { useState } from 'react';
 
-export type TableCellProps = { society: ISociety, index: number, type: "society" } | { index: number, type: "undiscovered", block: Block } | { type: "empty" | "inner-transition" | "the-unknown-soc" };
+export type TableCellProps = { society: ISociety, index: number, type: "society", invisible?: boolean } | { index: number, type: "undiscovered", block: Block, invisible?: boolean } | { type: "empty" | "inner-transition" | "the-unknown-soc", invisible?: boolean };
 
 /**
  * Gives the temporary name and symbol of an undiscovered element according to IUPAC nomenclature.
@@ -153,7 +153,7 @@ function TableCell(props: TableCellProps) {
 		if (modalIsOpen) setIsOpen(false);
 	}
 
-	return <div className={`cell-container ${props.type}`} onClick={openModal}>
+	return <div className={`cell-container ${props.type} ${(props.invisible ?? false) ? 'invisible' : ''}`} onClick={openModal}>
 		<Element {...props} />
 
 		{props.type === 'society' && <DetailsModal
