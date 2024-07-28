@@ -5,6 +5,7 @@ import Legend from './Legend';
 import { TableCellProps } from './Tablecell';
 import TableCell from './Tablecell';
 import { Block, ISociety } from "../data/societies";
+import Fuse from 'fuse.js';
 
 // Number of columns in the main table (which excludes the inner transition elements)
 const MAIN_TABLE_COLUMNS = 13;
@@ -25,7 +26,14 @@ const INNER_TRANSITION_START_ROW = 4;
 
 function Table(props: { societies: ISociety[] }) {
 	const [socFilter, setSocFilter] = useState<string>('');
-	const filtered_socities = props.societies.filter((soc) => soc.name.toLowerCase().includes(socFilter.toLowerCase()));
+
+	const fuse = new Fuse(props.societies, {
+		keys: ['name', 'description', 'symbol'],
+		minMatchCharLength: 3,
+		threshold: 0.4,
+		ignoreLocation: true
+	})
+	const filtered_socities: ISociety[] = socFilter.length > 2 ? fuse.search(socFilter).map((result) => result.item) : props.societies;
 
 	// All societies that will be part of the main table
 	const MAIN_SOCIETIES = props.societies.filter((soc) => soc.block != "W");
