@@ -63,6 +63,10 @@
     .modal-social-title {
         font-weight: bold;
     }
+
+    @media screen and (max-width: 1280px) {
+        font-size: 1.5rem;
+    }
 }
 
 .modal-close-btn {
@@ -70,9 +74,14 @@
     border: none;
     float: right;
     position: absolute;
+    font-size: 2rem;
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 1280px) {
+        font-size: 3rem;
     }
 }
 

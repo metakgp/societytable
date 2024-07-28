@@ -117,7 +117,7 @@ function DetailsModal(props: IDetailsModalProps) {
 				<h2 className="modal-title">
 					{props.name}
 				</h2>
-				<button className="modal-close-btn" onClick={props.closeModal}><FontAwesomeIcon icon={faCircleXmark} size="2xl" /></button>
+				<button className="modal-close-btn" onClick={props.closeModal}><FontAwesomeIcon icon={faCircleXmark} /></button>
 			</div>
 			<div className='modal-element'>
 				<Element {...props.elementProps} />
