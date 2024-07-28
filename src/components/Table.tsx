@@ -1,8 +1,11 @@
+import { useState } from "react";
+
 import { Grid } from "./Grid";
 import Legend from './Legend';
 import { TableCellProps } from './Tablecell';
 import TableCell from './Tablecell';
 import { Block, ISociety } from "../data/societies";
+import Fuse from 'fuse.js';
 
 // Number of columns in the main table (which excludes the inner transition elements)
 const MAIN_TABLE_COLUMNS = 13;
@@ -22,6 +25,16 @@ const INNER_TRANSITION_GAP_COLUMN = 3;
 const INNER_TRANSITION_START_ROW = 4;
 
 function Table(props: { societies: ISociety[] }) {
+	const [socFilter, setSocFilter] = useState<string>('');
+
+	const fuse = new Fuse(props.societies, {
+		keys: ['name', 'description', 'symbol'],
+		minMatchCharLength: 3,
+		threshold: 0.4,
+		ignoreLocation: true
+	})
+	const filtered_socities: ISociety[] = socFilter.length > 2 ? fuse.search(socFilter).map((result) => result.item) : props.societies;
+
 	// All societies that will be part of the main table
 	const MAIN_SOCIETIES = props.societies.filter((soc) => soc.block != "W");
 	// All inner transition societies
@@ -80,11 +93,11 @@ function Table(props: { societies: ISociety[] }) {
 
 			if (next_soc_index === -1) {
 				// If there are no more socs in this block, add an empty cell
-				main_grid_entries.push({ type: "undiscovered", index, block });
+				main_grid_entries.push({ type: "undiscovered", index, block, invisible: socFilter !== '', });
 			} else {
 				// If a soc exists, insert its element
 				const next_soc = MAIN_SOCIETIES.splice(next_soc_index, 1)[0];
-				main_grid_entries.push({ society: next_soc, index, type: "society" });
+				main_grid_entries.push({ society: next_soc, index, type: "society", invisible: !filtered_socities.includes(next_soc) });
 			}
 
 
@@ -105,6 +118,12 @@ function Table(props: { societies: ISociety[] }) {
 
 	return (
 		<div className="table">
+			<input
+				placeholder="🔎 Search societies"
+				className="soc-search"
+				value={socFilter}
+				onInput={(e) => setSocFilter(e.currentTarget.value)}
+			/>
 			<Grid
 				options={{ numColumns: MAIN_TABLE_COLUMNS }}
 			>
@@ -121,7 +140,7 @@ function Table(props: { societies: ISociety[] }) {
 						// The index of the element, calculated by adding offset to its index in the current row
 						let index = 1 + inner_transition_offsets[inner_row] + (i % INNER_TRANSITION_COLUMNS);
 
-						return <TableCell society={society} index={index} type="society" />;
+						return <TableCell society={society} index={index} type="society" invisible={!filtered_socities.includes(society)} />;
 					})}
 					<TableCell type="the-unknown-soc" />
 				</Grid>
