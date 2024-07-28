@@ -59,7 +59,12 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: true,
     description: 'The ARK consists of a group of students working towards building autonomous aerial vehicles, based at Indian Institute of Technology Kharagpur.',
     block: 'T',
-    links: { fb: 'https://www.facebook.com/aerialroboticskgp' }
+    links: {
+      website: 'https://arl-kgp.github.io/',
+      fb: 'https://www.facebook.com/aerialroboticskgp',
+      email: 'aerialroboticskharagpur@gmail.com',
+      metawiki: 'https://wiki.metakgp.org/w/Aerial_Robotics_Kharagpur'
+    }
   },
   {
     symbol: 'Aw',
@@ -69,7 +74,13 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: false,
     description: "आवाज़ पिछले १० वर्षों से कैम्पस सम्बन्धी ताज़ा समाचार तथा सामयिक विषयों पे समीक्षा प्रस्तुत करती रही है | इन वर्षों में कैम्पस में काफी कुछ बदला है और राजभाषा हिंदी के माध्यम से 'आवाज़' आपसे अनवरत जुड़ी रही |",
     block: 'U',
-    links: { fb: 'https://www.facebook.com/awaaziitkgp/' }
+    links: {
+      website: 'https://issuu.com/awaaz',
+      fb: 'https://www.facebook.com/awaaziitkgp/',
+      insta: 'https://www.instagram.com/awaaziitkgp',
+      linkedin: 'https://linkedin.com/company/awaaz-iit-kharagpur',
+      metawiki: 'https://wiki.metakgp.org/w/Awaaz'
+    }
   },
   {
     symbol: 'Ag',
@@ -79,7 +90,12 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: false,
     description: 'AGV is an interdisciplinary team aspiring to win the Intelligent Ground Vehicle Competition held at Oakland University and be involved in the Research work related to autonomous and mobile robots.',
     block: 'T',
-    links: { fb: 'https://www.facebook.com/agvkgp/' }
+    links: {
+      fb: 'https://www.facebook.com/agvkgp/',
+      website: 'https://www.agv.iitkgp.ac.in/',
+      linkedin: 'https://www.linkedin.com/company/autonomous-ground-vehicle-research-group',
+      metawiki: 'https://wiki.metakgp.org/w/AGV'
+    }
   },
   {
     symbol: 'Gt',
@@ -89,7 +105,12 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: false,
     description: 'KGTS is dedicated towards spreading awareness, knowledge and application of Game Theory. They are involved in publishing the half-yearly newspaper, "The Strategist".',
     block: 'U',
-    links: { fb: 'https://www.facebook.com/The.KGTS/' }
+    links: {
+      fb: 'https://www.facebook.com/The.KGTS/',
+      insta: 'https://www.instagram.com/kgts.iitkgp/',
+      website: 'https://thekgts.wordpress.com/',
+      metawiki: 'https://wiki.metakgp.org/w/The_KGPian_Game_Theory_Society'
+    }
   },
   {
     symbol: 'Qc',
@@ -99,7 +120,10 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: true,
     description: 'The Quiz Club conducts branstorming sessions and mock quizzes to promote the quizzing culture in the campus. The club usually meets once a week and conducts quizzes.',
     block: 'C',
-    links: { fb: 'https://www.facebook.com/iitkgp.quizclub/', insta: 'https://www.instagram.com/iitkgp.qc/' }
+    links: {
+      fb: 'https://www.facebook.com/iitkgp.quizclub/',
+      insta: 'https://www.instagram.com/iitkgp.qc/'
+    }
   },
   {
     symbol: 'Sp',
@@ -109,7 +133,11 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: true,
     description: 'Spectra is the Fine Arts Group of the campus which aims to bring together like-minded people who have the shared love for art.',
     block: 'C',
-    links: { fb: 'https://www.facebook.com/Spectra.IITKGP/' }
+    links: {
+      fb: 'https://www.facebook.com/Spectra.IITKGP/',
+      insta: 'https://www.instagram.com/spectra.iitkgp/',
+      metawiki: 'https://wiki.metakgp.org/w/Spectra'
+    }
   },
   {
     symbol: 'Dr',
@@ -119,7 +147,10 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: true,
     description: 'Technology Dramatics Society Druheen is one of the oldest societies of IIT Kharagpur. It is a dedicated group for theatrical plays in Bengali.',
     block: 'C',
-    links: { fb: 'https://www.facebook.com/tdsdruheen/' }
+    links: {
+      fb: 'https://www.facebook.com/tdsdruheen/',
+
+    }
   },
   {
     symbol: 'Wt',
