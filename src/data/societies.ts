@@ -809,6 +809,21 @@ export const SOCIETIES_ALL: ISociety[] = [
       insta: 'https://www.instagram.com/ppgs.iitkgp/',
       linkedin: 'https://www.linkedin.com/company/civil-services-club-iitkgp/'
     }
+  },
+  {
+    symbol: 'Kb',
+    name: 'Kharagpur Blockchain Society',
+    year: 2023,
+    size: 'M',
+    tsg_recognized: false,
+    description: "KBS is a dynamic community of passionate students dedicated to exploring, understanding, and shaping the future of Decentralized technologies. Our mission is to bridge the gap between curiosity and mastery in the world of Blockchain.",
+    block: 'TO',
+    links: {
+      website: 'https://www.kgpchain.org/',
+      fb: 'https://www.facebook.com/blockchainkgp',
+      insta: 'https://www.instagram.com/blockchainkgp/',
+      linkedin: 'https://www.linkedin.com/company/blockchainkgp',
+    }
   }
 ]
 
