@@ -1,5 +1,5 @@
 export type Block = "T" | "TO" | "O" | "W" | "C" | "CC" | "U";
-export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website" | "slack" | "twitter" | "email";
+export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website" | "slack" | "twitter" | "email" | "youtube";
 export interface ISociety {
   /**
    * The chemical symbol equivalent for the society element. Can be any unique two-letter combination.
@@ -823,6 +823,21 @@ export const SOCIETIES_ALL: ISociety[] = [
       fb: 'https://www.facebook.com/blockchainkgp',
       insta: 'https://www.instagram.com/blockchainkgp/',
       linkedin: 'https://www.linkedin.com/company/blockchainkgp',
+    }
+  },
+  {
+    symbol: 'At',
+    name: 'Atelier - Design Club',
+    year: 2024,
+    size: 'S',
+    tsg_recognized: false,
+    description: "Atelier is the design society dedicated to exploring every facet of design and providing hands-on and industry-level experience to its members",
+    block: 'C',
+    links: {
+      website: 'https://linktr.ee/atelier.iitkgp',
+      insta: 'https://www.instagram.com/atelier.iitkgp/',
+      linkedin: 'https://www.linkedin.com/company/atelier-design-club-iit-kharagpur/',
+      youtube: 'https://www.youtube.com/@atelier.iitkgp',
     }
   }
 ]

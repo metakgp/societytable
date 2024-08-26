@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareFacebook, faInstagram, faLinkedin, faSlack, faTwitter, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { faSquareFacebook, faInstagram, faLinkedin, faSlack, faTwitter, faYoutube, IconDefinition } from '@fortawesome/free-brands-svg-icons';
 import { faCircleXmark, faBook, faGlobe, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import { Block, ISociety, Social } from "../data/societies";
@@ -88,7 +88,8 @@ const SOCIAL_TITLE_ICON_MAP = {
 	website: { title: 'Website', icon: faGlobe },
 	slack: { title: 'Slack', icon: faSlack },
 	twitter: { title: 'Twitter', icon: faTwitter },
-	email: { title: 'Email', icon: faEnvelope }
+	email: { title: 'Email', icon: faEnvelope },
+	youtube: { title: 'YouTube', icon: faYoutube }
 }
 
 interface IDetailsModalProps {
