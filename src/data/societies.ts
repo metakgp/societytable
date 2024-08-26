@@ -1,5 +1,5 @@
 export type Block = "T" | "TO" | "O" | "W" | "C" | "CC" | "U";
-export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website" | "slack" | "twitter" | "email";
+export type Social = "fb" | "insta" | "metawiki" | "linkedin" | "website" | "slack" | "twitter" | "email" | "youtube";
 export interface ISociety {
   /**
    * The chemical symbol equivalent for the society element. Can be any unique two-letter combination.
