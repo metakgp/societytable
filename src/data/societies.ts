@@ -831,7 +831,7 @@ export const SOCIETIES_ALL: ISociety[] = [
     year: 2024,
     size: 'S',
     tsg_recognized: false,
-    description: "Atelier — Design Club is the creative hub of IIT Kharagpur, where ideas come to life through design. We work on real-time projects, providing hands-on experience and industry-level learning.",
+    description: "Atelier is the design society dedicated to exploring every facet of design and providing hands-on and industry-level experience to its members",
     block: 'C',
     links: {
       website: 'https://linktr.ee/atelier.iitkgp',
