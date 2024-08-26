@@ -824,6 +824,21 @@ export const SOCIETIES_ALL: ISociety[] = [
       insta: 'https://www.instagram.com/blockchainkgp/',
       linkedin: 'https://www.linkedin.com/company/blockchainkgp',
     }
+  },
+  {
+    symbol: 'At',
+    name: 'Atelier - Design Club',
+    year: 2024,
+    size: 'S',
+    tsg_recognized: false,
+    description: "Atelier — Design Club is the creative hub of IIT Kharagpur, where ideas come to life through design. We work on real-time projects, providing hands-on experience and industry-level learning.",
+    block: 'C',
+    links: {
+      website: 'https://linktr.ee/atelier.iitkgp',
+      insta: 'https://www.instagram.com/atelier.iitkgp/',
+      linkedin: 'https://www.linkedin.com/company/atelier-design-club-iit-kharagpur/',
+      youtube: 'https://www.youtube.com/@atelier.iitkgp',
+    }
   }
 ]
 
