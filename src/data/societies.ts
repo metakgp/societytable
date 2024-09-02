@@ -192,7 +192,7 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: false,
     description: 'spAts functions as the student body of Kalpana Chawla Space Technology Cell, the contact point of ISRO at IIT Kharagpur.They are dedicated to explore space technology and astronomy by conducting lectures, events and workshops.',
     block: 'TO',
-    links: { fb:'https://www.facebook.com/spAts.iitkgp', insta: 'https://www.instagram.com/spats.nssc.iitkgp/', linkedin:'https://www.linkedin.com/company/spats/', website: 'https://spats.co.in/', metawiki: 'https://wiki.metakgp.org/w/Space_Technology_Students%27_Society' }
+    links: { fb: 'https://www.facebook.com/spAts.iitkgp', insta: 'https://www.instagram.com/spats.nssc.iitkgp/', linkedin: 'https://www.linkedin.com/company/spats/', website: 'https://spats.co.in/', metawiki: 'https://wiki.metakgp.org/w/Space_Technology_Students%27_Society' }
   },
   {
     symbol: 'Bc',
@@ -263,7 +263,7 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: true,
     description: 'Technology Robotix Society conducts activities and projects related to robotics in the campus. With its reach expanding steadily each year, it has also cemented its position as one of the nerve centres of amateur robotics in India.',
     block: 'TO',
-    links: { fb: 'https://www.facebook.com/robotixiitkgp/', insta: 'https://www.instagram.com/robotix_iitkgp/',  linkedin: 'https://www.linkedin.com/company/technology-robotix-society/', website: 'https://www.robotix.in/' }
+    links: { fb: 'https://www.facebook.com/robotixiitkgp/', insta: 'https://www.instagram.com/robotix_iitkgp/', linkedin: 'https://www.linkedin.com/company/technology-robotix-society/', website: 'https://www.robotix.in/' }
   },
   {
     symbol: 'Os',
@@ -837,14 +837,27 @@ export const SOCIETIES_ALL: ISociety[] = [
       website: 'https://linktr.ee/atelier.iitkgp',
       insta: 'https://www.instagram.com/atelier.iitkgp/',
       linkedin: 'https://www.linkedin.com/company/atelier-design-club-iit-kharagpur/',
-      youtube: 'https://www.youtube.com/@atelier.iitkgp',
+      youtube: 'https://www.youtube.com/@atelier.iitkgp'
+    }
+  },
+  {
+    symbol: 'Tr',
+    name: 'the RAP society (tRAPs)',
+    year: 2023,
+    size: 'M',
+    tsg_recognized: false,
+    description: 'tRAPs is a society that conducts rap battles, cyphers and jamming sessions for hip-hop enthusiasts.',
+    block: 'U',
+    links: {
+      insta: 'https://www.instagram.com/traps.iitkgp/',
+      email: 'mailto:traps.iitkgp@gmail.com'
     }
   }
 ]
 
 export const checkForSocErrors = (societies: ISociety[]) => {
   // Check for duplicate symbols and empty symbols
-  const symbol_map: {[soc: string]: number} = {};
+  const symbol_map: { [soc: string]: number } = {};
   for (const i in societies) {
     const soc = societies[i];
 
