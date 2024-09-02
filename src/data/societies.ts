@@ -841,7 +841,7 @@ export const SOCIETIES_ALL: ISociety[] = [
     }
   },
   {
-    symbol: 'Tr',
+    symbol: 'Rs',
     name: 'the RAP society (tRAPs)',
     year: 2023,
     size: 'M',
