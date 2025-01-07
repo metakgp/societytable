@@ -872,6 +872,18 @@ export const SOCIETIES_ALL: ISociety[] = [
     links: {
       insta: 'https://www.instagram.com/tedxiitkharagpur/'
     }
+  },
+  {
+    symbol: 'Fn',
+    name: 'Finesse',
+    year: 2023,
+    size: 'M',
+    tsg_recognized: true,
+    description: 'The Fashion society of IIT KGP',
+    block: 'C',
+    links: {
+      insta: 'https://www.instagram.com/finesse_iitkgp'
+    }
   }
 ]
 
