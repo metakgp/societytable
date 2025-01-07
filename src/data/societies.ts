@@ -489,7 +489,10 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: true,
     description: "The Debating Society, IIT Kharagpur, is a full-fledged society under the Technology Students' Gymkhana, IIT Kharagpur, which aims to promote the culture of debating on the campus and provides a platform to bring all the debaters together.",
     block: 'C',
-    links: { fb: 'https://www.facebook.com/kgpdebsoc/' }
+    links: { 
+      fb: 'https://www.facebook.com/kgpdebsoc/',
+      insta: 'https://www.instagram.com/debsoc.iitkgp'
+    }
   },
   {
     symbol: 'Sa',
