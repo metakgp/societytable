@@ -859,6 +859,18 @@ export const SOCIETIES_ALL: ISociety[] = [
     links: {
       insta: 'https://www.instagram.com/traps.iitkgp/',
       email: 'mailto:traps.iitkgp@gmail.com'
+    },
+  },
+  {
+    symbol: 'Tx',
+    name: 'TedX IIT Kharagpur',
+    year: 2019,
+    size: 'S',
+    tsg_recognized: true,
+    description: 'TEDxIITKharagpur is an independently organized TED event at IIT KGP',
+    block: 'O',
+    links: {
+      insta: 'https://www.instagram.com/tedxiitkharagpur/'
     }
   }
 ]
