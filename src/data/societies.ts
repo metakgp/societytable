@@ -884,7 +884,19 @@ export const SOCIETIES_ALL: ISociety[] = [
     links: {
       insta: 'https://www.instagram.com/finesse_iitkgp'
     }
-  }
+  },
+  {
+    symbol: 'Wr',
+    name: 'Warriors',
+    year: 2024,
+    size: 'M',
+    tsg_recognized: false,
+    description: 'The martial arts society of IIT KGP',
+    block: 'C',
+    links: {
+      insta: 'https://www.instagram.com/warriors.iitkgp'
+    }
+  },
 ]
 
 export const checkForSocErrors = (societies: ISociety[]) => {
