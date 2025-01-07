@@ -605,10 +605,15 @@ export const SOCIETIES_ALL: ISociety[] = [
     name: '180 Degree Consulting, IIT Kharagpur',
     year: 2019,
     size: 'M',
-    tsg_recognized: false,
+    tsg_recognized: true,
     description: '180 Degree Consulting provides socially conscious organizations around the world with high quality and affordable consulting services.',
     block: 'O',
-    links: { fb: 'https://www.facebook.com/180dckgp/' }
+    links: {
+      fb: 'https://www.facebook.com/180dckgp/',
+      insta: 'https://www.instagram.com/180dc.iitkgp',
+      linkedin: 'https://www.linkedin.com/company/180-degrees-consulting-iit-kharagpur',
+      website: 'https://www.180dciitkgp.in'
+    }
   },
   {
     symbol: 'Tg',
