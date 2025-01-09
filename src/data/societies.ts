@@ -489,7 +489,10 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: true,
     description: "The Debating Society, IIT Kharagpur, is a full-fledged society under the Technology Students' Gymkhana, IIT Kharagpur, which aims to promote the culture of debating on the campus and provides a platform to bring all the debaters together.",
     block: 'C',
-    links: { fb: 'https://www.facebook.com/kgpdebsoc/' }
+    links: { 
+      fb: 'https://www.facebook.com/kgpdebsoc/',
+      insta: 'https://www.instagram.com/debsoc.iitkgp'
+    }
   },
   {
     symbol: 'Sa',
@@ -605,10 +608,15 @@ export const SOCIETIES_ALL: ISociety[] = [
     name: '180 Degree Consulting, IIT Kharagpur',
     year: 2019,
     size: 'M',
-    tsg_recognized: false,
+    tsg_recognized: true,
     description: '180 Degree Consulting provides socially conscious organizations around the world with high quality and affordable consulting services.',
     block: 'O',
-    links: { fb: 'https://www.facebook.com/180dckgp/' }
+    links: {
+      fb: 'https://www.facebook.com/180dckgp/',
+      insta: 'https://www.instagram.com/180dc.iitkgp',
+      linkedin: 'https://www.linkedin.com/company/180-degrees-consulting-iit-kharagpur',
+      website: 'https://www.180dciitkgp.in'
+    }
   },
   {
     symbol: 'Tg',
@@ -851,8 +859,44 @@ export const SOCIETIES_ALL: ISociety[] = [
     links: {
       insta: 'https://www.instagram.com/traps.iitkgp/',
       email: 'mailto:traps.iitkgp@gmail.com'
+    },
+  },
+  {
+    symbol: 'Tx',
+    name: 'TedX IIT Kharagpur',
+    year: 2019,
+    size: 'S',
+    tsg_recognized: true,
+    description: 'TEDxIITKharagpur is an independently organized TED event at IIT KGP',
+    block: 'O',
+    links: {
+      insta: 'https://www.instagram.com/tedxiitkharagpur/'
     }
-  }
+  },
+  {
+    symbol: 'Fn',
+    name: 'Finesse',
+    year: 2023,
+    size: 'M',
+    tsg_recognized: true,
+    description: 'The Fashion society of IIT KGP',
+    block: 'C',
+    links: {
+      insta: 'https://www.instagram.com/finesse_iitkgp'
+    }
+  },
+  {
+    symbol: 'Wr',
+    name: 'Warriors',
+    year: 2024,
+    size: 'M',
+    tsg_recognized: false,
+    description: 'The martial arts society of IIT KGP',
+    block: 'C',
+    links: {
+      insta: 'https://www.instagram.com/warriors.iitkgp'
+    }
+  },
 ]
 
 export const checkForSocErrors = (societies: ISociety[]) => {
