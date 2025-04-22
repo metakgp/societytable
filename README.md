@@ -29,7 +29,9 @@
     <br />
     <a href="https://soc.metakgp.org">Website</a>
     ·
-    <a href="https://github.com/societytable/issues">Request Feature / Report Bug</a>
+    <a href="https://github.com/societytable/issues">Report Bug</a>
+    .
+    <a href="https://github.com/metakgp/societytable/issues/new?template=new_soc.yml">Request Society Addition</a>
   </p>
 </div>
 
