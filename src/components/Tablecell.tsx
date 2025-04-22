@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSquareFacebook, faInstagram, faLinkedin, faSlack, faTwitter, faYoutube, IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { faSquareFacebook, faInstagram, faLinkedin, faSlack, faTwitter, faYoutube, IconDefinition, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCircleXmark, faBook, faGlobe, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import { Block, ISociety, Social } from "../data/societies";
@@ -179,8 +179,11 @@ function TableCell(props: TableCellProps) {
 			closeModal={closeModal}
 			elementProps={props}
 			name="The Unknown Society"
-			description="Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack link below."
-			links={[{ title: 'metaKGP Slack', url: 'https://slack.metakgp.org', icon: faSlack }]}
+			description="Incompleteness creates room for innovation and hence this element symbolizes our faith in the student community to push the ambits of existing boundaries. If your society is not listed here, please let us know via the Slack or Github link below."
+			links={[
+				{ title: 'metaKGP Slack', url: 'https://slack.metakgp.org', icon: faSlack },
+				{ title: 'Soc Addition Request', url: 'https://github.com/metakgp/societytable/issues/new?template=new_soc.yml', icon: faGithub }
+			]}
 		/>}
 		{props.type === 'undiscovered' && <DetailsModal
 			isOpen={modalIsOpen}
