@@ -1,0 +1,99 @@
+name: New Society Addition
+about: Request to add a new society to the table
+title: '[SOC REQUEST]: Add SOCIETY_NAME'
+labels: 'soc-request'
+assignees: ''
+body:
+	- type: markdown
+		attributes:
+      value: |
+        Please fill out the following information for the society
+
+	- type: input
+    id: name
+    attributes:
+      label: Name
+      description: Full name of the society
+      placeholder: e.g., Eastern Technology Music Society
+    validations:
+      required: true
+
+	- type: dropdown
+    id: tsg-recognition
+    attributes:
+      label: Is it TSG recognized?
+      options:
+				- Yes
+				- No
+		validations:
+      required: true
+
+	- type: textarea
+    id: desc
+    attributes:
+      label: Description
+      description: Description of the society
+      placeholder: ETMS is a group of self-learned musicians...
+    validations:
+      required: true
+
+	- type: dropdown
+    id: size
+			label: Team Size
+      description: How big is the team (relative terms compared to other socs)?
+      options:
+				- S
+				- M
+				- L
+				- X
+				- XL
+		validations:
+      required: true
+
+	- type: input
+    id: symbol
+      label: Society symbol
+      description: Symbol for the society element in the periodic table
+      placeholder: e.g., Kr, Os, Et, etc.
+		validations:
+      required: true
+
+	- type: dropdown
+    id: block
+			label: Block
+      description: The society's block describes the domains in which the society works. Select one.
+      options:
+				- Technical
+				- Organizational
+				- Technical-Organizational
+				- Welfare
+				- Creative
+				- Uncategorized
+		validations:
+      required: true
+
+	- type: dropdown
+    id: block
+			label: Block
+      description: The society's block describes the domains in which the society works. Select one.
+      options:
+				- Technical
+				- Organizational
+				- Technical-Organizational
+				- Welfare
+				- Creative
+				- Uncategorized
+		validations:
+      required: true
+
+	- type: textarea
+    id: links
+    attributes:
+      label: Social media links
+      description: Links to the society's social media channels. Add at least one. FB, Insta, MetaWiki, LinkedIN, Slack, Twitter, Email, Youtube, and Website links are supported.
+      placeholder: |
+				- [insta](link)
+				- [Wiki page](link)
+				- etc.
+    validations:
+      required: true
