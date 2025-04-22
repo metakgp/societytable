@@ -53,6 +53,7 @@ body:
 
   - type: input
     id: symbol
+    attributes:
       label: Society symbol
       description: Symbol for the society element in the periodic table
       placeholder: e.g., Kr, Os, Et, etc.
@@ -61,6 +62,7 @@ body:
 
   - type: dropdown
     id: block
+    attributes:
       label: Block
       description: The society's block describes the domains in which the society works. Select one.
       options:
@@ -75,6 +77,7 @@ body:
 
   - type: dropdown
     id: block
+    attributes:
       label: Block
       description: The society's block describes the domains in which the society works. Select one.
       options:
