@@ -18,7 +18,7 @@
 <!-- UPDATE -->
 <div align="center">
   <a href="https://github.com/metakgp/societytable">
-     <img width="140" alt="image" src="https://raw.githubusercontent.com/metakgp/design/main/logos/logo.jpg">
+     <img width="140" alt="image" src="https://raw.githubusercontent.com/metakgp/design/main/logos/black-large.jpg">
   </a>
 
   <h3 align="center">Periodic Table of Societies</h3>
@@ -40,7 +40,6 @@
 
 - [About The Project](#about-the-project)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
 - [Contact](#contact)
   - [Maintainer(s)](#maintainers)
   - [creators(s)](#creators)
@@ -63,14 +62,10 @@ The Periodic Table of Societies is a table of the societies and clubs of IIT Kha
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Development
-To set up a development environment, follow the steps below.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- USAGE EXAMPLES -->
-## Usage
-<!-- UPDATE -->
-Use this space to show useful examples of how this project can be used. Additional screenshots, code examples and demos work well in this space.
+1. Install [NodeJS](https://nodejs.org) and [PNPM](https://pnpm.io)
+2. Clone this repository
+3. Run `pnpm install`
+4. Run `pnpm dev`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
