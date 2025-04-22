@@ -1,8 +1,7 @@
 name: New Society Addition
-about: Request to add a new society to the table
+description: Request to add a new society to the table
 title: '[SOC REQUEST]: Add SOCIETY_NAME'
 labels: 'soc-request'
-assignees: ''
 body:
   - type: markdown
     attributes:
@@ -23,8 +22,8 @@ body:
     attributes:
       label: Is it TSG recognized?
       options:
-        - Yes
-        - No
+        - "Yes"
+        - "No"
     validations:
       required: true
 
@@ -57,21 +56,6 @@ body:
       label: Society symbol
       description: Symbol for the society element in the periodic table
       placeholder: e.g., Kr, Os, Et, etc.
-    validations:
-      required: true
-
-  - type: dropdown
-    id: block
-    attributes:
-      label: Block
-      description: The society's block describes the domains in which the society works. Select one.
-      options:
-        - Technical
-        - Organizational
-        - Technical-Organizational
-        - Welfare
-        - Creative
-        - Uncategorized
     validations:
       required: true
 
