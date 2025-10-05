@@ -489,7 +489,7 @@ export const SOCIETIES_ALL: ISociety[] = [
     tsg_recognized: true,
     description: "The Debating Society, IIT Kharagpur, is a full-fledged society under the Technology Students' Gymkhana, IIT Kharagpur, which aims to promote the culture of debating on the campus and provides a platform to bring all the debaters together.",
     block: 'C',
-    links: { 
+    links: {
       fb: 'https://www.facebook.com/kgpdebsoc/',
       insta: 'https://www.instagram.com/debsoc.iitkgp'
     }
@@ -897,6 +897,20 @@ export const SOCIETIES_ALL: ISociety[] = [
       insta: 'https://www.instagram.com/warriors.iitkgp'
     }
   },
+  {
+    symbol: 'In',
+    name: 'Innovation & Incubation Cell',
+    year: 2024,
+    size: 'M',
+    tsg_recognized: false,
+    description: `Innovation & Incubation Cell (IIC), is IIT Kharagpur's student driven innovation hub which enables students to intern on projects run by professors, support professors and research scholars for patents and other intellectual property, in-campus startups can get, workshops, mentorship, VCs and the whole institute's resources to work on, and get help being incubated by institute's four incubation centers, STEP, ABIF, AI4CPS, MNFIC. We aim to empower in-campus students, researchers, and faculty to convert technological breakthroughs into ventures that solve real world problems while building a vibrant entrepreneurial ecosystem.`,
+    block: 'TO',
+    links: {
+      insta: 'https://www.instagram.com/iic.iitkgp',
+      website: 'https://iciitkgp.com',
+      linkedin: 'https://www.linkedin.com/company/iic-iit-kgp',
+    }
+  }
 ]
 
 export const checkForSocErrors = (societies: ISociety[]) => {
